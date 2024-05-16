@@ -1,0 +1,17 @@
+.sh{
+    border: 2px solid;
+    background-color: #343A40;
+    display: flex;   
+    justify-content: center;
+}
+
+#contain{
+    padding: 20px;
+    background-color:rgb(21, 173, 165);
+}
+
+#heading{
+    text-align: center;
+    color:blanchedalmond;
+}
+
