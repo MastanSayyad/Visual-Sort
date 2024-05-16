@@ -16,7 +16,7 @@ Visual Sort is a web-based sorting algorithm visualization tool that provides an
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/your-username/visual-sort.git
+   git clone https://github.com/mastansayyad/visual-sort.git
    ```
 
 2. Open `index.html` in your web browser.
