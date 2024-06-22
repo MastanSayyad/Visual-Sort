@@ -77,6 +77,11 @@ You can clone the repository using the command line or GitHub Desktop.
 
 ![image](https://github.com/MastanSayyad/Visual-Sort/assets/101971980/0df13876-f3af-4bec-800a-507c34dbf315)
 
+## Additional Resources
+
+- **GitHub Documentation:** [GitHub Docs](https://docs.github.com/)
+- **Git Tutorial:** [Git Documentation](https://git-scm.com/doc)
+
 ## License
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/MastanSayyad/Visual-Sort/blob/main/LICENSE) file for details
 
