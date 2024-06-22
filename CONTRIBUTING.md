@@ -3,6 +3,7 @@
 
 Thank you for considering contributing to Visual Sort! We welcome contributions from everyone. Here are some guidelines to help you get started.
 
+**Please Make sure you Star the repository ⭐**
 ## #How to Raise an Issue
 
 1. **Navigate to the Repository:**
