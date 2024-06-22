@@ -25,8 +25,8 @@ Visual Sort is designed to help both beginners and seasoned developers understan
 
 ## #Getting Started
 
-Contributions are welcome! Feel free to open an issue or submit a pull request.
-Please make sure you read [CONTRIBUTING.md](https://github.com/MastanSayyad/Visual-Sort/blob/main/CONTRIBUTING.md)
+Contributions are welcome! Feel free to open an issue or submit a pull request. 
+**Please Make sure you Star the repository ⭐** and Read [CONTRIBUTING.md](https://github.com/MastanSayyad/Visual-Sort/blob/main/CONTRIBUTING.md)
 
 
 Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
