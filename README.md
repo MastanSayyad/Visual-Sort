@@ -25,6 +25,10 @@ Visual Sort is designed to help both beginners and seasoned developers understan
 
 ## #Getting Started
 
+Contributions are welcome! Feel free to open an issue or submit a pull request.
+Please make sure you read [CONTRIBUTING.md](https://github.com/MastanSayyad/Visual-Sort/blob/main/CONTRIBUTING.md)
+
+
 Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
 
 ### #Cloning the Repository
@@ -84,11 +88,6 @@ You can clone the repository using the command line or GitHub Desktop.
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/MastanSayyad/Visual-Sort/blob/main/LICENSE) file for details
-
-## Contributing
-
-Contributions are welcome! Feel free to open an issue or submit a pull request.
-Please make sure you read [CONTRIBUTING.md](https://github.com/MastanSayyad/Visual-Sort/blob/main/CONTRIBUTING.md)
 
 
 **Please Give a Star and Thank you for your visit :)**
