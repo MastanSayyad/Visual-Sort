@@ -88,6 +88,7 @@ This project is licensed under the MIT License. See the [LICENSE](https://github
 ## Contributing
 
 Contributions are welcome! Feel free to open an issue or submit a pull request.
+Please make sure you read [CONTRIBUTING.md](https://github.com/MastanSayyad/Visual-Sort/blob/main/CONTRIBUTING.md)
 
 
 **Please Give a Star and Thank you for your visit :)**
