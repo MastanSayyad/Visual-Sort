@@ -24,7 +24,7 @@ Thank you for considering contributing to Visual Sort! We welcome contributions 
 
 ## How To Contribute
 
-First Fork therepository
+- **First Fork the repository**
  
 ## #Clone the Repository
 
