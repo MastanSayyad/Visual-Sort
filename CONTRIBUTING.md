@@ -21,7 +21,12 @@ Thank you for considering contributing to Visual Sort! We welcome contributions 
 4. **Submit the Issue:**
    - Click the "Submit new issue" button.
 
-## #How to Clone the Repository
+
+## How To Contribute
+
+First Fork therepository
+ 
+## #Clone the Repository
 
 ### Using the Command Line
 
