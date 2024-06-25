@@ -5,8 +5,15 @@
   <title>Visual Sort</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@11.1.4/swiper-bundle.min.css" />
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- custom css link -->
+    <script src="https://kit.fontawesome.com/2815a7015d.js" crossorigin="anonymous"></script>  
+  
+  
   <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
   <link rel="stylesheet" href="fonts/icomoon/style.css">
 
@@ -253,22 +260,79 @@
               end selectionSort </p>
         </div>
       </div>
-
-      <div class="row mb-5 align-items-center">
-        <div class="col-lg-7 mb-5" data-aos="fade-up" data-aos-delay="100">
-          <img src="images/heap-sort.gif" alt="Image" class="img-fluid">
-        </div>
-        <div class="col-lg-4 ml-auto" data-aos="fade-up" data-aos-delay="200">
-          <h2 class="text-black mb-4">Heap Sort </h2>
-          <p class="mb-4">Heapsort(A) <br>
+<div class="row mb-5 align-items-center">
+    <div class="col-lg-7 mb-5" data-aos="fade-up" data-aos-delay="100">
+        <img src="images/heap-sort.gif" alt="Image" class="img-fluid">
+    </div>
+    <div class="col-lg-4 ml-auto" data-aos="fade-up" data-aos-delay="200">
+        <h2 class="text-black mb-4">Heap Sort </h2>
+        <p class="mb-4">Heapsort(A) <br>
             &nbsp; &nbsp; BUILD-MAX-HEAP(A) <br>
             &nbsp; &nbsp; for i = A.length downto 2 <br>
             &nbsp; &nbsp; &nbsp; &nbsp;exchange A[1] with A[i] <br>
             &nbsp; &nbsp;A.heap-size = A.heap-size - 1 <br>
-              &nbsp; &nbsp; &nbsp; &nbsp; MAX-HEAPIFY(A, 1) <br>
-          </p>
+            &nbsp; &nbsp; &nbsp; &nbsp; MAX-HEAPIFY(A, 1) <br>
+        </p>
+    </div>
+</div>
+
+<section class="review" id="review">
+    <h1 class="heading"> Student Reviews </h1>
+    <div class="swiper review-slider" data-aos="zoom-in">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide">
+                <img src="img/pic-1.png" alt="">
+                <h3>Noah Lee</h3>
+                <p>I recently used Cabrental for a weekend trip and was thoroughly impressed. The booking process was seamless, and the website was intuitive and easy to navigate. The car was clean and in excellent condition, and the pick-up and drop-off process was quick and hassle-free. The customer service was exceptional—friendly and helpful staff made the experience even better. Highly recommended!</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+            <div class="swiper-slide slide">
+                <img src="img/pic-2.png" alt="">
+                <h3>Sophia Rossi</h3>
+                <p>Visual Sort is awesome! It's super intuitive and made learning algorithms fun. I spent hours playing around with different sorting methods. Definitely worth checking out.</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            <div class="swiper-slide slide">
+                <img src="img/pic-3.png" alt="">
+                <h3>Olivia Davis</h3>
+                <p>Visual Sort is a lifesaver for understanding sorting algorithms! The visualizations are so clear and interactive. I finally get how Bubble Sort and Merge Sort actually work.</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-full-alt"></i>
+                </div>
+            </div>
+            <div class="swiper-slide slide">
+                <img src="img/pic-4.png" alt="">
+                <h3>Emma Brown</h3>
+                <p>Great tool for my algorithms class! The step-by-step animations helped me ace my exam on sorting algorithms. Highly recommend it for anyone struggling to grasp these concepts.</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
         </div>
-      </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</section>
+
 
       <div class="site-section" id="about-us-section">
         <div class="container">
@@ -389,6 +453,13 @@
       });
     </script>
 
+            </script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+      
+        <script src="main.js"></script>
+        
 </body>
 
 </html>
