@@ -11,12 +11,11 @@
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- custom css link -->
-    <script src="https://kit.fontawesome.com/2815a7015d.js" crossorigin="anonymous"></script>  
-  
-  
+    <script src="https://kit.fontawesome.com/2815a7015d.js" crossorigin="anonymous"></script>
+
   <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
   <link rel="stylesheet" href="fonts/icomoon/style.css">
-
+  <link rel="stylesheet" href="style.css">
   <!-- Swiper's CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 
@@ -35,6 +34,7 @@
   <link rel="stylesheet" href="css/aos.css">
 
   <link rel="stylesheet" href="css/style.css">
+
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -272,94 +272,106 @@
               end selectionSort </p>
         </div>
       </div>
-<div class="row mb-5 align-items-center">
-    <div class="col-lg-7 mb-5" data-aos="fade-up" data-aos-delay="100">
-        <img src="images/heap-sort.gif" alt="Image" class="img-fluid">
-    </div>
-    <div class="col-lg-4 ml-auto" data-aos="fade-up" data-aos-delay="200">
-        <h2 class="text-black mb-4">Heap Sort </h2>
-        <p class="mb-4">Heapsort(A) <br>
-            &nbsp; &nbsp; BUILD-MAX-HEAP(A) <br>
-            &nbsp; &nbsp; for i = A.length downto 2 <br>
-            &nbsp; &nbsp; &nbsp; &nbsp;exchange A[1] with A[i] <br>
-            &nbsp; &nbsp;A.heap-size = A.heap-size - 1 <br>
-            &nbsp; &nbsp; &nbsp; &nbsp; MAX-HEAPIFY(A, 1) <br>
-        </p>
-    </div>
-</div>
-
-<div class="row mb-5 align-items-center">
-  <div class="col-lg-7 mb-5 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
-    <img src="images/quick2.gif" alt="Image" class="img-fluid">
-  </div>
-  <div class="col-lg-4 mr-auto order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-    <h2 class="text-black mb-4">Quick Sort</h2>
-    <p class="mb-4">QUICKSORT (array A, start, end)<br>
-      &nbsp; &nbsp; if (start < end)    <br>
-      &nbsp; &nbsp;  p = partition(A, start, end)   <br> &nbsp; &nbsp; minimum <br>
-      &nbsp; &nbsp; QUICKSORT (A, start, p - 1)     <br>
-      &nbsp; &nbsp; &nbsp; &nbsp; QUICKSORT (A, p + 1, end) <br>
-      
-  </div>
-</div>
-
-<section class="review" id="review">
-    <h1 class="heading"> Student Reviews </h1>
-    <div class="swiper review-slider" data-aos="zoom-in">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide slide">
-                <img src="img/pic-1.png" alt="">
-                <h3>Noah Lee</h3>
-                <p>I recently used Cabrental for a weekend trip and was thoroughly impressed. The booking process was seamless, and the website was intuitive and easy to navigate. The car was clean and in excellent condition, and the pick-up and drop-off process was quick and hassle-free. The customer service was exceptional—friendly and helpful staff made the experience even better. Highly recommended!</p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-            </div>
-            <div class="swiper-slide slide">
-                <img src="img/pic-2.png" alt="">
-                <h3>Sophia Rossi</h3>
-                <p>Visual Sort is awesome! It's super intuitive and made learning algorithms fun. I spent hours playing around with different sorting methods. Definitely worth checking out.</p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-            </div>
-            <div class="swiper-slide slide">
-                <img src="img/pic-3.png" alt="">
-                <h3>Olivia Davis</h3>
-                <p>Visual Sort is a lifesaver for understanding sorting algorithms! The visualizations are so clear and interactive. I finally get how Bubble Sort and Merge Sort actually work.</p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-full-alt"></i>
-                </div>
-            </div>
-            <div class="swiper-slide slide">
-                <img src="img/pic-4.png" alt="">
-                <h3>Emma Brown</h3>
-                <p>Great tool for my algorithms class! The step-by-step animations helped me ace my exam on sorting algorithms. Highly recommend it for anyone struggling to grasp these concepts.</p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-            </div>
+      <div class="row mb-5 align-items-center">
+        <div class="col-lg-7 mb-5" data-aos="fade-up" data-aos-delay="100">
+            <img src="images/heap-sort.gif" alt="Image" class="img-fluid">
         </div>
-        <div class="swiper-pagination"></div>
+        <div class="col-lg-4 ml-auto" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="text-black mb-4">Heap Sort </h2>
+            <p class="mb-4">Heapsort(A) <br>
+                &nbsp; &nbsp; BUILD-MAX-HEAP(A) <br>
+                &nbsp; &nbsp; for i = A.length downto 2 <br>
+                &nbsp; &nbsp; &nbsp; &nbsp;exchange A[1] with A[i] <br>
+                &nbsp; &nbsp;A.heap-size = A.heap-size - 1 <br>
+                &nbsp; &nbsp; &nbsp; &nbsp; MAX-HEAPIFY(A, 1) <br>
+            </p>
+        </div>
     </div>
-</section>
+    
+    <div class="row mb-5 align-items-center">
+      <div class="col-lg-7 mb-5 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
+        <img src="images/quick2.gif" alt="Image" class="img-fluid">
+      </div>
+      <div class="col-lg-4 mr-auto order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+        <h2 class="text-black mb-4">Quick Sort</h2>
+        <p class="mb-4">QUICKSORT (array A, start, end)<br>
+          &nbsp; &nbsp; if (start < end)    <br>
+          &nbsp; &nbsp;  p = partition(A, start, end)   <br> &nbsp; &nbsp; minimum <br>
+          &nbsp; &nbsp; QUICKSORT (A, start, p - 1)     <br>
+          &nbsp; &nbsp; &nbsp; &nbsp; QUICKSORT (A, p + 1, end) <br>
+          
+      </div>
+    </div>
 
+      <section class="review" id="review">
+
+        <h1 class="heading"> Student Reviews </h1>
+
+        <div class="swiper review-slider" data-aos="zoom-in">
+
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide slide">
+                    <img src="img/pic-1.png" alt="">
+                    <h3>Noah Lee</h3>
+                    <p>I recently used Cabrental for a weekend trip and was thoroughly impressed. The booking process was seamless, and the website was intuitive and easy to navigate. The car was clean and in excellent condition, and the pick-up and drop-off process was quick and hassle-free. The customer service was exceptional—friendly and helpful staff made the experience even better. Highly recommended!</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide">
+                    <img src="img/pic-2.png" alt="">
+                    <h3>Sophia Rossi</h3>
+                    <p>Visual Sort is awesome! It's super intuitive and made learning algorithms fun. I spent hours playing around with different sorting methods. Definitely worth checking out.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide">
+                    <img src="img/pic-3.png" alt="">
+                    <h3>Olivia Davis</h3>
+                    <p>Visual Sort is a lifesaver for understanding sorting algorithms! The visualizations are so clear and interactive. I finally get how Bubble Sort and Merge Sort actually work.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-full-alt"></i>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide">
+                    <img src="img/pic-4.png" alt="">
+                    <h3>Emma Brown</h3>
+                    <p>Great tool for my algorithms class! The step-by-step animations helped me ace my exam on sorting algorithms. Highly recommend it for anyone struggling to grasp these concepts.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="swiper-pagination"></div>
+
+        </div>
+
+    </section>
+
+    
     <section class="contact us" id="contact us">
 
       <div id="contact">
@@ -390,101 +402,101 @@
 
 
   </section>
-      
-      <div class="site-section" id="about-us-section">
-        <div class="container">
-          <div class="row mb-5 justify-content-center">
-            <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="">
-              <h2 class="section-title">About Us</h2>
-              <p>Welcome to Visual Sort, your interactive companion for understanding sorting algorithms. Our web-based tool provides dynamic visualizations of various sorting algorithms, helping users grasp how they work and their efficiency in sorting data. We believe that visual learning makes complex concepts easier to understand and more engaging. Explore, learn, and enjoy the fascinating world of sorting algorithms with Visual Sort.</p>
-            </div>
-          </div>
 
-      <footer class="container py-4 py-md-5 px-4 px-md-3">
-        <div class="row d-flex justify-content-center items-center text-center">
-          <div class="col-md-6 offset-md-1 mb-3">
-            <form>
-              <h5>Subscribe to our newsletter</h5>
-              <p>Monthly digest of what's new and exciting from us.</p>
-              <div class="d-flex gap-2">
-                <input id="newsletter1" type="text" class="form-control w-full" placeholder="Email address">
-                <button class="btn btn-primary" type="button">Subscribe</button>
-              </div>
-            </form>
-          </div>
+  <div class="site-section" id="about-us-section">
+    <div class="container">
+      <div class="row mb-5 justify-content-center">
+        <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="">
+          <h2 class="section-title">About Us</h2>
+          <p>Welcome to Visual Sort, your interactive companion for understanding sorting algorithms. Our web-based tool provides dynamic visualizations of various sorting algorithms, helping users grasp how they work and their efficiency in sorting data. We believe that visual learning makes complex concepts easier to understand and more engaging. Explore, learn, and enjoy the fascinating world of sorting algorithms with Visual Sort.</p>
         </div>
-        <div class="row mt-5">
-          <div class="col-md-4 mb-3">
-            <a class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none footer-title"
-              href="/" aria-label="Visual Sort">
-              Visual Sort
-            </a>
-            <ul class="list-unstyled small">
-              <li class="mb-2">Visual Sort is a web-based sorting algorithm visualization tool which provides an
-                interactive way to visualize various sorting algorithms in action, helping users understand how
-                different algorithms work and their efficiency in sorting data</li>
-            </ul>
-          </div>
-          <div class="col-6 col-md-2 mb-3">
-            <h5>Home</h5>
-            <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#home-section" class="nav-link p-0 text-body-secondary">Home</a></li>
-              <li class="nav-item mb-2"><a href="#algorithm-section"
-                  class="nav-link p-0 text-body-secondary">Algorithms</a></li>
-              <li class="nav-item mb-2"><a href="#programs-section"
-                  class="nav-link p-0 text-body-secondary">Programs</a></li>
-            </ul>
-          </div>
+      </div>
 
-          <div class="col-6 col-md-2 mb-3">
-            <h5>About</h5>
-            <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#about-us-section" class="nav-link p-0 text-body-secondary">About</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Our Contributors</a></li>
-            </ul>
+  <footer class="container py-4 py-md-5 px-4 px-md-3">
+    <div class="row d-flex justify-content-center items-center text-center">
+      <div class="col-md-6 offset-md-1 mb-3">
+        <form>
+          <h5>Subscribe to our newsletter</h5>
+          <p>Monthly digest of what's new and exciting from us.</p>
+          <div class="d-flex gap-2">
+            <input id="newsletter1" type="text" class="form-control w-full" placeholder="Email address">
+            <button class="btn btn-primary" type="button">Subscribe</button>
           </div>
+        </form>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-md-4 mb-3">
+        <a class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none footer-title"
+          href="/" aria-label="Visual Sort">
+          Visual Sort
+        </a>
+        <ul class="list-unstyled small">
+          <li class="mb-2">Visual Sort is a web-based sorting algorithm visualization tool which provides an
+            interactive way to visualize various sorting algorithms in action, helping users understand how
+            different algorithms work and their efficiency in sorting data</li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2 mb-3">
+        <h5>Home</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#home-section" class="nav-link p-0 text-body-secondary">Home</a></li>
+          <li class="nav-item mb-2"><a href="#algorithm-section"
+              class="nav-link p-0 text-body-secondary">Algorithms</a></li>
+          <li class="nav-item mb-2"><a href="#programs-section"
+              class="nav-link p-0 text-body-secondary">Programs</a></li>
+        </ul>
+      </div>
 
-          <div class="col-6 col-md-2 mb-3">
-            <h5>Support</h5>
-            <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Contact</a></li>
-            </ul>
-          </div>
+      <div class="col-6 col-md-2 mb-3">
+        <h5>About</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#about-us-section" class="nav-link p-0 text-body-secondary">About</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Our Contributors</a></li>
+        </ul>
+      </div>
 
-          <div class="col-6 col-md-2 mb-3">
-            <h5>Legal</h5>
-            <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Privacy Policy</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Terms & Conditions</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Licensing</a></li>
-            </ul>
-          </div>
+      <div class="col-6 col-md-2 mb-3">
+        <h5>Support</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-2 mb-3">
+        <h5>Legal</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Privacy Policy</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Terms & Conditions</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Licensing</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot">
+      <div class="icons">
+        <div class="linkedin">
+        <a href=""><i class="fa-brands fa-linkedin"></i></a>
         </div>
-        <div class="foot">
-          <div class="icons">
-            <div class="linkedin">
-            <a href=""><i class="fa-brands fa-linkedin"></i></a>
-            </div>
-            <div class="github">
-             <a href=""><i class="fa-brands fa-github"></i></a>  
-            </div>
-            <div class="instagram">
-             <a href=""><i class="fa-brands fa-instagram"></i></a>
-            </div>
-            <div class="twitter">
-             <a href=""><i class="fa fa-twitter"></i></a>
-            </div>
+        <div class="github">
+         <a href=""><i class="fa-brands fa-github"></i></a>  
         </div>
-
+        <div class="instagram">
+         <a href=""><i class="fa-brands fa-instagram"></i></a>
         </div>
-      
-
-        <div class="d-flex flex-column flex-sm-row justify-content-center py-4 my-4 border-top">
-          <p>© 2024 Visual Sort - Mastan Sayyad, Inc. All rights reserved.</p>
+        <div class="twitter">
+         <a href=""><i class="fa fa-twitter"></i></a>
         </div>
-      </footer>
+    </div>
 
+    </div>
+  
+
+    <div class="d-flex flex-column flex-sm-row justify-content-center py-4 my-4 border-top">
+      <p>© 2024 Visual Sort - Mastan Sayyad, Inc. All rights reserved.</p>
+    </div>
+  </footer>
+  
       <!--&copy;<script>document.write(new Date().getFullYear());</script-->
 
     </div> <!-- .site-wrap -->
@@ -527,14 +539,11 @@
         },
       });
     </script>
-
-            </script>
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
       
         <script src="main.js"></script>
-        
 </body>
 
 </html>
