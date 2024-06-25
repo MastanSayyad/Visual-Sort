@@ -1129,3 +1129,54 @@ h1, h2, h3, h4, h5,
 .footer-title {
   font-weight: 700;
 }
+
+.icons {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  position: relative;
+  left: 5px;
+  font-size: 25px;
+}
+.fa.fa-twitter::before {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  content: "";
+  background-color: currentColor;
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg viewBox="0 -8 26 30" xmlns="http://www.w3.org/2000/svg"><g><path fill="white" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g></svg>') no-repeat center;
+  mask: url('data:image/svg+xml;utf8,<svg viewBox="0 -8 26 30" xmlns="http://www.w3.org/2000/svg"><g><path fill="white" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g></svg>') no-repeat center;
+  background-position: center 3px;
+}
+
+
+.icons:hover {
+  color: #555;
+  transition: transform 0.3s, color 0.3s; 
+
+}
+
+.linkedin:hover{
+  transform: scale(1.2);
+}
+.github:hover{
+  transform: scale(1.2);
+}
+.twitter:hover{
+  transform: scale(1.2);
+}
+.instagram:hover{
+  transform: scale(1.2);
+}
+
+.nav-link {
+  color: #7971ea; 
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #555; 
+}
