@@ -36,6 +36,9 @@
 
   <link rel="stylesheet" href="css/style.css">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="72">
@@ -155,24 +158,6 @@
                   Insertion sort works similarly as we sort cards in our hand in a cards. </p>
               </div>
             </div>
-            <div class="course bg-white h-100 align-self-stretch">
-              <figure class="m-0">
-                <a href="quick.html"><img src="images/quick1.png" alt="Image" class="img-fluid"></a>
-              </figure>
-              <div class="course-inner-text py-4 px-4">
-                <h3><a href="quick.html">Quick Sort</a></h3>
-                <p>Quick sort is an efficient , comparison-based sorting  that uses a divide-and-conquer approach by partitioning elements around a pivot.</p>
-              </div>
-            </div>
-            <div class="course bg-white h-100 align-self-stretch">
-              <figure class="m-0">
-                <a href="heap.html"><img src="images/Heap-Sort.png" alt="Image" class="img-fluid"></a>
-              </figure>
-              <div class="course-inner-text py-4 px-4">
-                <h3><a href="heap.html">Heap Sort</a></h3>
-                <p>Heap sort is a comparison-based sorting algorithm that builds a max heap from the input data and repeatedly extracts the maximum element to sort the array.
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -269,125 +254,74 @@
               end selectionSort </p>
         </div>
       </div>
-<div class="row mb-5 align-items-center">
-    <div class="col-lg-7 mb-5" data-aos="fade-up" data-aos-delay="100">
-        <img src="images/heap-sort.gif" alt="Image" class="img-fluid">
-    </div>
-    <div class="col-lg-4 ml-auto" data-aos="fade-up" data-aos-delay="200">
-        <h2 class="text-black mb-4">Heap Sort </h2>
-        <p class="mb-4">Heapsort(A) <br>
-            &nbsp; &nbsp; BUILD-MAX-HEAP(A) <br>
-            &nbsp; &nbsp; for i = A.length downto 2 <br>
-            &nbsp; &nbsp; &nbsp; &nbsp;exchange A[1] with A[i] <br>
-            &nbsp; &nbsp;A.heap-size = A.heap-size - 1 <br>
-            &nbsp; &nbsp; &nbsp; &nbsp; MAX-HEAPIFY(A, 1) <br>
-        </p>
-    </div>
-</div>
+      <section class="review" id="review">
 
-<div class="row mb-5 align-items-center">
-  <div class="col-lg-7 mb-5 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
-    <img src="images/quick2.gif" alt="Image" class="img-fluid">
-  </div>
-  <div class="col-lg-4 mr-auto order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-    <h2 class="text-black mb-4">Quick Sort</h2>
-    <p class="mb-4">QUICKSORT (array A, start, end)<br>
-      &nbsp; &nbsp; if (start < end)    <br>
-      &nbsp; &nbsp;  p = partition(A, start, end)   <br> &nbsp; &nbsp; minimum <br>
-      &nbsp; &nbsp; QUICKSORT (A, start, p - 1)     <br>
-      &nbsp; &nbsp; &nbsp; &nbsp; QUICKSORT (A, p + 1, end) <br>
-      
-  </div>
-</div>
+        <h1 class="heading"> Student Reviews </h1>
 
-<section class="review" id="review">
-    <h1 class="heading"> Student Reviews </h1>
-    <div class="swiper review-slider" data-aos="zoom-in">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide slide">
-                <img src="img/pic-1.png" alt="">
-                <h3>Noah Lee</h3>
-                <p>I recently used Cabrental for a weekend trip and was thoroughly impressed. The booking process was seamless, and the website was intuitive and easy to navigate. The car was clean and in excellent condition, and the pick-up and drop-off process was quick and hassle-free. The customer service was exceptional—friendly and helpful staff made the experience even better. Highly recommended!</p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
+        <div class="swiper review-slider" data-aos="zoom-in">
+
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide slide">
+                    <img src="img/pic-1.png" alt="">
+                    <h3>Noah Lee</h3>
+                    <p>I recently used Cabrental for a weekend trip and was thoroughly impressed. The booking process was seamless, and the website was intuitive and easy to navigate. The car was clean and in excellent condition, and the pick-up and drop-off process was quick and hassle-free. The customer service was exceptional—friendly and helpful staff made the experience even better. Highly recommended!</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
                 </div>
-            </div>
-            <div class="swiper-slide slide">
-                <img src="img/pic-2.png" alt="">
-                <h3>Sophia Rossi</h3>
-                <p>Visual Sort is awesome! It's super intuitive and made learning algorithms fun. I spent hours playing around with different sorting methods. Definitely worth checking out.</p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
+
+                <div class="swiper-slide slide">
+                    <img src="img/pic-2.png" alt="">
+                    <h3>Sophia Rossi</h3>
+                    <p>Visual Sort is awesome! It's super intuitive and made learning algorithms fun. I spent hours playing around with different sorting methods. Definitely worth checking out.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
                 </div>
-            </div>
-            <div class="swiper-slide slide">
-                <img src="img/pic-3.png" alt="">
-                <h3>Olivia Davis</h3>
-                <p>Visual Sort is a lifesaver for understanding sorting algorithms! The visualizations are so clear and interactive. I finally get how Bubble Sort and Merge Sort actually work.</p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-full-alt"></i>
+
+                <div class="swiper-slide slide">
+                    <img src="img/pic-3.png" alt="">
+                    <h3>Olivia Davis</h3>
+                    <p>Visual Sort is a lifesaver for understanding sorting algorithms! The visualizations are so clear and interactive. I finally get how Bubble Sort and Merge Sort actually work.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-full-alt"></i>
+                    </div>
                 </div>
-            </div>
-            <div class="swiper-slide slide">
-                <img src="img/pic-4.png" alt="">
-                <h3>Emma Brown</h3>
-                <p>Great tool for my algorithms class! The step-by-step animations helped me ace my exam on sorting algorithms. Highly recommend it for anyone struggling to grasp these concepts.</p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
+
+                <div class="swiper-slide slide">
+                    <img src="img/pic-4.png" alt="">
+                    <h3>Emma Brown</h3>
+                    <p>Great tool for my algorithms class! The step-by-step animations helped me ace my exam on sorting algorithms. Highly recommend it for anyone struggling to grasp these concepts.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
                 </div>
+
             </div>
+
+            <div class="swiper-pagination"></div>
+
         </div>
-        <div class="swiper-pagination"></div>
-    </div>
-</section>
 
-    <section class="contact us" id="contact us">
+    </section>
 
-      <div id="contact">
-          <div class="container">
-              <div class="row">
-                  <div class="contact-left">
-                      <h1 class="sub-title">Contact Me</h1>
-
-                      <div class="social-icon">
-                          <a href="#" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                          <a href="#" target="_blank"><i class="fa-brands fa-twitter-square"></i></a>
-                          <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                          <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                      </div>
-
-                  </div>
-                  <div class="contact-right">
-                      <form name="submit-to-google-sheet">
-                          <input type="text" name="Name" placeholder="Your Name" required>
-                          <input type="email" name="Email" placeholder="Your Email" required>
-                          <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                          <button type="submit" class="btn btn2">Submit</button>
-                      </form>
-                      <span id="msg"></span>
-                  </div>
-              </div>
-          </div>
-
-
-  </section>
-      
       <div class="site-section" id="about-us-section">
         <div class="container">
           <div class="row mb-5 justify-content-center">
@@ -458,6 +392,24 @@
             </ul>
           </div>
         </div>
+        <div class="foot">
+          <div class="icons">
+            <div class="linkedin">
+            <a href=""><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <div class="github">
+             <a href=""><i class="fa-brands fa-github"></i></a>  
+            </div>
+            <div class="instagram">
+             <a href=""><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <div class="twitter">
+             <a href=""><i class="fa fa-twitter"></i></a>
+            </div>
+        </div>
+
+        </div>
+      
 
         <div class="d-flex flex-column flex-sm-row justify-content-center py-4 my-4 border-top">
           <p>© 2024 Visual Sort - Mastan Sayyad, Inc. All rights reserved.</p>
