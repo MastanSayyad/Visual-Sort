@@ -1348,7 +1348,7 @@ h5,
 }
 
 .sort-heading {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .course {
@@ -1604,7 +1604,7 @@ h5,
 
 .accordion__header:hover {
   background-color: #f1f1f1;
-
+  transition: 0.4s ease;
   padding: 1rem;
 }
 
@@ -1634,4 +1634,37 @@ h5,
   overflow: hidden;
   height: 0;
   transition: height 0.4s ease-in-out;
+}
+
+.contact-right input,
+.contact-right textarea {
+  background: rgb(205, 229, 236);
+}
+
+.contact-right .btn,
+.btn-primary {
+  background: rgb(44, 126, 153);
+  letter-spacing: 1px;
+}
+
+.contact-right .btn:hover,
+.btn-primary:hover {
+  background: rgb(15, 80, 102);
+  transition: 0.3s ease;
+}
+
+.text-center {
+  font-weight: 800;
+}
+
+.cards {
+  background: rgb(166, 231, 231);
+  text-align: center;
+  border-radius: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.cards p {
+  font-weight: 700;
 }
