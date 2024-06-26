@@ -1347,6 +1347,10 @@ h5,
   padding-bottom: 5rem;
 }
 
+.sort-heading {
+  font-weight: 600;
+}
+
 .course {
   -webkit-box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.3);
   box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.3);
@@ -1355,11 +1359,18 @@ h5,
   transition: 0.3s all ease-in-out;
   top: 0;
   position: relative;
+  border-radius: 1rem;
 }
+
 .course .course-inner-text {
   position: relative;
   padding-top: 35px !important;
+  background: lightcyan;
+  font-weight: 600;
+  color: black;
+  border-radius: 0 0 1rem 1rem;
 }
+
 .course .course-price {
   position: absolute;
   padding: 10px 15px;
@@ -1588,17 +1599,19 @@ h5,
   align-items: center;
   gap: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in;
 }
 
 .accordion__header:hover {
   background-color: #f1f1f1;
+
+  padding: 1rem;
 }
 
 .accordion__icon {
-  background-color: #ff4b4b;
-  width: 2.2rem;
-  height: 2.2rem;
+  background-color: lightseagreen;
+  width: 2.4rem;
+  height: 2.4rem;
   display: flex;
   justify-content: center;
   align-items: center;
