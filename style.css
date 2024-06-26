@@ -1,0 +1,112 @@
+/* review */
+.heading {
+    font-size: 50px;
+    text-align: center;
+    color: black;
+}
+.review .review-slider {
+    box-shadow: var(--box-shadow);
+}
+
+.review .review-slider .slide {
+    background: var(--white);
+    border-radius: .5rem;
+    text-align: center;
+    padding: 3rem;
+}
+
+.review .review-slider .slide img {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: .5rem;
+}
+
+.review .review-slider .slide h3 {
+    font-size: 2.5rem;
+    color: black;
+}
+
+.review .review-slider .slide p {
+    font-size: 1.5rem;
+    color: black;
+    line-height: 1.7;
+    padding: 1rem 0;
+}
+
+.review .review-slider .slide .stars {
+    padding: 1rem 0;
+    padding-bottom: 1.5rem;
+}
+
+.review .review-slider .slide .stars i {
+    font-size: 2rem;
+    color: gold;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--main-color);
+}
+
+.contact-left{
+    flex-basis: 35%;
+    padding: 20px;
+}
+.contact-right{
+    flex-basis: 60%;
+    padding: 20px;
+}
+.contact-left p{
+    margin-top: 30px;
+}
+.contact-left p i{
+    color: #ff004f;
+    margin-right: 15px;
+    font-size: 25px;
+}
+.social-icon{
+    margin-top: 30px;
+}
+.social-icon a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: blue;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+.social-icon a:hover{
+    color: yellowgreen;
+    transform: translateY(-5px);
+}
+.btn.btn2{
+    display: inline-block;
+    background: blueviolet;
+    border-radius: 14px;
+    color: white;
+}
+.btn.btn2:hover{
+    background-color: #ff004f;
+}
+
+.contact-right form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: rgb(232, 210, 238);
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+form .btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
