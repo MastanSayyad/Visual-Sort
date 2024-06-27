@@ -1,227 +1,307 @@
 <!DOCTYPE html>
 <html>
-   <title>Merge Sort</title>
-   <script src="https://d3js.org/d3.v3.js"></script>
-   <meta charset="UTF-8">
-   <head>
-      <style>
-         /* div {margin-left: 40px;margin-top: 20px} */
-         #buttons {margin-left: 40px;margin-top: 20px}
-        text {fill: black;}
-        rect {fill: white;}
-        .unsorted{ fill:white}
-        .sorted {fill: rgb(10, 223, 28);}
-        .min {fill: rgb(182, 50, 50);;}
-        .testing {fill: red;}
-      </style>
-      <script src="http://d3js.org/d3.v4.min.js"></script>
-   </head>
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-   <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-   <link rel="stylesheet" href="css/Styling.css">
-   <link rel="stylesheet" href="css/style.css">
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
-   <body>
-      <div class="w3-bar w3-theme">
-         <a href="index.html" class="w3-bar-item w3-button w3-padding-16">Home</a>
-         <a href="Bubble.html" class="w3-bar-item w3-button w3-padding-16">Bubble Sort</a>
-         <a href="Insertion.html" class="w3-bar-item w3-button w3-padding-16">Insertion Sort</a>
-         <a href="selectionsort.html" class="w3-bar-item w3-button w3-padding-16">Selection Sort</a>
-         <a href="mergesort.html" class="w3-bar-item w3-button w3-padding-16">Merge Sort</a>
-      </div>
-      <div id="contain">
-        <p><h2 id="heading">MERGE SORT</h2></p>
-         <div class="sh"></div>
-         <div>
-            <div id="buttons">
-               <input id= "array" type="text" placeholder="Enter array seperated by space" size="30">
-               <button id="submit" class="btn-primary btn-default" onclick="submit()">Submit</button>
-               <button class="btn-default " onclick="mergeSort()" >Merge Sort</button>
-               <button class="btn-default" onclick="stop = true" style="margin-left:40px">Stop</button>
-               <button class="btn-default" onclick="stop = false,mergeSort()">Resume</button>
-               <button class="btn-default" onclick="reset()">Reset</button>
-               <button class="btn-deafault btn-danger" onClick="window.location.reload();">Clear</button>
-            </div>
-         </div>
-      </div>
-   </body>
-   <script>
-      var count = 9 + 1,
-          durationTime = 1100,
-          array = [],
-          unsortedArray = [...array],
-          sortedArray = [],
-          stop = false;
-          steps=0;
-      
-      
-
-      var margin = {top: 40, right: 40, bottom: 180, left: 40},
-          width = 960 - margin.left - margin.right,
-          height = 500 - margin.top - margin.bottom;
-          var barWidth = width/count;
-      var x = d3.scaleLinear()
-          .domain([0,count])
-          .range([0, width]);
-      
-      var svg = d3.select('.sh').append("svg")
-          .attr("width", width + margin.left + margin.right)
-          .attr("height", height + margin.top + margin.bottom)
-          .append("g")
-          .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-      
-          var labels;
-          var rects;
-          
-          function submit(){
-      
-              document.getElementById("submit").disabled = true;
-      var array2 = document.getElementById("array");
-      array2 = array2.value.split(" ").map(function (item) {
-      return parseInt(item, 10);
-      });
-      console.log(array2);
-      array = array2;
-      unsortedArray = [...array];
-      
-          rects = svg.append("g")
-          .attr("transform", "translate(" + barWidth + ",2)")
-          .selectAll("rect")
-          .data(unsortedArray)
-          .enter().append("rect");
-      
-      rects.attr("id", function(d) {return "rect" + d})
-          .attr("transform", function(d, i) {return "translate(" + (x(i) - barWidth) + ",0)"})
-          .attr("width", barWidth *.9)
-          .attr("height", function(d) {return d*barWidth/3});
-          rects.attr("y",function(d){ return 400-d*barWidth/3; });
-      
-      labels = svg.selectAll("text")
-                  .data(unsortedArray)
-                  .enter().append("text")
-      
-      labels.attr("id", function(d) {return "text" + d})
-          .attr("transform", function(d, i) {return "translate(" + x(i) + ",0)"})
-          .html(function(d) {return d;})
-          .attr("class","unsorted")
-
-      }
-      
-      function reset() {
-          unsortedArray = [...array];
-          sortedArray = [];
-          stop = false;
-
-          d3.select("#counter").html(steps = 0)
-      
-          labels.attr("class", "")                
-              .transition().duration(2000)
-              .attr("transform", function(d, i) {return "translate(" + (x(i)) + ", 0)"})  
-              .attr("class","unsorted")            
-          
-          rects.attr("class", "")                
-              .transition().duration(2000)
-              .attr("transform", function(d, i) {return "translate(" + (x(i-1)) + ", 0)"})
-          
-          rects.attr("id", function(d) {return "rect" + d})
-          .attr("transform", function(d, i) {return "translate(" + (x(i) - barWidth) + ",0)"})
-          .attr("width", barWidth *.9)
-          .attr("height", function(d) {return d*barWidth/3})
-          rects.attr("y",function(d){ return 400-d*barWidth/3; });
-         
-      }
-      
-      function mergeSort() {
-        var mergeReps = (unsortedArray.length).toString(2).length + 1;
-        var mergeArrays = [[...unsortedArray], []];
-
-        for (i=0; i<unsortedArray.length; i += 2) {
-            mergeArrays[1].push(mergeTwo([unsortedArray[i]], [unsortedArray[i+1]]))
+<head>
+    <title>Merge Sort Visualization</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
         }
-        for (n=2; n<mergeReps; n++) {
-            mergeArrays[n] = [];
-            var unMerged = mergeArrays[n-1];
-            for (i=0; i<unMerged.length; i += 2) {
-                mergeArrays[n].push(mergeTwo(unMerged[i], unMerged[i+1] ? unMerged[i+1] : []))
+        #buttons {
+            margin: 20px;
+            text-align: center;
+        }
+        input, button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+        button {
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #ddd;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .btn-danger {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+        }
+        .btn-danger:hover {
+            background-color: #bd2130;
+        }
+        text {
+            fill: black;
+            font-size: 16px;
+            text-anchor: middle;
+            z-index: 3;
+        }
+        rect {
+            fill: white;
+            stroke: #a5a5a5;
+            stroke-width: 2px;
+            z-index: 2;
+        }
+        .unsorted {
+            fill: #e4e4e4;
+        }
+        .sorted {
+            fill: #0adf1c;
+        }
+        .comparing {
+            fill: #ffcc00;
+        }
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position: relative; /* Ensure z-index works */
+        }
+        .header a {
+            color: white;
+            padding: 21px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+        .header a:hover {
+            background-color: #ddd;
+            color: black; /* Adjust text color on hover */
+        }
+        .sh {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+        }
+        #heading {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+            font-size: 36px;
+            font-weight: bold;
+        }
+    </style>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html">Home</a>
+        <a href="Bubble.html">Bubble Sort</a>
+        <a href="Insertion.html">Insertion Sort</a>
+        <a href="selectionsort.html">Selection Sort</a>
+        <a href="mergesort.html">Merge Sort</a>
+    </div>
+
+    <div id="contain">
+        <h2 id="heading">MERGE SORT</h2>
+        <div class="sh"></div>
+
+        <div id="buttons">
+            <input id="array" type="text" placeholder="Enter array separated by space" size="30">
+            <button id="submit" class="btn-primary" onclick="submit()">Submit</button>
+            <button class="btn-default" onclick="mergeSort()">Merge Sort</button>
+            <button class="btn-default" onclick="stop = true" style="margin-left:40px">Stop</button>
+            <button class="btn-default" onclick="stop = false; mergeSort()">Resume</button>
+            <button class="btn-default" onclick="reset()">Reset</button>
+            <button class="btn-default btn-danger" onClick="window.location.reload();">Clear</button>
+        </div>
+    </div>
+
+    <script>
+        var durationTime = 1000,
+            array = [],
+            unsortedArray = [],
+            stop = false;
+
+        var margin = {top: 40, right: 40, bottom: 180, left: 40},
+            width = 960 - margin.left - margin.right,
+            height = 500 - margin.top - margin.bottom;
+
+        var x = d3.scaleBand().range([0, width]).padding(0.1);
+        var y = d3.scaleLinear().range([height, 0]);
+
+        var svg = d3.select('.sh').append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        function submit() {
+            document.getElementById("submit").disabled = true;
+
+            var array2 = document.getElementById("array").value.split(" ").map(function(item) {
+                return parseInt(item, 10); // Convert into decimal
+            });
+
+            array = array2;
+            unsortedArray = [...array];
+
+            x.domain(array.map(function(d, i) { return i; }));
+            y.domain([0, d3.max(array, function(d) { return d; })]);
+
+            svg.selectAll(".bar")
+                .data(unsortedArray)
+                .enter().append("rect")
+                .attr("class", "bar unsorted")
+                .attr("x", function(d, i) { return x(i); })
+                .attr("width", x.bandwidth())
+                .attr("y", function(d) { return y(d); })
+                .attr("height", function(d) { return height - y(d); });
+
+            svg.selectAll("text")
+                .data(unsortedArray)
+                .enter().append("text")
+                .attr("x", function(d, i) { return x(i) + x.bandwidth() / 2; })
+                .attr("y", function(d) { return y(d) - 5; })
+                .attr("text-anchor", "middle")
+                .text(function(d) { return d; });
+        }
+
+        function reset() {
+            unsortedArray = [...array];
+            stop = false;
+
+            svg.selectAll(".bar")
+                .data(unsortedArray)
+                .attr("x", function(d, i) { return x(i); })
+                .attr("y", function(d) { return y(d); })
+                .attr("height", function(d) { return height - y(d); })
+                .attr("class", "bar unsorted");
+
+            svg.selectAll("text")
+                .data(unsortedArray)
+                .attr("x", function(d, i) { return x(i) + x.bandwidth() / 2; })
+                .attr("y", function(d) { return y(d) - 5; })
+                .text(function(d) { return d; });
+        }
+
+        async function mergeSort() {
+            await mergeSortHelper(unsortedArray, 0, unsortedArray.length - 1);
+            svg.selectAll(".bar")
+                .attr("class", "bar sorted");
+        }
+
+        async function mergeSortHelper(arr, left, right) {
+            if (left < right) {
+                var mid = Math.floor((left + right) / 2);
+
+                await mergeSortHelper(arr, left, mid);
+                await mergeSortHelper(arr, mid + 1, right);
+
+                await merge(arr, left, mid, right);
             }
         }
-        for (i=1; i<mergeArrays.length; i++) {
-            mergeArrays[i] = d3.merge(mergeArrays[i])
-        }
-        mergeMove(0);
-    
-        function mergeTwo(iArray, nArray) {
-            var newArray = [];
-            for (var i=0, n=0; i<iArray.length || n<nArray.length;) {
-                if (iArray[i] < nArray[n]) {
-                    newArray.push(iArray[i++])
-                } else if (iArray[i] > nArray[n]) {
-                    newArray.push(nArray[n++])
-                } else if (!(iArray[i])) {
-                    newArray.push(nArray[n++])
-                } else if (!(nArray[n])) {
-                    newArray.push(iArray[i++])
+
+        async function merge(arr, left, mid, right) {
+            var n1 = mid - left + 1;
+            var n2 = right - mid;
+
+            var L = new Array(n1);
+            var R = new Array(n2);
+
+            for (var i = 0; i < n1; i++)
+                L[i] = arr[left + i];
+            for (var j = 0; j < n2; j++)
+                R[j] = arr[mid + 1 + j];
+
+            var i = 0;
+            var j = 0;
+            var k = left;
+
+            while (i < n1 && j < n2) {
+                await highlightBars(k, k+i, k+j);
+                if (L[i] <= R[j]) {
+                    arr[k] = L[i];
+                    i++;
+                } else {
+                    arr[k] = R[j];
+                    j++;
                 }
+                k++;
+                await updateBars(arr);
             }
-            return newArray;
-        }
 
-        function mergeMove(j) {
-            var oldArray = mergeArrays[j],
-                newArray = [...mergeArrays[j+1]],
-                sortedArray = [];
+            while (i < n1) {
+                arr[k] = L[i];
+                i++;
+                k++;
+                await updateBars(arr);
+            }
 
-            moveStep(0);
-
-            function moveStep(n) {
-                if (stop) return stop = false;            
-                d3.selectAll("rect").attr("class", "")                
-
-                d3.select("#counter").html(++steps);
-                d3.select("#rect" + newArray[n]).attr("class", "testing")
-
-                sortedArray.push(newArray[n])
-                oldArray.shift()
-
-                rects.transition().duration(durationTime)
-                    .attr("transform", function(d) {
-                        var xVal = sortedArray.indexOf(d) > -1 ? sortedArray.indexOf(d) : oldArray.indexOf(d) + sortedArray.length;
-                        return "translate(" + x(xVal - 1) + ",0)" 
-                    })
-
-                labels
-                    .classed("sorted", function(d) {
-                        return !mergeArrays[j + 2] && sortedArray.indexOf(d) == d - 1;
-                    })
-                    .transition().duration(durationTime)
-                    .attr("transform", function(d) {
-                        var xVal = sortedArray.indexOf(d) > -1 ? sortedArray.indexOf(d) : oldArray.indexOf(d) + sortedArray.length;
-                        return "translate(" + x(xVal) + ",0)" 
-                    })
-
-                d3.timeout(function() {
-                    if (oldArray.length > 0) {
-                        moveStep(++n)
-                    } else if (mergeArrays[j + 2]) {
-                        mergeMove(++j)
-                    } else {
-                        rects.classed("testing", false)
-                    }
-                }, durationTime);
+            while (j < n2) {
+                arr[k] = R[j];
+                j++;
+                k++;
+                await updateBars(arr);
             }
         }
-    }
-      function slide(d, i) {
-          d3.select("#text" + d)
-              .transition().duration(durationTime)
-              .attr("transform", function(d) {return "translate(" + (x(i)) + ", 0)"})
-      
-          d3.select("#rect" + d)
-              .transition().duration(durationTime)
-              .attr("transform", function(d) {return "translate(" + (x(i-1)) + ", 0)"})                
-      }
-      
-   </script>
+
+        async function updateBars(arr) {
+            svg.selectAll(".bar")
+                .data(arr)
+                .transition()
+                .duration(durationTime)
+                .attr("x", function(d, i) { return x(i); })
+                .attr("y", function(d) { return y(d); })
+                .attr("height", function(d) { return height - y(d); });
+
+            svg.selectAll("text")
+                .data(arr)
+                .transition()
+                .duration(durationTime)
+                .attr("x", function(d, i) { return x(i) + x.bandwidth() / 2; })
+                .attr("y", function(d) { return y(d) - 5; })
+                .tween("text", function(d) {
+                    var that = d3.select(this),
+                        i = d3.interpolateNumber(that.text(), d);
+                    return function(t) {
+                        that.text(Math.round(i(t)));
+                    };
+                });
+
+            await new Promise(resolve => setTimeout(resolve, durationTime));
+
+            if (stop) {
+                await new Promise(resolve => {
+                    var interval = setInterval(() => {
+                        if (!stop) {
+                            clearInterval(interval);
+                            resolve();
+                        }
+                    }, 100);
+                });
+            }
+        }
+
+        async function highlightBars(k, i, j) {
+            svg.selectAll(".bar")
+                .filter((d, idx) => idx === i || idx === j)
+                .classed("comparing", true);
+
+            await new Promise(resolve => setTimeout(resolve, durationTime / 2));
+
+            svg.selectAll(".bar")
+                .filter((d, idx) => idx === i || idx === j)
+                .classed("comparing", false);
+        }
+    </script>
+</body>
 </html>

@@ -1,219 +1,283 @@
 <!DOCTYPE html>
 <html>
-<title>selection Sort</title>
-<script src="https://d3js.org/d3.v3.js"></script>
-<meta charset="UTF-8">
 <head>
+    <title>Selection Sort Visualization</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        /* div {margin-left: 40px;margin-top: 20px} */
-        #buttons {margin-left: 40px;margin-top: 20px}
-        text {fill: black;}
-        rect {fill: white;}
-        .unsorted{ fill:white}
-        .sorted {fill: rgb(10, 223, 28);}
-        .min {fill: rgb(182, 50, 50);;}
-        .testing {fill: red;}
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        #buttons {
+            margin: 20px;
+            text-align: center;
+        }
+        input, button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+        button {
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #ddd;
+            
+        }
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .btn-danger {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+        }
+        .btn-danger:hover {
+            background-color: #bd2130;
+        }
+        text {
+            fill: black;
+            font-size: 16px;
+            text-anchor: middle;
+            z-index: 3;
+        }
+        rect {
+            fill: white;
+            stroke: #a5a5a5;
+            stroke-width: 2px;
+            z-index: 2;
+        }
+        .unsorted {
+            fill: #e4e4e4;
+        }
+        .sorted {
+            fill: #0adf1c;
+        }
+        .min {
+            fill: #ef233c;
+        }
+        .testing {
+            fill: #d90429;
+        }
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position: relative; /* Ensure z-index works */
+        }
+        .header a {
+            color: white;
+            padding: 21px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+        .header a:hover {
+            background-color: #ddd;
+            color: black; /* Adjust text color on hover */
+        }
+        .sh {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+        }
+        #heading {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+            font-size: 36px;
+            font-weight: bold;
+        }
     </style>
-    <script src="http://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
 </head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="css/Styling.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
-
 <body>
-
-    <div class="w3-bar w3-theme">
-        <a href="index.html" class="w3-bar-item w3-button w3-padding-16">Home</a>
-        <a href="Bubble.html" class="w3-bar-item w3-button w3-padding-16">Bubble Sort</a>
-        <a href="Insertion.html" class="w3-bar-item w3-button w3-padding-16">Insertion Sort</a>
-        <a href="selectionsort.html" class="w3-bar-item w3-button w3-padding-16">Selection Sort</a>
-        <a href="mergesort.html" class="w3-bar-item w3-button w3-padding-16">Merge Sort</a>
-      </div>
-    <div id="contain">
-        <p><h2 id="heading"> SELECTION SORT</h2></p>
-    <div class="sh"></div>
-
-    <div><div id="buttons">
-        <input id= "array" type="text" placeholder="Enter array seperated by space" size="30">
-               <button id="submit" class="btn-primary " onclick="submit()">Submit</button>
-               <button class="btn-default" onclick="selectionSort()" >Selection Sort</button>
-               <button class="btn-default" onclick="stop = true" style="margin-left:40px">Stop</button>
-               <button class="btn-default" onclick="stop = false,selectionSort()">Resume</button>
-               <button class="btn-default" onclick="reset()">Reset</button>
-               <button class="btn-deafault btn-danger" onClick="window.location.reload();">Clear</button>
+    <div class="header">
+        <a href="index.html">Home</a>
+        <a href="Bubble.html">Bubble Sort</a>
+        <a href="Insertion.html">Insertion Sort</a>
+        <a href="selectionsort.html">Selection Sort</a>
+        <a href="mergesort.html">Merge Sort</a>
     </div>
 
-</div>
-</div>
+    <div id="contain">
+        <h2 id="heading">SELECTION SORT</h2>
+        <div class="sh"></div>
 
-</body>
+        <div id="buttons">
+            <input id="array" type="text" placeholder="Enter array separated by space" size="30">
+            <button id="submit" class="btn-primary" onclick="submit()">Submit</button>
+            <button class="btn-default" onclick="selectionSort()">Selection Sort</button>
+            <button class="btn-default" onclick="stop = true" style="margin-left:40px">Stop</button>
+            <button class="btn-default" onclick="stop = false; selectionSort()">Resume</button>
+            <button class="btn-default" onclick="reset()">Reset</button>
+            <button class="btn-default btn-danger" onClick="window.location.reload();">Clear</button>
+        </div>
+    </div>
 
-<script>
+    <script>
+        var count = 9 + 1,
+            durationTime = 900,
+            array,
+            unsortedArray,
+            sortedArray = [],
+            stop = false,
+            steps = 0;
 
-    var count = 9+1,
-        durationTime = 900,
-        array,
-        unsortedArray,
-        sortedArray = [],
-        stop = false,
-        steps = 0;
-    
-    var margin = {top: 40, right: 40, bottom: 180, left: 40},
-        width = 960 - margin.left - margin.right,
-        height = 500 - margin.top - margin.bottom;
+        var margin = {top: 40, right: 40, bottom: 180, left: 40},
+            width = 960 - margin.left - margin.right,
+            height = 500 - margin.top - margin.bottom;
 
-    var barWidth = width/count;
+        var barWidth = width / count;
 
-    var x = d3.scaleLinear()
-        .domain([0,count])
-        .range([0, width]);
+        var x = d3.scaleLinear()
+            .domain([0, count])
+            .range([0, width]);
 
-    var svg = d3.select('.sh').append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-        .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-      
-    var rects;
-    var labels;
-        
-    function submit(){
+        var svg = d3.select('.sh').append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-        document.getElementById("submit").disabled = true;
+        var rects;
+        var labels;
 
-        var array2 = document.getElementById("array");
-    array2 = array2.value.split(" ").map(function (item) {
-    return parseInt(item, 10);//convert into decimal 10 means decimal
-});
-        console.log(array2);
-        array = array2;
-        unsortedArray = [...array];
+        function submit() {
+            document.getElementById("submit").disabled = true;
 
-        rects = svg.append("g")
-        .attr("transform", "translate(" + barWidth + ",2)")
-        .selectAll("rect")
-        .data(unsortedArray)
-        .enter().append("rect")//append will add rectangle for each
+            var array2 = document.getElementById("array").value;
+            array2 = array2.split(" ").map(function (item) {
+                return parseInt(item, 10);
+            });
 
-    rects.attr("id", function(d) {return "rect" + d})
-        .attr("transform", function(d, i) {return "translate(" + (x(i) - barWidth) + ",0)"})
-        .attr("width", barWidth *.9)
-        .attr("height", function(d) {return d*barWidth/3})
-        rects.attr("y",function(d){ return 400-d*barWidth/3; });
+            array = array2;
+            unsortedArray = [...array];
 
-    labels = svg.selectAll("text")
+            rects = svg.append("g")
+                .attr("transform", "translate(" + barWidth + ",2)")
+                .selectAll("rect")
                 .data(unsortedArray)
-                .enter().append("text")
-    
-    labels.attr("id", function(d) {return "text" + d})
-        .attr("transform", function(d, i) {return "translate(" + x(i) + ",0)"})
-        .attr("class","unsorted")
-        .html(function(d) {return d;})
-    }
+                .enter().append("rect");
 
-    function reset() {
-        unsortedArray = [...array];
-        sortedArray = [];
-        stop = false;
+            rects.attr("id", function (d, i) { return "rect" + i })
+                .attr("transform", function (d, i) { return "translate(" + (x(i) - barWidth / 2) + ",0)" })
+                .attr("width", barWidth * 0.8)
+                .attr("height", function (d) { return d * 20; }) // Adjusted for better visualization
+                .attr("y", function (d) { return height - d * 20; }) // Adjusted for better visualization
+                .attr("class", "unsorted");
 
-        d3.select("#counter").html(steps = 0)
+            labels = svg.selectAll("text")
+                .data(unsortedArray)
+                .enter().append("text");
 
-        labels.attr("class", "")                
-            .transition().duration(2000)
-            .attr("transform", function(d, i) {return "translate(" + (x(i)) + ", 0)"})  
-            .attr("class","unsorted")              
-        
-        rects.attr("class", "")                
-            .transition().duration(2000)
-            .attr("transform", function(d, i) {return "translate(" + (x(i-1)) + ", 0)"})
-        
-
-    rects.attr("id", function(d) {return "rect" + d})
-        .attr("transform", function(d, i) {return "translate(" + (x(i) - barWidth) + ",0)"})
-        .attr("width", barWidth *.9)
-        .attr("height", function(d) {return d*barWidth/3})
-        rects.attr("y",function(d){ return 400-d*barWidth/3; });
-    }
-
-
-    function selectionSort() {
-        var min = count,
-            spliceIndex,
-            i = 0;
-
-        function findMin() {
-            if (stop) return stop = false;
-
-            d3.timeout(function() {
-            
-                if (i<=unsortedArray.length) {
-
-                    d3.select("#rect" + unsortedArray[i]).attr("class", "testing")
-  
-                    d3.timeout(function() {
-                        
-                        d3.select("#rect" + unsortedArray[i]).attr("class", "")
-
-                        if (unsortedArray[i] < min) {
-                            d3.select("#rect" + unsortedArray[i]).attr("class", "min")
-                            d3.select("#rect" + min).attr("class", "")
-                            min = unsortedArray[spliceIndex = i]
-                        }
-
-                        d3.select("#counter").html(++steps);
-                        i++;
-
-                        d3.timeout(function() {return findMin()}, durationTime/2);
-
-                    }, durationTime/2);
-
-                } else {
-
-                    sortedArray.push(min);
-                    unsortedArray.splice(spliceIndex,1);
-
-                    d3.select("#counter").html(++steps);
-
-                rects.transition().duration(durationTime * 4)
-                    .attr("transform", function(d) {
-                        var xVal = sortedArray.indexOf(d) > -1 ? sortedArray.indexOf(d) : unsortedArray.indexOf(d) + sortedArray.length;
-                        return "translate(" + x(xVal - 1) + ",0)" 
-                    })
-
-                labels
-                    .classed("sorted", function(d) {return sortedArray.indexOf(d) == d - 1;})
-                    .transition().duration(durationTime * 4)
-                    .attr("transform", function(d) {
-                        var xVal = sortedArray.indexOf(d) > -1 ? sortedArray.indexOf(d) : unsortedArray.indexOf(d) + sortedArray.length;
-                        return "translate(" + x(xVal) + ",0)" 
-                    })
-
-                    rects.attr("class", "")
-
-                    d3.timeout(function() {
-                        if (unsortedArray.length > 0) selectionSort();
-                    }, durationTime);
-                    return;
-                }                
-            })
+            labels.attr("id", function (d, i) { return "text" + i })
+                .attr("x", function (d, i) { return x(i) + barWidth / 2; })
+                .attr("y", function (d) { return height - d * 20 - 10; }) // Adjusted for better visualization
+                .attr("text-anchor", "middle")
+                .attr("class", "number-text")
+                .text(function (d) { return d; });
         }
-        findMin();
-    }
 
-    function slide(d, i) {
-        d3.select("#text" + d)
-            .transition().duration(durationTime)
-            .attr("transform", function(d) {return "translate(" + (x(i)) + ", 0)"})
+        function reset() {
+            unsortedArray = [...array];
+            sortedArray = [];
+            stop = false;
 
-        d3.select("#rect" + d)
-            .transition().duration(durationTime)
-            .attr("transform", function(d) {return "translate(" + (x(i-1)) + ", 0)"})                
-    }
+            labels.text(function (d) { return d; })
+                .transition().duration(2000)
+                .attr("x", function (d, i) { return x(i) + barWidth / 2; })
+                .attr("y", function (d) { return height - d * 20 - 10; });
 
-</script>
+            rects.attr("class", "unsorted")
+                .transition().duration(2000)
+                .attr("transform", function (d, i) { return "translate(" + (x(i) - barWidth / 2) + ",0)"; })
+                .attr("height", function (d) { return d * 20; })
+                .attr("y", function (d) { return height - d * 20; });
+        }
+
+        function selectionSort() {
+            var i = 0, j = 0, minIdx;
+
+            function step() {
+                if (stop) return;
+
+                if (i < unsortedArray.length - 1) {
+                    if (j < unsortedArray.length) {
+                        if (j === i) {
+                            minIdx = i;
+                            d3.select("#rect" + i).classed("min", true);
+                        } else {
+                            d3.select("#rect" + j).classed("testing", true);
+
+                            if (unsortedArray[j] < unsortedArray[minIdx]) {
+                                d3.select("#rect" + minIdx).classed("min", false);
+                                minIdx = j;
+                                d3.select("#rect" + minIdx).classed("min", true);
+                            }
+
+                            d3.timeout(function () {
+                                d3.select("#rect" + j).classed("testing", false);
+                                j++;
+                                step();
+                            }, durationTime);
+                            return;
+                        }
+                        j++;
+                        step();
+                    } else {
+                        if (minIdx !== i) {
+                            var temp = unsortedArray[i];
+                            unsortedArray[i] = unsortedArray[minIdx];
+                            unsortedArray[minIdx] = temp;
+
+                            d3.select("#rect" + i)
+                                .transition().duration(durationTime)
+                                .attr("height", unsortedArray[i] * 20)
+                                .attr("y", height - unsortedArray[i] * 20);
+
+                            d3.select("#rect" + minIdx)
+                                .transition().duration(durationTime)
+                                .attr("height", unsortedArray[minIdx] * 20)
+                                .attr("y", height - unsortedArray[minIdx] * 20);
+
+                            d3.select("#text" + i).text(unsortedArray[i])
+                                .transition().duration(durationTime)
+                                .attr("x", x(i) + barWidth / 2)
+                                .attr("y", height - unsortedArray[i] * 20 - 10);
+
+                            d3.select("#text" + minIdx).text(unsortedArray[minIdx])
+                                .transition().duration(durationTime)
+                                .attr("x", x(minIdx) + barWidth / 2)
+                                .attr("y", height - unsortedArray[minIdx] * 20 - 10);
+                        }
+                        d3.select("#rect" + i).classed("sorted", true);
+                        d3.select("#rect" + minIdx).classed("min", false);
+                        i++;
+                        j = i;
+                        d3.timeout(step, durationTime);
+                    }
+                } else {
+                    d3.select("#rect" + i).classed("sorted", true);
+                }
+            }
+
+            step();
+        }
+    </script>
+</body>
 </html>
-
-

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sorting Algorithms Visualization</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        #buttons {
+            margin: 20px;
+            text-align: center;
+        }
+        input, button, select {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+        button {
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #ddd;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .btn-danger {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+        }
+        .btn-danger:hover {
+            background-color: #bd2130;
+        }
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .sh {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 400px;
+            margin-top: 20px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
+        #heading {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .bar-container {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: left 0.5s ease-in-out;
+        }
+        .bar {
+            background-color: #3498db;
+            transition: background-color 0.5s ease-in-out, height 0.5s ease-in-out;
+        }
+        .bar-label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .comparing {
+            background-color: #e74c3c;
+        }
+        .sorted {
+            background-color: #2ecc71;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Sorting Algorithms Visualization</h1>
+    </div>
+
+    <div id="contain">
+        <h2 id="heading">SORTING VISUALIZATION</h2>
+        <div class="sh" id="visualization"></div>
+
+        <div id="buttons">
+            <input id="array" type="text" placeholder="Enter array separated by space" size="30">
+            <button id="submit" class="btn-primary" onclick="submit()">Submit</button>
+            <select id="sortSelect">
+                <option value="bubble">Bubble Sort</option>
+                <option value="selection">Selection Sort</option>
+                <option value="insertion">Insertion Sort</option>
+                <option value="merge">Merge Sort</option>
+                <option value="heap">Heap Sort</option>
+                <option value="quick">Quick Sort</option>
+            </select>
+            <button class="btn-primary" onclick="startSort()">Start Sort</button>
+            <button class="btn-primary" onclick="stop = true">Stop</button>
+            <button class="btn-primary" onclick="stop = false; startSort()">Resume</button>
+            <button class="btn-primary" onclick="reset()">Reset</button>
+            <button class="btn-danger" onClick="window.location.reload();">Clear</button>
+        </div>
+    </div>
+
+    <script>
+        let array = [];
+        let stop = false;
+        const delay = ms => new Promise(res => setTimeout(res, ms));
+        const delayTime = 300;
+
+        function submit() {
+            const input = document.getElementById("array").value;
+            array = input.split(" ").map(Number);
+            visualizeArray(array);
+        }
+
+        function visualizeArray(arr) {
+            const container = document.getElementById("visualization");
+            container.innerHTML = "";
+            const maxVal = Math.max(...arr);
+            const containerWidth = container.offsetWidth;
+            const barWidth = Math.max(30, Math.min(100, containerWidth / arr.length - 2));
+            
+            arr.forEach((val, idx) => {
+                const barContainer = document.createElement("div");
+                barContainer.className = "bar-container";
+                barContainer.style.width = `${barWidth}px`;
+                barContainer.style.left = `${idx * (barWidth + 2)}px`;
+                
+                const label = document.createElement("div");
+                label.className = "bar-label";
+                label.textContent = val;
+                
+                const bar = document.createElement("div");
+                bar.className = "bar";
+                bar.style.height = `${(val / maxVal) * 300}px`;
+                bar.style.width = `${barWidth}px`;
+                bar.id = `bar-${idx}`;
+                
+                barContainer.appendChild(label);
+                barContainer.appendChild(bar);
+                container.appendChild(barContainer);
+            });
+        }
+
+        async function updateBars() {
+            const maxVal = Math.max(...array);
+            array.forEach((val, idx) => {
+                const container = document.getElementById(`bar-${idx}`).parentElement;
+                const label = container.querySelector('.bar-label');
+                const bar = container.querySelector('.bar');
+                
+                label.textContent = val;
+                bar.style.height = `${(val / maxVal) * 300}px`;
+            });
+            await delay(delayTime);
+        }
+
+        async function swap(i, j) {
+            const temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+
+            const container1 = document.getElementById(`bar-${i}`).parentElement;
+            const container2 = document.getElementById(`bar-${j}`).parentElement;
+            
+            const tempLeft = container1.style.left;
+            container1.style.left = container2.style.left;
+            container2.style.left = tempLeft;
+
+            container1.querySelector('.bar').id = `bar-${j}`;
+            container2.querySelector('.bar').id = `bar-${i}`;
+
+            await updateBars();
+        }
+
+        async function bubbleSort() {
+            for (let i = 0; i < array.length; i++) {
+                for (let j = 0; j < array.length - i - 1; j++) {
+                    if (stop) return;
+                    document.getElementById(`bar-${j}`).classList.add("comparing");
+                    document.getElementById(`bar-${j + 1}`).classList.add("comparing");
+                    await delay(delayTime);
+                    if (array[j] > array[j + 1]) {
+                        await swap(j, j + 1);
+                    }
+                    document.getElementById(`bar-${j}`).classList.remove("comparing");
+                    document.getElementById(`bar-${j + 1}`).classList.remove("comparing");
+                }
+                document.getElementById(`bar-${array.length - i - 1}`).classList.add("sorted");
+            }
+        }
+
+        async function selectionSort() {
+            for (let i = 0; i < array.length; i++) {
+                let minIdx = i;
+                document.getElementById(`bar-${i}`).classList.add("comparing");
+                for (let j = i + 1; j < array.length; j++) {
+                    if (stop) return;
+                    document.getElementById(`bar-${j}`).classList.add("comparing");
+                    await delay(delayTime);
+                    if (array[j] < array[minIdx]) {
+                        minIdx = j;
+                    }
+                    document.getElementById(`bar-${j}`).classList.remove("comparing");
+                }
+                if (minIdx !== i) {
+                    await swap(i, minIdx);
+                }
+                document.getElementById(`bar-${i}`).classList.remove("comparing");
+                document.getElementById(`bar-${i}`).classList.add("sorted");
+            }
+        }
+
+        async function insertionSort() {
+            for (let i = 1; i < array.length; i++) {
+                let j = i;
+                document.getElementById(`bar-${j}`).classList.add("comparing");
+                while (j > 0 && array[j - 1] > array[j]) {
+                    if (stop) return;
+                    await swap(j, j - 1);
+                    j--;
+                    await delay(delayTime);
+                }
+                document.getElementById(`bar-${j}`).classList.remove("comparing");
+                for (let k = 0; k <= i; k++) {
+                    document.getElementById(`bar-${k}`).classList.add("sorted");
+                }
+            }
+        }
+
+        async function mergeSortWrapper() {
+            await mergeSort(0, array.length - 1);
+        }
+
+        async function mergeSort(left, right) {
+            if (left < right) {
+                const middle = Math.floor((left + right) / 2);
+                
+                await mergeSort(left, middle);
+                await mergeSort(middle + 1, right);
+                await merge(left, middle, right);
+            }
+        }
+
+        async function merge(left, middle, right) {
+            const leftArray = array.slice(left, middle + 1);
+            const rightArray = array.slice(middle + 1, right + 1);
+            let i = 0, j = 0, k = left;
+
+            while (i < leftArray.length && j < rightArray.length) {
+                if (stop) return;
+
+                await highlightBars([left + i, middle + 1 + j], "comparing");
+                await delay(delayTime);
+
+                if (leftArray[i] <= rightArray[j]) {
+                    array[k] = leftArray[i];
+                    i++;
+                } else {
+                    array[k] = rightArray[j];
+                    j++;
+                }
+                await updateSingleBar(k);
+                k++;
+            }
+
+            while (i < leftArray.length) {
+                if (stop) return;
+                array[k] = leftArray[i];
+                await updateSingleBar(k);
+                i++;
+                k++;
+            }
+
+            while (j < rightArray.length) {
+                if (stop) return;
+                array[k] = rightArray[j];
+                await updateSingleBar(k);
+                j++;
+                k++;
+            }
+
+            for (let i = left; i <= right; i++) {
+                await highlightBars([i], "sorted");
+            }
+        }
+
+        async function heapSort() {
+            let n = array.length;
+
+            // Build heap (rearrange array)
+            for (let i = Math.floor(n / 2) - 1; i >= 0; i--)
+                await heapify(n, i);
+
+            // One by one extract an element from heap
+            for (let i = n - 1; i > 0; i--) {
+                if (stop) return;
+                // Move current root to end
+                await swap(0, i);
+
+                // call max heapify on the reduced heap
+                await heapify(i, 0);
+
+                document.getElementById(`bar-${i}`).classList.add("sorted");
+            }
+            document.getElementById(`bar-0`).classList.add("sorted");
+        }
+
+        async function heapify(n, i) {
+            let largest = i; // Initialize largest as root
+            let l = 2 * i + 1; // left = 2*i + 1
+            let r = 2 * i + 2; // right = 2*i + 2
+
+            // If left child is larger than root
+            if (l < n && array[l] > array[largest])
+                largest = l;
+
+            // If right child is larger than largest so far
+            if (r < n && array[r] > array[largest])
+                largest = r;
+
+            // If largest is not root
+            if (largest != i) {
+                await highlightBars([i, largest], "comparing");
+                await swap(i, largest);
+
+                // Recursively heapify the affected sub-tree
+                await heapify(n, largest);
+            }
+        }
+
+        async function quickSort(low = 0, high = array.length - 1) {
+            if (low < high) {
+                let pi = await partition(low, high);
+
+                await quickSort(low, pi - 1);
+                await quickSort(pi + 1, high);
+            }
+            if (low === 0 && high === array.length - 1) {
+                for (let i = 0; i < array.length; i++) {
+                    document.getElementById(`bar-${i}`).classList.add("sorted");
+                }
+            }
+        }
+
+        async function partition(low, high) {
+            let pivot = array[high];
+            let i = low - 1;
+
+            for (let j = low; j <= high - 1; j++) {
+                if (stop) return;
+                await highlightBars([j, high], "comparing");
+                if (array[j] < pivot) {
+                    i++;
+                    await swap(i, j);
+                }
+            }
+            await swap(i + 1, high);
+            return i + 1;
+        }
+
+        async function highlightBars(indices, className) {
+            indices.forEach(index => {
+                document.getElementById(`bar-${index}`).classList.remove("comparing", "sorted");
+                if (className) {
+                    document.getElementById(`bar-${index}`).classList.add(className);
+                }
+            });
+            await delay(delayTime);
+        }
+
+        async function updateSingleBar(index) {
+            const maxVal = Math.max(...array);
+            const container = document.getElementById(`bar-${index}`).parentElement;
+            const label = container.querySelector('.bar-label');
+            const bar = container.querySelector('.bar');
+            
+            label.textContent = array[index];
+            bar.style.height = `${(array[index] / maxVal) * 300}px`;
+            await delay(delayTime);
+        }
+
+        function reset() {
+            stop = false;
+            visualizeArray(array);
+        }
+
+        async function startSort() {
+            reset();
+            const sortMethod = document.getElementById("sortSelect").value;
+            switch(sortMethod) {
+                case "bubble":
+                    await bubbleSort();
+                    break;
+                case "selection":
+                    await selectionSort();
+                    break;
+                case "insertion":
+                    await insertionSort();
+                    break;
+                case "merge":
+                    await mergeSortWrapper();
+                    break;
+                case "heap":
+                    await heapSort();
+                    break;
+                case "quick":
+                    await quickSort();
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
