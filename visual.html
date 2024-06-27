@@ -110,6 +110,8 @@
                 <option value="selection">Selection Sort</option>
                 <option value="insertion">Insertion Sort</option>
                 <option value="merge">Merge Sort</option>
+                <option value="heap">Heap Sort</option>
+                <option value="quick">Quick Sort</option>
             </select>
             <button class="btn-primary" onclick="startSort()">Start Sort</button>
             <button class="btn-primary" onclick="stop = true">Stop</button>
@@ -303,6 +305,80 @@
             }
         }
 
+        async function heapSort() {
+            let n = array.length;
+
+            // Build heap (rearrange array)
+            for (let i = Math.floor(n / 2) - 1; i >= 0; i--)
+                await heapify(n, i);
+
+            // One by one extract an element from heap
+            for (let i = n - 1; i > 0; i--) {
+                if (stop) return;
+                // Move current root to end
+                await swap(0, i);
+
+                // call max heapify on the reduced heap
+                await heapify(i, 0);
+
+                document.getElementById(`bar-${i}`).classList.add("sorted");
+            }
+            document.getElementById(`bar-0`).classList.add("sorted");
+        }
+
+        async function heapify(n, i) {
+            let largest = i; // Initialize largest as root
+            let l = 2 * i + 1; // left = 2*i + 1
+            let r = 2 * i + 2; // right = 2*i + 2
+
+            // If left child is larger than root
+            if (l < n && array[l] > array[largest])
+                largest = l;
+
+            // If right child is larger than largest so far
+            if (r < n && array[r] > array[largest])
+                largest = r;
+
+            // If largest is not root
+            if (largest != i) {
+                await highlightBars([i, largest], "comparing");
+                await swap(i, largest);
+
+                // Recursively heapify the affected sub-tree
+                await heapify(n, largest);
+            }
+        }
+
+        async function quickSort(low = 0, high = array.length - 1) {
+            if (low < high) {
+                let pi = await partition(low, high);
+
+                await quickSort(low, pi - 1);
+                await quickSort(pi + 1, high);
+            }
+            if (low === 0 && high === array.length - 1) {
+                for (let i = 0; i < array.length; i++) {
+                    document.getElementById(`bar-${i}`).classList.add("sorted");
+                }
+            }
+        }
+
+        async function partition(low, high) {
+            let pivot = array[high];
+            let i = low - 1;
+
+            for (let j = low; j <= high - 1; j++) {
+                if (stop) return;
+                await highlightBars([j, high], "comparing");
+                if (array[j] < pivot) {
+                    i++;
+                    await swap(i, j);
+                }
+            }
+            await swap(i + 1, high);
+            return i + 1;
+        }
+
         async function highlightBars(indices, className) {
             indices.forEach(index => {
                 document.getElementById(`bar-${index}`).classList.remove("comparing", "sorted");
@@ -344,6 +420,12 @@
                     break;
                 case "merge":
                     await mergeSortWrapper();
+                    break;
+                case "heap":
+                    await heapSort();
+                    break;
+                case "quick":
+                    await quickSort();
                     break;
             }
         }
