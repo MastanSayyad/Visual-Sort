@@ -78,7 +78,7 @@
 }
 .social-icon a:hover{
     color: yellowgreen;
-    transform: translateY(-5px);
+    transform: translateY(-5px) scale(1.2);
 }
 .btn.btn2{
     display: inline-block;
@@ -110,3 +110,10 @@ form .btn2{
     margin-top: 20px;
     cursor: pointer;
 }
+footer {
+    height: 50px;
+  }
+.col-6.col-md-2.mb-3 a:hover {
+    transform: translateY(-5px) scale(1.2);
+    color: rgb(0, 0, 0);
+  }
