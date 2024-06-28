@@ -32,7 +32,7 @@
   .img {
     width: 440px;
     height: 410px;
-    border-radius: 50%;
+    border-radius: 20%;
     margin-right: 16px;
   }
   .card h1 {
