@@ -418,7 +418,16 @@
             visualizeArray(array);
         }
 
+        function disableSubmitButton() {
+            document.getElementById("submit").disabled = true;
+        }
+
+        function enableSubmitButton() {
+            document.getElementById("submit").disabled = false;
+        }
+
         async function startSort() {
+            disableSubmitButton();
             reset();
             const sortMethod = document.getElementById("sortSelect").value;
             switch(sortMethod) {
@@ -441,6 +450,7 @@
                     await quickSort();
                     break;
             }
+            enableSubmitButton();
         }
 
         const TimeComplexity={
