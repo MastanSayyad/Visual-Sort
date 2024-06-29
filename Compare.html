@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sorting Algorithms Visualization</title>
+    <title>Sorting Algorithms Comparison</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
@@ -58,10 +58,9 @@
             align-items: flex-end;
             height: 400px;
             margin-top: 20px;
-            width: 90%;
-            margin-left: auto;
-            margin-right: auto;
+            width: 45%;
             position: relative;
+            margin: 0 20px;
         }
         #heading {
             text-align: center;
@@ -69,6 +68,10 @@
             color: #333;
             font-size: 36px;
             font-weight: bold;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
         }
         .bar-container {
             position: absolute;
@@ -101,30 +104,30 @@
 </head>
 <body>
     <div class="header">
-        <h1>Sorting Algorithms Visualization</h1>
+        <h1>Sorting Algorithms Comparison</h1>
     </div>
 
     <div id="contain">
         <h2 id="heading">SORTING VISUALIZATION</h2>
-        <div class="time">
-            <div><h3>Time Complexity</h3></div>
-            <div><h3 id="best-case">Best Case: O(n)</h3></div>
-            <div><h3 id="worst-case">Worst Case: O(n^2)</h3></div>
-            <div><h3 id="average-case">Average Case: O(n^2)</h3></div>
-            <div><h3 id="space-complexity">Space Complexity: O(1)</h3></div>
+        <div class="container">
+            <div class="sh" id="visualization1"></div>
+            <div class="sh" id="visualization2"></div>
         </div>
-        <div class="sh" id="visualization"></div>
 
         <div id="buttons">
             <input id="array" type="text" placeholder="Enter array separated by space" size="30">
             <button id="submit" class="btn-primary" onclick="submit()">Submit</button>
-            <select id="sortSelect" onchange="updateTimeComplexity()">
+            <select id="sortSelect1">
                 <option value="bubble">Bubble Sort</option>
                 <option value="selection">Selection Sort</option>
                 <option value="insertion">Insertion Sort</option>
                 <option value="merge">Merge Sort</option>
-                <option value="heap">Heap Sort</option>
-                <option value="quick">Quick Sort</option>
+            </select>
+            <select id="sortSelect2">
+                <option value="bubble">Bubble Sort</option>
+                <option value="selection">Selection Sort</option>
+                <option value="insertion">Insertion Sort</option>
+                <option value="merge">Merge Sort</option>
             </select>
             <button class="btn-primary" onclick="startSort()">Start Sort</button>
             <button class="btn-primary" onclick="stop = true">Stop</button>
@@ -143,11 +146,12 @@
         function submit() {
             const input = document.getElementById("array").value;
             array = input.split(" ").map(Number);
-            visualizeArray(array);
+            visualizeArray(array, 'visualization1');
+            visualizeArray(array, 'visualization2');
         }
 
-        function visualizeArray(arr) {
-            const container = document.getElementById("visualization");
+        function visualizeArray(arr, containerId) {
+            const container = document.getElementById(containerId);
             container.innerHTML = "";
             const maxVal = Math.max(...arr);
             const containerWidth = container.offsetWidth;
@@ -167,7 +171,7 @@
                 bar.className = "bar";
                 bar.style.height = `${(val / maxVal) * 300}px`;
                 bar.style.width = `${barWidth}px`;
-                bar.id = `bar-${idx}`;
+                bar.id = `${containerId}-bar-${idx}`;
                 
                 barContainer.appendChild(label);
                 barContainer.appendChild(bar);
@@ -175,10 +179,10 @@
             });
         }
 
-        async function updateBars() {
+        async function updateBars(containerId) {
             const maxVal = Math.max(...array);
             array.forEach((val, idx) => {
-                const container = document.getElementById(`bar-${idx}`).parentElement;
+                const container = document.getElementById(`${containerId}-bar-${idx}`).parentElement;
                 const label = container.querySelector('.bar-label');
                 const bar = container.querySelector('.bar');
                 
@@ -188,94 +192,94 @@
             await delay(delayTime);
         }
 
-        async function swap(i, j) {
+        async function swap(i, j, containerId) {
             const temp = array[i];
             array[i] = array[j];
             array[j] = temp;
 
-            const container1 = document.getElementById(`bar-${i}`).parentElement;
-            const container2 = document.getElementById(`bar-${j}`).parentElement;
+            const container1 = document.getElementById(`${containerId}-bar-${i}`).parentElement;
+            const container2 = document.getElementById(`${containerId}-bar-${j}`).parentElement;
             
             const tempLeft = container1.style.left;
             container1.style.left = container2.style.left;
             container2.style.left = tempLeft;
 
-            container1.querySelector('.bar').id = `bar-${j}`;
-            container2.querySelector('.bar').id = `bar-${i}`;
+            container1.querySelector('.bar').id = `${containerId}-bar-${j}`;
+            container2.querySelector('.bar').id = `${containerId}-bar-${i}`;
 
-            await updateBars();
+            await updateBars(containerId);
         }
 
-        async function bubbleSort() {
+        async function bubbleSort(containerId) {
             for (let i = 0; i < array.length; i++) {
                 for (let j = 0; j < array.length - i - 1; j++) {
                     if (stop) return;
-                    document.getElementById(`bar-${j}`).classList.add("comparing");
-                    document.getElementById(`bar-${j + 1}`).classList.add("comparing");
+                    document.getElementById(`${containerId}-bar-${j}`).classList.add("comparing");
+                    document.getElementById(`${containerId}-bar-${j + 1}`).classList.add("comparing");
                     await delay(delayTime);
                     if (array[j] > array[j + 1]) {
-                        await swap(j, j + 1);
+                        await swap(j, j + 1, containerId);
                     }
-                    document.getElementById(`bar-${j}`).classList.remove("comparing");
-                    document.getElementById(`bar-${j + 1}`).classList.remove("comparing");
+                    document.getElementById(`${containerId}-bar-${j}`).classList.remove("comparing");
+                    document.getElementById(`${containerId}-bar-${j + 1}`).classList.remove("comparing");
                 }
-                document.getElementById(`bar-${array.length - i - 1}`).classList.add("sorted");
+                document.getElementById(`${containerId}-bar-${array.length - i - 1}`).classList.add("sorted");
             }
         }
 
-        async function selectionSort() {
+        async function selectionSort(containerId) {
             for (let i = 0; i < array.length; i++) {
                 let minIdx = i;
-                document.getElementById(`bar-${i}`).classList.add("comparing");
+                document.getElementById(`${containerId}-bar-${i}`).classList.add("comparing");
                 for (let j = i + 1; j < array.length; j++) {
                     if (stop) return;
-                    document.getElementById(`bar-${j}`).classList.add("comparing");
+                    document.getElementById(`${containerId}-bar-${j}`).classList.add("comparing");
                     await delay(delayTime);
                     if (array[j] < array[minIdx]) {
                         minIdx = j;
                     }
-                    document.getElementById(`bar-${j}`).classList.remove("comparing");
+                    document.getElementById(`${containerId}-bar-${j}`).classList.remove("comparing");
                 }
                 if (minIdx !== i) {
-                    await swap(i, minIdx);
+                    await swap(i, minIdx, containerId);
                 }
-                document.getElementById(`bar-${i}`).classList.remove("comparing");
-                document.getElementById(`bar-${i}`).classList.add("sorted");
+                document.getElementById(`${containerId}-bar-${i}`).classList.remove("comparing");
+                document.getElementById(`${containerId}-bar-${i}`).classList.add("sorted");
             }
         }
 
-        async function insertionSort() {
+        async function insertionSort(containerId) {
             for (let i = 1; i < array.length; i++) {
                 let j = i;
-                document.getElementById(`bar-${j}`).classList.add("comparing");
+                document.getElementById(`${containerId}-bar-${j}`).classList.add("comparing");
                 while (j > 0 && array[j - 1] > array[j]) {
                     if (stop) return;
-                    await swap(j, j - 1);
+                    await swap(j, j - 1, containerId);
                     j--;
                     await delay(delayTime);
                 }
-                document.getElementById(`bar-${j}`).classList.remove("comparing");
+                document.getElementById(`${containerId}-bar-${j}`).classList.remove("comparing");
                 for (let k = 0; k <= i; k++) {
-                    document.getElementById(`bar-${k}`).classList.add("sorted");
+                    document.getElementById(`${containerId}-bar-${k}`).classList.add("sorted");
                 }
             }
         }
 
-        async function mergeSortWrapper() {
-            await mergeSort(0, array.length - 1);
+        async function mergeSortWrapper(containerId) {
+            await mergeSort(0, array.length - 1, containerId);
         }
 
-        async function mergeSort(left, right) {
+        async function mergeSort(left, right, containerId) {
             if (left < right) {
                 const middle = Math.floor((left + right) / 2);
                 
-                await mergeSort(left, middle);
-                await mergeSort(middle + 1, right);
-                await merge(left, middle, right);
+                await mergeSort(left, middle, containerId);
+                await mergeSort(middle + 1, right, containerId);
+                await merge(left, middle, right, containerId);
             }
         }
 
-        async function merge(left, middle, right) {
+        async function merge(left, middle, right, containerId) {
             const leftArray = array.slice(left, middle + 1);
             const rightArray = array.slice(middle + 1, right + 1);
             let i = 0, j = 0, k = left;
@@ -283,7 +287,7 @@
             while (i < leftArray.length && j < rightArray.length) {
                 if (stop) return;
 
-                await highlightBars([left + i, middle + 1 + j], "comparing");
+                await highlightBars([left + i, middle + 1 + j], containerId, "comparing");
                 await delay(delayTime);
 
                 if (leftArray[i] <= rightArray[j]) {
@@ -293,14 +297,14 @@
                     array[k] = rightArray[j];
                     j++;
                 }
-                await updateSingleBar(k);
+                await updateSingleBar(k, containerId);
                 k++;
             }
 
             while (i < leftArray.length) {
                 if (stop) return;
                 array[k] = leftArray[i];
-                await updateSingleBar(k);
+                await updateSingleBar(k, containerId);
                 i++;
                 k++;
             }
@@ -308,103 +312,29 @@
             while (j < rightArray.length) {
                 if (stop) return;
                 array[k] = rightArray[j];
-                await updateSingleBar(k);
+                await updateSingleBar(k, containerId);
                 j++;
                 k++;
             }
 
             for (let i = left; i <= right; i++) {
-                await highlightBars([i], "sorted");
+                await highlightBars([i], containerId, "sorted");
             }
         }
 
-        async function heapSort() {
-            let n = array.length;
-
-            // Build heap (rearrange array)
-            for (let i = Math.floor(n / 2) - 1; i >= 0; i--)
-                await heapify(n, i);
-
-            // One by one extract an element from heap
-            for (let i = n - 1; i > 0; i--) {
-                if (stop) return;
-                // Move current root to end
-                await swap(0, i);
-
-                // call max heapify on the reduced heap
-                await heapify(i, 0);
-
-                document.getElementById(`bar-${i}`).classList.add("sorted");
-            }
-            document.getElementById(`bar-0`).classList.add("sorted");
-        }
-
-        async function heapify(n, i) {
-            let largest = i; // Initialize largest as root
-            let l = 2 * i + 1; // left = 2*i + 1
-            let r = 2 * i + 2; // right = 2*i + 2
-
-            // If left child is larger than root
-            if (l < n && array[l] > array[largest])
-                largest = l;
-
-            // If right child is larger than largest so far
-            if (r < n && array[r] > array[largest])
-                largest = r;
-
-            // If largest is not root
-            if (largest != i) {
-                await highlightBars([i, largest], "comparing");
-                await swap(i, largest);
-
-                // Recursively heapify the affected sub-tree
-                await heapify(n, largest);
-            }
-        }
-
-        async function quickSort(low = 0, high = array.length - 1) {
-            if (low < high) {
-                let pi = await partition(low, high);
-
-                await quickSort(low, pi - 1);
-                await quickSort(pi + 1, high);
-            }
-            if (low === 0 && high === array.length - 1) {
-                for (let i = 0; i < array.length; i++) {
-                    document.getElementById(`bar-${i}`).classList.add("sorted");
-                }
-            }
-        }
-
-        async function partition(low, high) {
-            let pivot = array[high];
-            let i = low - 1;
-
-            for (let j = low; j <= high - 1; j++) {
-                if (stop) return;
-                await highlightBars([j, high], "comparing");
-                if (array[j] < pivot) {
-                    i++;
-                    await swap(i, j);
-                }
-            }
-            await swap(i + 1, high);
-            return i + 1;
-        }
-
-        async function highlightBars(indices, className) {
+        async function highlightBars(indices, containerId, className) {
             indices.forEach(index => {
-                document.getElementById(`bar-${index}`).classList.remove("comparing", "sorted");
+                document.getElementById(`${containerId}-bar-${index}`).classList.remove("comparing", "sorted");
                 if (className) {
-                    document.getElementById(`bar-${index}`).classList.add(className);
+                    document.getElementById(`${containerId}-bar-${index}`).classList.add(className);
                 }
             });
             await delay(delayTime);
         }
 
-        async function updateSingleBar(index) {
+        async function updateSingleBar(index, containerId) {
             const maxVal = Math.max(...array);
-            const container = document.getElementById(`bar-${index}`).parentElement;
+            const container = document.getElementById(`${containerId}-bar-${index}`).parentElement;
             const label = container.querySelector('.bar-label');
             const bar = container.querySelector('.bar');
             
@@ -415,70 +345,33 @@
 
         function reset() {
             stop = false;
-            visualizeArray(array);
+            visualizeArray(array, 'visualization1');
+            visualizeArray(array, 'visualization2');
         }
 
         async function startSort() {
             reset();
-            const sortMethod = document.getElementById("sortSelect").value;
+            const sortMethod1 = document.getElementById("sortSelect1").value;
+            const sortMethod2 = document.getElementById("sortSelect2").value;
+            const sortFunc1 = getSortFunction(sortMethod1, 'visualization1');
+            const sortFunc2 = getSortFunction(sortMethod2, 'visualization2');
+
+            await Promise.all([sortFunc1(), sortFunc2()]);
+        }
+
+        function getSortFunction(sortMethod, containerId) {
             switch(sortMethod) {
                 case "bubble":
-                    await bubbleSort();
-                    break;
+                    return () => bubbleSort(containerId);
                 case "selection":
-                    await selectionSort();
-                    break;
+                    return () => selectionSort(containerId);
                 case "insertion":
-                    await insertionSort();
-                    break;
+                    return () => insertionSort(containerId);
                 case "merge":
-                    await mergeSortWrapper();
-                    break;
-                case "heap":
-                    await heapSort();
-                    break;
-                case "quick":
-                    await quickSort();
-                    break;
+                    return () => mergeSortWrapper(containerId);
             }
         }
 
-        const TimeComplexity={
-            bubble: {
-                best: "O(n)",
-                average: "O(n^2)",
-                worst: "O(n^2)",
-                space: "O(1)"
-            },
-            selection: {
-                best: "O(n^2)",
-                average: "O(n^2)",
-                worst: "O(n^2)",
-                space: "O(1)"
-            },
-            insertion: {
-                best: "O(n)",
-                average: "O(n^2)",
-                worst: "O(n^2)",
-                space: "O(1)"
-            },
-            merge: {
-                best: "O(n log n)",
-                average: "O(n log n)",
-                worst: "O(n log n)",
-                space: "O(n)"
-            }
-        }
-
-        function updateTimeComplexity(){
-            const sortMethod = document.getElementById("sortSelect").value;
-            const complexity=TimeComplexity[sortMethod];
-            document.getElementById("best-case").textContent = `Best Case: ${complexity.best}`;
-            document.getElementById("average-case").textContent = `Average Case: ${complexity.average}`;
-            document.getElementById("worst-case").textContent = `Worst Case: ${complexity.worst}`;
-            document.getElementById("space-complexity").textContent = `Space Complexity: ${complexity.space}`;
-        }
     </script>
 </body>
 </html>
-
