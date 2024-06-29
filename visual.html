@@ -126,10 +126,10 @@
                 <option value="heap">Heap Sort</option>
                 <option value="quick">Quick Sort</option>
             </select>
-            <button class="btn-primary" onclick="startSort()">Start Sort</button>
-            <button class="btn-primary" onclick="stop = true">Stop</button>
-            <button class="btn-primary" onclick="stop = false; startSort()">Resume</button>
-            <button class="btn-primary" onclick="reset()">Reset</button>
+            <button id="start" class="btn-primary" onclick="startSort()">Start Sort</button>
+            <button class="btn-primary" onclick="stop = true; stopClicked()">Stop</button>
+            <button id="resume" class="btn-primary" onclick="stop = false; startSort()">Resume</button>
+            <button id="reset" class="btn-primary" onclick="reset()">Reset</button>
             <button class="btn-danger" onClick="window.location.reload();">Clear</button>
         </div>
     </div>
@@ -418,7 +418,26 @@
             visualizeArray(array);
         }
 
+        function stopClicked(){
+            document.getElementById("resume").disabled = false;
+            document.getElementById("reset").disabled = false;
+        }
+        function disableSubmitButton() {
+            document.getElementById("submit").disabled = true;
+            document.getElementById("start").disabled = true;
+            document.getElementById("resume").disabled = true;
+            document.getElementById("reset").disabled = true;
+        }
+        
+        function enableSubmitButton() {
+            document.getElementById("submit").disabled = false;
+            document.getElementById("start").disabled = false;
+            document.getElementById("resume").disabled = false;
+            document.getElementById("reset").disabled = false;
+        }
+
         async function startSort() {
+            disableSubmitButton();
             reset();
             const sortMethod = document.getElementById("sortSelect").value;
             switch(sortMethod) {
@@ -441,6 +460,7 @@
                     await quickSort();
                     break;
             }
+            enableSubmitButton();
         }
 
         const TimeComplexity={
