@@ -143,6 +143,14 @@
         const delay = ms => new Promise(res => setTimeout(res, ms));
         const delayTime = 300;
 
+        function disableSubmitButton() {
+            document.getElementById("submit").disabled = true;
+        }
+
+        function enableSubmitButton() {
+            document.getElementById("submit").disabled = false;
+        }
+
         function submit() {
             const input = document.getElementById("array").value;
             array = input.split(" ").map(Number);
@@ -350,13 +358,18 @@
         }
 
         async function startSort() {
+            disableSubmitButton();
             reset();
             const sortMethod1 = document.getElementById("sortSelect1").value;
             const sortMethod2 = document.getElementById("sortSelect2").value;
             const sortFunc1 = getSortFunction(sortMethod1, 'visualization1');
             const sortFunc2 = getSortFunction(sortMethod2, 'visualization2');
 
-            await Promise.all([sortFunc1(), sortFunc2()]);
+            const promise1 = sortFunc1();
+            const promise2 = sortFunc2();
+
+            await Promise.all([promise1, promise2]);
+            enableSubmitButton();
         }
 
         function getSortFunction(sortMethod, containerId) {
