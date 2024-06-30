@@ -1653,3 +1653,96 @@ h5,
 .navbar.fixed-top.navbar-light .navbar-nav .nav-link:hover {
   color: purple;
 }
+
+/* Style for placeholder text */
+::placeholder {
+  color: white; /* Color of the placeholder text */
+  opacity: 1; /* Fully opaque text */
+}
+
+/* Style for input fields with purple background placeholder */
+.custom-placeholder::placeholder {
+  color: black; /* Placeholder text color */
+}
+
+.custom-placeholder {
+  background-color: #e8d2ee; /* Background color for input */
+  color: white; /* Text color for input */
+}
+
+#contact button {
+  background: #8a2be2;
+  border: none;
+}
+
+#contact button:hover {
+  background: rgb(199, 35, 199);
+}
+
+.sub-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+@media (min-width: 300px) {
+  .accordion__question,
+  .accordion__answer {
+    font-size: 0.8rem;
+  }
+
+  .accordion__icon {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .sub-title {
+    font-size: 2rem;
+  }
+
+  .accordion__question,
+  .accordion__answer {
+    font-size: 1rem;
+  }
+  .accordion__icon {
+    width: 1.7rem;
+    height: 1.7rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .sub-title {
+    font-size: 2.5rem;
+  }
+  .accordion__question,
+  .accordion__answer {
+    font-size: 1.5rem;
+  }
+
+  .accordion__icon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .sub-title {
+    font-size: 3rem;
+  }
+  .accordion__question,
+  .accordion__answer {
+    font-size: 2rem;
+  }
+
+  .accordion__icon {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .sub-title {
+    font-size: 3.5rem;
+  }
+}
