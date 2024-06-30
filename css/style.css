@@ -1684,9 +1684,30 @@ h5,
   font-weight: 900;
 }
 
+@media (min-width: 300px) {
+  .accordion__question,
+  .accordion__answer {
+    font-size: 0.8rem;
+  }
+
+  .accordion__icon {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
+
 @media (min-width: 576px) {
   .sub-title {
     font-size: 2rem;
+  }
+
+  .accordion__question,
+  .accordion__answer {
+    font-size: 1rem;
+  }
+  .accordion__icon {
+    width: 1.7rem;
+    height: 1.7rem;
   }
 }
 
@@ -1694,11 +1715,29 @@ h5,
   .sub-title {
     font-size: 2.5rem;
   }
+  .accordion__question,
+  .accordion__answer {
+    font-size: 1.5rem;
+  }
+
+  .accordion__icon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
 }
 
 @media (min-width: 992px) {
   .sub-title {
     font-size: 3rem;
+  }
+  .accordion__question,
+  .accordion__answer {
+    font-size: 2rem;
+  }
+
+  .accordion__icon {
+    width: 2rem;
+    height: 2rem;
   }
 }
 
