@@ -112,8 +112,23 @@ form .btn2{
 }
 footer {
     height: 50px;
+    color: #7971ea;
   }
+
+footer h5 {
+    color: rgb(65, 43, 43);
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+.col-6.col-md-2.mb-3 a {
+    color: #7971ea;
+  }
+
 .col-6.col-md-2.mb-3 a:hover {
-    transform: translateY(-5px) scale(1.2);
-    color: rgb(0, 0, 0);
+    color: black;
   }
+.vs{
+    color: gray;
+    font-weight: bolder;
+}
