@@ -91,6 +91,12 @@
         .sorted {
             background-color: #2ecc71;
         }
+        .time{
+            display:flex;
+            align-items: end;
+            justify-content:space-around;
+            margin: 10px 20px;
+        }
     </style>
 </head>
 <body>
@@ -100,12 +106,19 @@
 
     <div id="contain">
         <h2 id="heading">SORTING VISUALIZATION</h2>
+        <div class="time">
+            <div><h3>Time Complexity</h3></div>
+            <div><h3 id="best-case">Best Case: O(n)</h3></div>
+            <div><h3 id="worst-case">Worst Case: O(n^2)</h3></div>
+            <div><h3 id="average-case">Average Case: O(n^2)</h3></div>
+            <div><h3 id="space-complexity">Space Complexity: O(1)</h3></div>
+        </div>
         <div class="sh" id="visualization"></div>
 
         <div id="buttons">
             <input id="array" type="text" placeholder="Enter array separated by space" size="30">
             <button id="submit" class="btn-primary" onclick="submit()">Submit</button>
-            <select id="sortSelect">
+            <select id="sortSelect" onchange="updateTimeComplexity()">
                 <option value="bubble">Bubble Sort</option>
                 <option value="selection">Selection Sort</option>
                 <option value="insertion">Insertion Sort</option>
@@ -113,10 +126,10 @@
                 <option value="heap">Heap Sort</option>
                 <option value="quick">Quick Sort</option>
             </select>
-            <button class="btn-primary" onclick="startSort()">Start Sort</button>
-            <button class="btn-primary" onclick="stop = true">Stop</button>
-            <button class="btn-primary" onclick="stop = false; startSort()">Resume</button>
-            <button class="btn-primary" onclick="reset()">Reset</button>
+            <button id="start" class="btn-primary" onclick="startSort()">Start Sort</button>
+            <button class="btn-primary" onclick="stop = true; stopClicked()">Stop</button>
+            <button id="resume" class="btn-primary" onclick="stop = false; startSort()">Resume</button>
+            <button id="reset" class="btn-primary" onclick="reset()">Reset</button>
             <button class="btn-danger" onClick="window.location.reload();">Clear</button>
         </div>
     </div>
@@ -405,7 +418,26 @@
             visualizeArray(array);
         }
 
+        function stopClicked(){
+            document.getElementById("resume").disabled = false;
+            document.getElementById("reset").disabled = false;
+        }
+        function disableSubmitButton() {
+            document.getElementById("submit").disabled = true;
+            document.getElementById("start").disabled = true;
+            document.getElementById("resume").disabled = true;
+            document.getElementById("reset").disabled = true;
+        }
+        
+        function enableSubmitButton() {
+            document.getElementById("submit").disabled = false;
+            document.getElementById("start").disabled = false;
+            document.getElementById("resume").disabled = false;
+            document.getElementById("reset").disabled = false;
+        }
+
         async function startSort() {
+            disableSubmitButton();
             reset();
             const sortMethod = document.getElementById("sortSelect").value;
             switch(sortMethod) {
@@ -428,7 +460,45 @@
                     await quickSort();
                     break;
             }
+            enableSubmitButton();
+        }
+
+        const TimeComplexity={
+            bubble: {
+                best: "O(n)",
+                average: "O(n^2)",
+                worst: "O(n^2)",
+                space: "O(1)"
+            },
+            selection: {
+                best: "O(n^2)",
+                average: "O(n^2)",
+                worst: "O(n^2)",
+                space: "O(1)"
+            },
+            insertion: {
+                best: "O(n)",
+                average: "O(n^2)",
+                worst: "O(n^2)",
+                space: "O(1)"
+            },
+            merge: {
+                best: "O(n log n)",
+                average: "O(n log n)",
+                worst: "O(n log n)",
+                space: "O(n)"
+            }
+        }
+
+        function updateTimeComplexity(){
+            const sortMethod = document.getElementById("sortSelect").value;
+            const complexity=TimeComplexity[sortMethod];
+            document.getElementById("best-case").textContent = `Best Case: ${complexity.best}`;
+            document.getElementById("average-case").textContent = `Average Case: ${complexity.average}`;
+            document.getElementById("worst-case").textContent = `Worst Case: ${complexity.worst}`;
+            document.getElementById("space-complexity").textContent = `Space Complexity: ${complexity.space}`;
         }
     </script>
 </body>
 </html>
+
