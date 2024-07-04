@@ -4,82 +4,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy</title>
+    <title>Privacy Policy - Visual Sort</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px 10px;
-            font-size: 25px;
             color: #333;
+            background-color: #f8f9fa;
         }
 
-        .breadcrumb {
-            text-align: center;
-            color: #000000;
-            font-size: 25px;
-            margin-bottom: 20px;
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
         }
 
-        .breadcrumb span {
-            color: #4CAF50;
+        .navbar-brand {
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+            padding: 40px;
+            margin-top: 80px;
         }
 
         h1 {
-            text-align: center;
-            font-size: 45px;
-            margin-bottom: 10px;
-            color: #000;
-        }
-
-        .update-date {
-            color: #0c0b0b;
-            font-size: 25px;
-            margin-bottom: 20px;
-            text-align: left;
+            color: #303842;
+            border-bottom: 2px solid #303842;
+            padding-bottom: 10px;
         }
 
         h2 {
-            font-size: 35px;
+            color: #303842;
             margin-top: 30px;
-            color: #4b4b4b;
+            font-size: 1.5rem;
         }
 
-        p {
+        .last-updated {
+            font-style: italic;
+            color: #6c757d;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: #2d5661;
+            padding: 30px 0;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
             margin-bottom: 15px;
         }
 
-        /* Responsive adjustments */
-        @media (max-width: 600px) {
-            body {
-                padding: 15px 5px;
+        .footer-links {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #ecf0f1;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #3498db;
+        }
+
+        .social-icons a {
+            color: #ecf0f1;
+            font-size: 1.2rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+.mb-4{
+    text-align: center;
+}
+        .social-icons a:hover {
+            color: #3498db;
+        }
+
+        @media (min-width: 768px) {
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
             }
 
-            h1 {
-                font-size: 32px;
-            }
-
-            h2 {
-                font-size: 22px;
+            .copyright,
+            .footer-links,
+            .social-icons {
+                margin-bottom: 0;
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="breadcrumb">Home / <span>Privacy Policy</span></div>
-    <h1>Privacy Policy</h1>
-    <div class="update-date">Last updated: May 17, 2024</div>
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #303842;">
+        <div class="container-fluid">
+            <a class="navbar-brand" style="font-weight: 900; color: rgb(255, 255, 255);" href="index.html">Visual
+                Sort</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" style="font-weight: 500; color: white;" href="index.html">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <p>Welcome to NactoCare. We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about our policy or our practices with regards to your personal information, please contact us at nactoreorganization@gmail.com.</p>
+    <div class="container mt-5 pt-5">
+        <h1 class="mb-4">Privacy Policy</h1>
+        <p class="last-updated">Last updated: July 1, 2024</p>
 
-    <h2>Information We Collect</h2>
-    <p>We collect personal information that you provide to us, such as name, address, contact information, and payment information. We collect personal information when you register for our services, express an interest in obtaining information about us or our products and services, participate in activities on the Services, or otherwise contact us.</p>
+        <h2>Introduction</h2>
+        <p>Welcome to Visual Sort ("we," "our," or "us"). This Privacy Policy governs your use of our website
+            www.visualsort.com (the "Site") and our sorting visualization services. We are committed to protecting your
+            privacy and ensuring a safe, transparent online experience.</p>
 
-    <h2>How We Use Your Information</h2>
-    <p>We use personal information collected via our Services for a variety of business purposes described below. We process your personal information for these purposes in reliance on our legitimate business interests, in order to enter into or perform a contract with you, with your consent, and/or for compliance with our legal obligations.</p>
+        <h2>Information We Collect</h2>
+        <p>We collect and process the following types of information:</p>
+        <ul>
+            <li><strong>Personal Information:</strong> Name, email address, and any other information you provide when
+                contacting us or subscribing to our newsletter.</li>
+            <li><strong>Usage Data:</strong> IP address, browser type, operating system, pages visited, time spent on
+                the Site, and other analytics data.</li>
+            <li><strong>Cookies and Tracking Technologies:</strong> We use cookies and similar technologies to enhance
+                your browsing experience and collect usage information.</li>
+        </ul>
+
+        <h2>How We Use Your Information</h2>
+        <p>We use the collected information for various purposes, including:</p>
+        <ul>
+            <li>Providing, maintaining, and improving our Site and services.</li>
+            <li>Responding to your inquiries and fulfilling your requests.</li>
+            <li>Sending technical notices, updates, security alerts, and administrative messages.</li>
+            <li>Analyzing usage patterns to enhance user experience and Site functionality.</li>
+            <li>Detecting, preventing, and addressing technical issues or fraudulent activities.</li>
+        </ul>
+
+        <h2>Sharing of Your Information</h2>
+        <p>We do not sell, trade, or rent your personally identifiable information to third parties. However, we may
+            share information with:</p>
+        <ul>
+            <li>Service providers who assist us in operating our Site and conducting our business, subject to
+                confidentiality agreements.</li>
+            <li>Law enforcement or other governmental agencies in response to a legal request or when required by law.
+            </li>
+            <li>Other parties in connection with a corporate transaction, such as a merger, sale of assets, or
+                acquisition.</li>
+        </ul>
+
+        <h2>Data Security</h2>
+        <p>We implement and maintain reasonable security measures to protect your personal information, including:</p>
+        <ul>
+            <li>Using industry-standard encryption protocols for data transmission.</li>
+            <li>Storing personal information in encrypted form on secure servers.</li>
+            <li>Regularly updating our security practices and technologies.</li>
+            <li>Limiting access to personal information to authorized personnel only.</li>
+        </ul>
+
+        <h2>Your Rights and Choices</h2>
+        <p>You have certain rights regarding your personal information:</p>
+        <ul>
+            <li>Access and update your personal information.</li>
+            <li>Request deletion of your personal data, subject to certain exceptions.</li>
+            <li>Opt-out of marketing communications.</li>
+            <li>Object to the processing of your personal information.</li>
+            <li>Data portability rights, where applicable.</li>
+        </ul>
+
+        <h2>Children's Privacy</h2>
+        <p>Our Site is not intended for children under 13 years of age. We do not knowingly collect personal information
+            from children under 13. If you are a parent or guardian and believe we may have collected information about
+            a child, please contact us immediately.</p>
+
+        <h2>International Data Transfers</h2>
+        <p>Your information may be transferred to and processed in countries other than your own. We ensure appropriate
+            safeguards are in place to protect your information and comply with applicable data protection laws.</p>
+
+        <h2>Changes to This Privacy Policy</h2>
+        <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new
+            Privacy Policy on this page and updating the "Last updated" date. We encourage you to review this Privacy
+            Policy periodically.</p>
+
+        <h2>Contact Us</h2>
+        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our privacy practices,
+            please contact us at:</p>
+        <p>
+            Email: privacy@visualsort.com<br>
+            Address: 123 Tech Street, San Francisco, CA 94105, USA<br>
+            Phone: +1 (555) 123-4567
+        </p>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright">&copy; 2024 Visual Sort. All rights reserved.</p>
+
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
