@@ -1839,3 +1839,23 @@ h5,
     font-size: 2.5rem;
   }
 }
+/* Add these styles to your style.css file */
+
+body {
+  padding-top: 60px; /* Adjust for fixed navbar */
+}
+
+@media (max-width: 768px) {
+  .container {
+      padding-left: 15px;
+      padding-right: 15px;
+  }
+
+  h1 {
+      font-size: 2rem;
+  }
+
+  h2 {
+      font-size: 1.5rem;
+  }
+}
