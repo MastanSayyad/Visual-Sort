@@ -323,3 +323,8 @@ pre code {
 .chatbot-button:hover {
   content: "ghhj";
 }
+
+.log:hover {
+  color: white !important;
+  background: rgb(34, 34, 139) !important;
+}
