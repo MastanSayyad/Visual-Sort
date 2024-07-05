@@ -13,7 +13,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   
     <!-- Link to CSS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
@@ -72,53 +72,8 @@
     </div>
 
 
-    <!-- <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner"> 
-
-    <div class="container-fluid">
-        <div class="d-flex align-items-center">
-          <div class="site-logo mr-auto w-25"><a href="index.html">Visual Sort</a></div>
-
-          <div class="mx-auto text-center">
-            <nav class="site-navigation position-relative text-right" role="navigation">
-              <ul class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block  m-0 p-0">
-                <li><a href="#home-section" class="nav-link">Home</a></li>
-                <li><a href="#algorithm-section" class="nav-link">Types</a></li>
-                <li><a href="#programs-section" class="nav-link">Algorithms</a></li>
-                <li><a href="#about-us-section" class="nav-link">About Us</a></li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </div>
-
-    </header> -->
-
-    
-
-    <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Visual Sort</a>
-
-         <button class="navbar-toggler" style="border-color: blue;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon" ></span>
-          </button>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-link active" aria-current="page" href="#home-section">Home</a>
-            <a class="nav-link" href="#algorithm-section">Sorting Visualizers</a>
-            <a class="nav-link" href="#programs-section">Algorithms</a>
-            <a class="nav-link" href="#about-us-section">About Us</a>
-          </div>
-        </div>
-      </div>
-    </nav> -->
-
     <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #303842;">
-      <!-- <nav class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner"> -->
+ 
       <div class="container-fluid">
           <a class="navbar-brand" style="font-weight: 900 ; color: white;" href="#">Visual Sort</a>
           <button class="navbar-toggler" style="border-color: white;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -147,15 +102,13 @@
                   <li class="nav-item">
                       <a class="nav-link" style="font-weight: 500;" href="#About-Us">About Us</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" style="font-weight: 500;" href="login.html">Login</a>
+                  <li class="nav-item ">
+                    <a class="nav-link log" style="font-weight: 500; background-color: rgb(55, 55, 172);border-radius: 0.4rem; margin-left: 0.7rem;" href="login.html">Login</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" style="font-weight: 500;" href="signup.html">Sign Up</a>
+                  <a class="nav-link log" style="font-weight: 500;  background-color:  rgb(55, 55, 172); border-radius: 0.4rem; margin-left: 0.7rem;" href="signup.html">Sign Up</a>
               </li>
-                <li class="nav-item">
-                    <a class="nav-link" style="font-weight: 500;" href="./chatbot.html">AI</a>
-                </li>
+               
               </ul>
           </div>
       </div>
@@ -1018,6 +971,14 @@
 
 <!--&copy;<script>document.write(new Date().getFullYear());</script-->
 
+  <a href="chatbot.html">  <button  class="chatbot-button">
+  <img src="./images/chat-bot.gif" alt="">
+
+
+  </button>
+</a>
+  
+  
 </div> <!-- .site-wrap -->
 
 <script src="js/jquery-3.3.1.min.js"></script>
@@ -1040,6 +1001,8 @@
 
 <!-- Initialize Swiper -->
 <script>
+
+
   var swiper = new Swiper(".mySwiper", {
     slidesPerView: 3,
     spaceBetween: 30,
