@@ -328,3 +328,11 @@ pre code {
   color: white !important;
   background: rgb(34, 34, 139) !important;
 }
+
+#Loader{
+    background: white url(img/pre-loader.gif) no-repeat center center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
