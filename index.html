@@ -60,6 +60,8 @@
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="72">
 
+  <div id="Loader"></div>
+
   <div class="site-wrap">
 
     <div class="site-mobile-menu site-navbar-target">
@@ -1018,6 +1020,13 @@
       prevEl: ".swiper-button-prev",
     },
   });
+</script>
+
+  <script>
+  var loader = document.getElementById("Loader");
+  window.addEventListener("load", function(){
+    loader.style.display = "none";
+  })
 </script>
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
