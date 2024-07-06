@@ -1859,3 +1859,24 @@ body {
       font-size: 1.5rem;
   }
 }
+
+
+
+.topbtn{
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background: #7971ea;
+  bottom: 11px;
+  right: 29px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
+  color: white !important;
+  font-size: 22px;
+  border-radius: 50%
+}
+
+.gotopbtn i {
+  color: white !important; /* Ensure the icon color stays white */
+}
