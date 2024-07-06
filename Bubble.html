@@ -3,6 +3,7 @@
 <title>Bubble Sort</title>
 <meta charset="UTF-8">
 <head>
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -102,6 +103,7 @@
     <script src="https://d3js.org/d3.v4.min.js"></script>
 </head>
 <body>
+    <div id="Loader"></div>
     <div class="header">
         <a href="index.html">Home</a>
         <a href="Bubble.html">Bubble Sort</a>
@@ -123,6 +125,12 @@
             <button class="btn-default btn-danger" onClick="window.location.reload();">Clear</button>
         </div>
     </div>
+    <script>
+      var loader = document.getElementById("Loader");
+      window.addEventListener("load", function(){
+        loader.style.display = "none";
+      })
+    </script> 
 </body>
 <script>
     var count = 9 + 1,
@@ -262,4 +270,5 @@
         d3.select("#rect" + unsortedArray[current]).attr("class", "unsorted");
     }
 </script>
+    
 </html>
