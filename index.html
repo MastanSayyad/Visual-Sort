@@ -900,7 +900,7 @@
       
     </div>
 
- <div class="topbtn">
+     <div id="topbtn" class="topbtn">
       <a class="gotopbtn" href="#"><i class="fa-solid fa-angles-up"></i></a>
   </div>
   
@@ -1039,6 +1039,27 @@
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="main.js"></script>
+
+
+
+  <script>
+  // Get the button
+  const topButton = document.getElementById("topbtn");
+
+  // Show the button when scrolled down 100px
+  window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      topButton.style.display = "block";
+    } else {
+      topButton.style.display = "none";
+    }
+  };
+
+  // Scroll to the top when the button is clicked
+  topButton.onclick = function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+</script>
 
 </body>
 
