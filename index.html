@@ -1041,25 +1041,24 @@
 <script src="main.js"></script>
 
 
-
   <script>
-  // Get the button
-  const topButton = document.getElementById("topbtn");
-
-  // Show the button when scrolled down 100px
-  window.onscroll = function() {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-      topButton.style.display = "block";
-    } else {
-      topButton.style.display = "none";
-    }
-  };
-
-  // Scroll to the top when the button is clicked
-  topButton.onclick = function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+    const topButton = document.getElementById("topbtn");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            topButton.style.display = "block";
+        } else {
+            topButton.style.display = "none";
+        }
+    };
+    topButton.onclick = function (event) {
+        event.preventDefault(); 
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'  
+        });
+    };
 </script>
+
 
 </body>
 
