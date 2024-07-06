@@ -4,6 +4,7 @@
    <script src="https://d3js.org/d3.v3.js"></script>
    <meta charset="UTF-8">
    <head>
+      <link rel="stylesheet" href="style.css">
       <style>
          /* div {margin-left: 40px;margin-top: 20px} */
          #buttons {margin-left: 40px;margin-top: 20px}
@@ -24,6 +25,7 @@
    <link rel="stylesheet" href="css/style.css">
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
    <body>
+      <div id="Loader"></div>
       <div class="w3-bar w3-theme">
          <a href="index.html" class="w3-bar-item w3-button w3-padding-16">Home</a>
          <a href="Bubble.html" class="w3-bar-item w3-button w3-padding-16">Bubble Sort</a>
@@ -49,6 +51,12 @@
             </div>
          </div>
       </div>
+      <script>
+     var loader = document.getElementById("Loader");
+     window.addEventListener("load", function(){
+       loader.style.display = "none";
+     })
+      </script> 
    </body>
    <script>
       var count = 9 + 1,

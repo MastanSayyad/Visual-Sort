@@ -23,6 +23,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.1/marked.min.js"></script>
   </head>
   <body class="bg-[#1B63AC] flex items-center justify-center min-h-screen">
+    <div id="Loader"></div>
     <div
       class="flex flex-col items-center justify-center w-full max-w-xl space-y-4"
     >
@@ -357,5 +358,11 @@
         }
       }
     </script>
+    <script>
+    var loader = document.getElementById("Loader");
+    window.addEventListener("load", function(){
+      loader.style.display = "none";
+    })
+    </script> 
   </body>
 </html>

@@ -4,6 +4,7 @@
     <title>Sorting Algorithms Comparison</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -103,6 +104,7 @@
     </style>
 </head>
 <body>
+    <div id="Loader"></div>
     <div class="header">
         <h1>Sorting Algorithms Comparison</h1>
     </div>
@@ -396,5 +398,11 @@
         }
 
     </script>
+    <script>
+      var loader = document.getElementById("Loader");
+      window.addEventListener("load", function(){
+        loader.style.display = "none";
+      })
+    </script> 
 </body>
 </html>
