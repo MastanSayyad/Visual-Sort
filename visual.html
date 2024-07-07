@@ -4,6 +4,7 @@
     <title>Sorting Algorithms Visualization</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -91,8 +92,12 @@
         .sorted {
             background-color: #2ecc71;
         }
-
-        /* Tour guide styles */
+        .time{
+            display:flex;
+            align-items: end;
+            justify-content:space-around;
+            margin: 10px 20px;
+        }
         .tour-overlay {
             position: fixed;
             top: 0;
@@ -103,6 +108,7 @@
             z-index: 1000;
             display: none;
         }
+
         .tour-popup {
             position: absolute;
             background-color: white;
@@ -112,13 +118,16 @@
             max-width: 300px;
             z-index: 1001;
         }
+
         .tour-popup h3 {
             margin-top: 0;
             color: #333;
         }
+
         .tour-popup p {
             margin-bottom: 15px;
         }
+
         .tour-popup button {
             background-color: #007bff;
             color: white;
@@ -127,39 +136,48 @@
             border-radius: 3px;
             cursor: pointer;
         }
+
         .tour-popup button:hover {
             background-color: #0056b3;
         }
     </style>
 </head>
 <body>
+    <div id="Loader"></div>
     <div class="header">
         <h1>Sorting Algorithms Visualization</h1>
     </div>
 
     <div id="contain">
         <h2 id="heading">SORTING VISUALIZATION</h2>
+        <div class="time">
+            <div><h3>Time Complexity</h3></div>
+            <div><h3 id="best-case">Best Case: O(n)</h3></div>
+            <div><h3 id="worst-case">Worst Case: O(n^2)</h3></div>
+            <div><h3 id="average-case">Average Case: O(n^2)</h3></div>
+            <div><h3 id="space-complexity">Space Complexity: O(1)</h3></div>
+        </div>
         <div class="sh" id="visualization"></div>
 
         <div id="buttons">
             <input id="array" type="text" placeholder="Enter array separated by space" size="30">
             <button id="submit" class="btn-primary" onclick="submit()">Submit</button>
-            <select id="sortSelect">
+            <select id="sortSelect" onchange="updateTimeComplexity()">
                 <option value="bubble">Bubble Sort</option>
                 <option value="selection">Selection Sort</option>
                 <option value="insertion">Insertion Sort</option>
+                <option value="comb">Comb Sort</option>
                 <option value="merge">Merge Sort</option>
                 <option value="heap">Heap Sort</option>
                 <option value="quick">Quick Sort</option>
             </select>
-            <button id="startSort" class="btn-primary" onclick="startSort()">Start Sort</button>
-            <button id="stopSort" class="btn-primary" onclick="stop = true">Stop</button>
-            <button id="resumeSort" class="btn-primary" onclick="stop = false; startSort()">Resume</button>
-            <button id="resetSort" class="btn-primary" onclick="reset()">Reset</button>
-            <button id="clearSort" class="btn-danger" onClick="window.location.reload();">Clear</button>
+            <button id="start" class="btn-primary" onclick="startSort()">Start Sort</button>
+            <button class="btn-primary" onclick="stop = true; stopClicked()">Stop</button>
+            <button id="resume" class="btn-primary" onclick="stop = false; startSort()">Resume</button>
+            <button id="reset" class="btn-primary" onclick="reset()">Reset</button>
+            <button class="btn-danger" onClick="window.location.reload();">Clear</button>
         </div>
     </div>
-
     <div class="tour-overlay" id="tourOverlay">
         <div class="tour-popup" id="tourPopup">
             <h3 id="tourTitle"></h3>
@@ -355,32 +373,71 @@
         async function heapSort() {
             let n = array.length;
 
+            // Build heap (rearrange array)
             for (let i = Math.floor(n / 2) - 1; i >= 0; i--)
                 await heapify(n, i);
 
+            // One by one extract an element from heap
             for (let i = n - 1; i > 0; i--) {
                 if (stop) return;
+                // Move current root to end
                 await swap(0, i);
+
+                // call max heapify on the reduced heap
                 await heapify(i, 0);
+
                 document.getElementById(`bar-${i}`).classList.add("sorted");
             }
             document.getElementById(`bar-0`).classList.add("sorted");
         }
 
-        async function heapify(n, i) {
-            let largest = i;
-            let l = 2 * i + 1;
-            let r = 2 * i + 2;
+        async function combSort() {
+            let gap = array.length;
+            let shrink = 1.3;
+            let sorted = false;
+        
+            while (!sorted) {
+                gap = Math.floor(gap / shrink);
+                if (gap <= 1) {
+                    gap = 1;
+                    sorted = true;
+                }
+        
+                let i = 0;
+                while (i + gap < array.length) {
+                    if (stop) return;
+                    if (array[i] > array[i + gap]) {
+                        await swap(i, i + gap);
+                        sorted = false;
+                    }
+                    i++;
+                }
+            }
+        
+            for (let i = 0; i < array.length; i++) {
+                document.getElementById(`bar-${i}`).classList.add("sorted");
+            }
+        }
 
+        async function heapify(n, i) {
+            let largest = i; // Initialize largest as root
+            let l = 2 * i + 1; // left = 2*i + 1
+            let r = 2 * i + 2; // right = 2*i + 2
+
+            // If left child is larger than root
             if (l < n && array[l] > array[largest])
                 largest = l;
 
+            // If right child is larger than largest so far
             if (r < n && array[r] > array[largest])
                 largest = r;
 
+            // If largest is not root
             if (largest != i) {
                 await highlightBars([i, largest], "comparing");
                 await swap(i, largest);
+
+                // Recursively heapify the affected sub-tree
                 await heapify(n, largest);
             }
         }
@@ -441,7 +498,26 @@
             visualizeArray(array);
         }
 
+        function stopClicked(){
+            document.getElementById("resume").disabled = false;
+            document.getElementById("reset").disabled = false;
+        }
+        function disableSubmitButton() {
+            document.getElementById("submit").disabled = true;
+            document.getElementById("start").disabled = true;
+            document.getElementById("resume").disabled = true;
+            document.getElementById("reset").disabled = true;
+        }
+        
+        function enableSubmitButton() {
+            document.getElementById("submit").disabled = false;
+            document.getElementById("start").disabled = false;
+            document.getElementById("resume").disabled = false;
+            document.getElementById("reset").disabled = false;
+        }
+
         async function startSort() {
+            disableSubmitButton();
             reset();
             const sortMethod = document.getElementById("sortSelect").value;
             switch(sortMethod) {
@@ -455,23 +531,72 @@
                     await insertionSort();
                     break;
                 case "merge":
-                    await mergeSortWrapper();k
+                    await mergeSortWrapper();
                     break;
                 case "heap":
                     await heapSort();
+                    break;
+                case "comb":
+                    await combSort();
                     break;
                 case "quick":
                     await quickSort();
                     break;
             }
+            enableSubmitButton();
         }
 
-        // Tour guide implementation
+        const TimeComplexity={
+            bubble: {
+                best: "O(n)",
+                average: "O(n^2)",
+                worst: "O(n^2)",
+                space: "O(1)"
+            },
+            selection: {
+                best: "O(n^2)",
+                average: "O(n^2)",
+                worst: "O(n^2)",
+                space: "O(1)"
+            },
+            insertion: {
+                best: "O(n)",
+                average: "O(n^2)",
+                worst: "O(n^2)",
+                space: "O(1)"
+            },
+            merge: {
+                best: "O(n log n)",
+                average: "O(n log n)",
+                worst: "O(n log n)",
+                space: "O(n)"
+            },
+            comb: {
+                best: "O(n log n)",
+                average: "O(n^2)",
+                worst: "O(n^2)",
+                space: "O(1)"
+            }
+        }
+
+        function updateTimeComplexity(){
+            const sortMethod = document.getElementById("sortSelect").value;
+            const complexity=TimeComplexity[sortMethod];
+            document.getElementById("best-case").textContent = `Best Case: ${complexity.best}`;
+            document.getElementById("average-case").textContent = `Average Case: ${complexity.average}`;
+            document.getElementById("worst-case").textContent = `Worst Case: ${complexity.worst}`;
+            document.getElementById("space-complexity").textContent = `Space Complexity: ${complexity.space}`;
+        }
         const tourSteps = [
             {
                 title: "Welcome to Sorting Visualizer",
                 description: "This tour will guide you through the features of our sorting algorithm visualizer.",
                 target: "heading"
+            },
+            {
+                title: "Time Complexity",
+                description: "This section shows the time and space complexity of the selected sorting algorithm.",
+                target: "best-case"
             },
             {
                 title: "Enter Your Array",
@@ -491,7 +616,7 @@
             {
                 title: "Start Sorting",
                 description: "Click this button to start the sorting process.",
-                target: "startSort"
+                target: "start"
             },
             {
                 title: "Additional Controls",
@@ -545,7 +670,17 @@
         });
 
         // Start the tour when the page loads
-        window.addEventListener("load", startTour);
+        window.addEventListener("load", function() {
+            loader.style.display = "none";
+            startTour();
+        });
     </script>
+    <script>
+      var loader = document.getElementById("Loader");
+      window.addEventListener("load", function(){
+        loader.style.display = "none";
+      })
+    </script> 
 </body>
 </html>
+
