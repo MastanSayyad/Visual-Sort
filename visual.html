@@ -99,7 +99,7 @@
             margin: 10px 20px;
         }
         .tour-overlay {
-            position: fixed;
+            position: relative;
             top: 0;
             left: 0;
             width: 100%;
@@ -110,15 +110,16 @@
         }
 
         .tour-popup {
-            position: absolute;
-            background-color: white;
-            border-radius: 5px;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            max-width: 300px;
-            z-index: 1001;
-        }
-
+    position: fixed;
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 300px;
+    z-index: 1001;
+    max-height: calc(100vh - 40px); /* Ensure it doesn't exceed viewport height */
+    overflow-y: auto; /* Allow scrolling if content is too long */
+}
         .tour-popup h3 {
             margin-top: 0;
             color: #333;
@@ -135,10 +136,19 @@
             padding: 5px 10px;
             border-radius: 3px;
             cursor: pointer;
+            margin-right: 10px;
         }
 
         .tour-popup button:hover {
             background-color: #0056b3;
+        }
+
+        .tour-popup .skip-btn {
+            background-color: #dc3545;
+        }
+
+        .tour-popup .skip-btn:hover {
+            background-color: #c82333;
         }
     </style>
 </head>
@@ -183,8 +193,10 @@
             <h3 id="tourTitle"></h3>
             <p id="tourDescription"></p>
             <button id="tourNext">Next</button>
+            <button id="tourSkip" class="skip-btn">Skip</button>
         </div>
     </div>
+
 
     <script>
         let array = [];
@@ -633,32 +645,47 @@
         }
 
         function showStep(step) {
-            const tourPopup = document.getElementById("tourPopup");
-            const targetElement = document.getElementById(tourSteps[step].target);
-            const targetRect = targetElement.getBoundingClientRect();
+    const tourPopup = document.getElementById("tourPopup");
+    const targetElement = document.getElementById(tourSteps[step].target);
+    const targetRect = targetElement.getBoundingClientRect();
 
-            // Calculate position
-            let top = targetRect.bottom + 10;
-            let left = targetRect.left + targetRect.width / 2 - 150; // Center the popup
+    // Calculate position
+    let top = targetRect.bottom + 10;
+    let left = targetRect.left + targetRect.width / 2 - 150; // Center the popup
 
-            // Adjust if it goes off-screen
-            if (left < 10) left = 10;
-            if (left + 300 > window.innerWidth) left = window.innerWidth - 310;
-            if (top + 200 > window.innerHeight) top = targetRect.top - 210;
-
-            tourPopup.style.left = `${left}px`;
-            tourPopup.style.top = `${top}px`;
-
-            document.getElementById("tourTitle").textContent = tourSteps[step].title;
-            document.getElementById("tourDescription").textContent = tourSteps[step].description;
-
-            if (step === tourSteps.length - 1) {
-                document.getElementById("tourNext").textContent = "Finish";
-            } else {
-                document.getElementById("tourNext").textContent = "Next";
-            }
+    // Adjust if it goes off-screen
+    if (left < 10) left = 10;
+    if (left + 300 > window.innerWidth) left = window.innerWidth - 310;
+    
+    // Check if the popup would go below the viewport
+    if (top + 200 > window.innerHeight) {
+        // Position above the target element if it would go below
+        top = targetRect.top - 210;
+        
+        // If it's still off-screen (too high), position it at the top of the viewport
+        if (top < 10) {
+            top = 10;
         }
+    }
 
+    // Ensure the popup is within the viewport vertically
+    top = Math.max(10, Math.min(top, window.innerHeight - 210));
+
+    tourPopup.style.left = `${left}px`;
+    tourPopup.style.top = `${top}px`;
+
+    document.getElementById("tourTitle").textContent = tourSteps[step].title;
+    document.getElementById("tourDescription").textContent = tourSteps[step].description;
+
+    if (step === tourSteps.length - 1) {
+        document.getElementById("tourNext").textContent = "Finish";
+    } else {
+        document.getElementById("tourNext").textContent = "Next";
+    }
+
+    // Scroll the target element into view if it's not fully visible
+    targetElement.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+}
         document.getElementById("tourNext").addEventListener("click", () => {
             currentStep++;
             if (currentStep < tourSteps.length) {
@@ -674,6 +701,10 @@
             loader.style.display = "none";
             startTour();
         });
+        document.getElementById("tourSkip").addEventListener("click", () => {
+    document.getElementById("tourOverlay").style.display = "none";
+    currentStep = 0;
+});
     </script>
     <script>
       var loader = document.getElementById("Loader");
