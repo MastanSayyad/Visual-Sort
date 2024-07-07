@@ -5,6 +5,15 @@ Welcome to **Visual Sort**, a web-based sorting algorithm visualization tool bui
 ![image](https://github.com/MastanSayyad/Visual-Sort/assets/101971980/60a1d8c8-c21f-482c-9e41-01e4bd98af4f)
 
 
+##  Project Admin ✨
+
+<table align="center">
+  <tr>
+<td align="center"><a href="https://github.com/MastanSayyad"><img src="https://media.licdn.com/dms/image/D4D03AQH5h5wjzu5JCw/profile-displayphoto-shrink_400_400/0/1720377064846?e=1726099200&v=beta&t=yEkMjvHLm06OHyiDKMX_ZSRA_-Lqq1oZY8-ukd-dW0E" width="100px;" alt="Mastan Sayyad"/><br /><sub><b>Mastan Sayyad</b></sub></a></td>
+  
+ </tr>
+</table>
+
 ## #Live Demo
 
 Check out the live demo of the project: [Visual Sort](https://visual-sort-pink.vercel.app/)
