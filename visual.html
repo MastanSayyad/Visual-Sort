@@ -99,27 +99,27 @@
             margin: 10px 20px;
         }
         .tour-overlay {
-            position: relative;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
             z-index: 1000;
             display: none;
         }
 
         .tour-popup {
-    position: fixed;
-    background-color: white;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    max-width: 300px;
-    z-index: 1001;
-    max-height: calc(100vh - 40px); /* Ensure it doesn't exceed viewport height */
-    overflow-y: auto; /* Allow scrolling if content is too long */
-}
+            position: fixed;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            max-width: 300px;
+            z-index: 1001;
+            max-height: calc(100vh - 40px); /* Ensure it doesn't exceed viewport height */
+            overflow-y: auto; /* Allow scrolling if content is too long */
+        }
         .tour-popup h3 {
             margin-top: 0;
             color: #333;
