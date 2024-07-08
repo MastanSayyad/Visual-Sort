@@ -324,15 +324,30 @@ pre code {
   content: "ghhj";
 }
 
-.log:hover {
+.log {
   color: white !important;
-  background: rgb(34, 34, 139) !important;
 }
 
-#Loader{
-    background: white url(img/pre-loader.gif) no-repeat center center;
-    height: 100vh;
-    width: 100%;
-    position: fixed;
-    z-index: 100;
+.log:hover {
+  background: purple !important;
+}
+
+#Loader {
+  background: white url(img/pre-loader.gif) no-repeat center center;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
+
+.nav-link {
+  color: black;
+}
+
+.dropdown-item {
+  font-weight: 600 !important;
+}
+
+.dropdown-item:hover {
+  background: rgb(236, 188, 236) !important;
 }
