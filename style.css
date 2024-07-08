@@ -342,12 +342,21 @@ pre code {
 
 .nav-link {
   color: black;
+
+  transition: color 0.3s, border-bottom 0.3s;
+  border-bottom: none;
 }
 
-.dropdown-item {
-  font-weight: 600 !important;
+.nav-link.active {
+  color: rgb(219, 127, 219);
+  border-bottom: 2px solid rgb(219, 127, 219);
 }
 
 .dropdown-item:hover {
   background: rgb(236, 188, 236) !important;
+}
+
+.hover-move {
+  position: relative;
+  transition: transform 0.3s ease-in-out;
 }

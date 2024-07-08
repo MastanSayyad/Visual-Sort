@@ -56,6 +56,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <style>
+    .hover-move {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .hover-move:hover {
+      transform: translateX(20px);
+    }
+  </style>
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="72">
@@ -77,15 +86,15 @@
     <nav class="navbar navbar-expand-lg fixed-top bg-white" >
  
       <div class="container-fluid">
-          <a class="navbar-brand" style="font-weight: 900 ; color:rgb(219, 127, 219);" href="#">Visual Sort</a>
-          <button class="navbar-toggler" style="border-color: white;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        <div class="flex items-center"> <img src="images/fevicon.png" class="h-6 mr-2" alt=""><a class="navbar-brand" style="font-weight: 900 ; color:rgb(219, 127, 219);" href="#">Visual Sort</a></div>  
+          <button class="navbar-toggler" style="border-color: purple;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
               aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon" ></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end " id="navbarNav">
               <ul class="navbar-nav ms-auto">
                   <li class="nav-item" >
-                      <a class="nav-link" style="font-weight: 600;" href="#home-section">Home</a>
+                      <a class="nav-link" style="font-weight: 700;" href="#home-section">Home</a>
                   </li>
 
                   <li class="nav-item dropdown">
@@ -99,7 +108,7 @@
                       <li><a class="dropdown-item" href="">Comb Sort</a></li>
                       <li><a class="dropdown-item" href="mergesort.html">Merge Sort</a></li>
                       <li><a class="dropdown-item" href="">Heap Sort</a></li>
-                      <li><a class="dropdown-item" href="qui">Quick Sort</a></li>
+                      <li><a class="dropdown-item" href="">Quick Sort</a></li>
                   
                     </ul>
                   </li>
@@ -112,20 +121,20 @@
           </a>
         </li>
                   <li class="nav-item"> -->
-                      <a class="nav-link" style="font-weight: 600;" href="#programs-section">Algorithms</a>
+                      <a class="nav-link" style="font-weight: 700;" href="#programs-section">Algorithms</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" style="font-weight: 600;" href="#features-section">Features</a>
+                    <a class="nav-link" style="font-weight: 700;" href="#features-section">Features</a>
                 </li>
                   <li class="nav-item">
-                      <a class="nav-link" style="font-weight: 600;" href="#About-Us">About Us</a>
+                      <a class="nav-link" style="font-weight: 700;" href="#About-Us">About Us</a>
                   </li>
                   <li class="nav-item ">
-                    <a class="nav-link log" style="font-weight: 600; background-color: rgb(219, 127, 219);border-radius: 0.4rem; margin-left: 0.7rem;" href="login.html">Login</a>
+                    <a class="nav-link log" style="font-weight: 700; background-color: rgb(219, 127, 219);border-radius: 0.4rem; margin-left: 0.7rem;" href="login.html">Login</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                   <a class="nav-link log" style="font-weight: 600;  background-color:  rgb(219, 127, 219); border-radius: 0.4rem; margin-left: 0.7rem;" href="signup.html">Sign Up</a>
-              </li>
+              </li> -->
                
               </ul>
           </div>
@@ -135,7 +144,7 @@
 
     <div class="intro-section" id="home-section">
 
-      <!--  <div class="slide-1" style="background-image: url('images/1.jpg');" data-stellar-background-ratio="0.5">
+       <!-- <div class="slide-1" style="background-image: url('images/1.jpg');" data-stellar-background-ratio="0.5">
        <div class="container">
           <div class="row align-items-center">
             <div class="col-12">
@@ -153,21 +162,28 @@
         </div> -->
 
 
-<div class="flex p-5 items-center justify-center">
-  <div class="sm:w-full md:w-1/2 ">
-
-    <h1 class="text-4xl font-black sm:text-5xl md:text-6xl text-black mb-3">
-      The <span style="color: rgb(219, 127, 219);">#1</span> Sorting Visualization Tool
-    </h1>
-    
-    <p class="mb-4 text-base sm:text-sm md:text-lg text-black ">Our sorting visualizer tool provides an interactive way to visualize sorting algorithms in action helping users understand how different algorithm work and their efficiency in sorting data.</p>
-
-  <a class="mr-3 p-2 rounded-md font-semibold hover:text-white" style="background: rgb(219, 127, 219);" href="visual.html"> <button>Get Started</button></a>
-
-  <a class="mr-3 bg-gray-300 p-2 rounded-md font-semibold hover:text-purple-700"  href="#programs-section"> <button class="items-center">Explore <span  class="text-2xl"  >&#x203A;</span></button></a> </div>
-  <div class="w-1/2 md:flex hidden"><img src="./images/home.jpg" alt=""></div>
-
-</div>
+        <div class="flex p-5 items-center justify-center ml-10 mr-10">
+          <div class="sm:w-full md:w-1/2">
+            <h1 class="text-4xl font-bold sm:text-5xl md:text-6xl text-black mb-3">
+              The <span style="color: rgb(219, 127, 219);">#1</span> Sorting Visualization Tool
+            </h1>
+            <p class="mb-4 text-base sm:text-sm md:text-lg text-black">
+              Our sorting visualizer tool provides an interactive way to visualize sorting algorithms in action helping users understand how different algorithm work and their efficiency in sorting data.
+            </p>
+            <a class="mr-3 p-2 rounded-md font-semibold text-white" style="background: rgb(219, 127, 219);" href="visual.html">
+              <button>Get Started</button>
+            </a>
+            <a class="mr-3 bg-gray-300 p-2 rounded-md font-semibold hover:text-purple-700" href="#programs-section">
+              <button class="items-center">Explore <span class="text-2xl">&#x203A;</span></button>
+            </a>
+          </div>
+          <div class="w-1/2 md:flex hidden">
+            <img id="movingImage" class="hover-move" src="./images/home.jpg" alt="">
+          </div>
+        </div>
+        
+        
+        
 
       </div>
     </div>
@@ -1076,6 +1092,55 @@
 
 
   <script>
+
+
+  const img = document.getElementById('movingImage');
+
+  img.addEventListener('mouseover', (event) => {
+    const mouseX = event.clientX;
+    const mouseY = event.clientY;
+    const imgRect = img.getBoundingClientRect();
+    const imgCenterX = imgRect.left + imgRect.width / 2;
+    const imgCenterY = imgRect.top + imgRect.height / 2;
+
+    const deltaX = imgCenterX - mouseX;
+    const deltaY = imgCenterY - mouseY;
+
+    const distance = 40; // Distance to move away from the cursor
+
+    const moveX = deltaX > 0 ? distance : -distance;
+    const moveY = deltaY > 0 ? distance : -distance;
+
+    img.style.transform = `translate(${moveX}px, ${moveY}px)`;
+  });
+
+  img.addEventListener('mouseout', () => {
+    img.style.transform = 'translate(0, 0)';
+  });
+
+
+
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    function changeLinkState() {
+      let index = sections.length;
+
+      while(--index && window.scrollY + 20 < sections[index].offsetTop) {}
+
+      navLinks.forEach((link) => link.classList.remove('active'));
+      navLinks[index].classList.add('active');
+    }
+
+    changeLinkState();
+    window.addEventListener('scroll', changeLinkState);
+  });
+  
+
+
     const topButton = document.getElementById("topbtn");
     window.onscroll = function () {
         if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
