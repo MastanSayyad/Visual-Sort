@@ -853,31 +853,6 @@ h5,
   padding-bottom: 10px !important;
 }
 
-/* Blocks */
-.intro-section {
-  position: relative;
-}
-.intro-section,
-.intro-section .container > .row {
-  height: 100vh;
-  min-height: 900px;
-}
-.intro-section.single-cover,
-.intro-section.single-cover .container > .row {
-  height: 50vh;
-  min-height: 400px;
-}
-.intro-section h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 1.5rem;
-}
-.intro-section p {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 1.1rem;
-}
-
 .img-absolute {
   position: absolute;
   right: 10%;
@@ -1669,7 +1644,7 @@ h5,
 .review-slider .swiper-wrapper .swiper-slide h3 {
   font-weight: 400;
 }
-.swiper-wrapper .swiper-slide img{
+.swiper-wrapper .swiper-slide img {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1873,17 +1848,18 @@ body {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
 }
 
- .dropdown-item {
+.dropdown-item {
   color: #333;
   padding: 0.5rem 1rem;
   transition: background-color 0.2s, color 0.2s;
 }
 
-.dropdown-item:hover, .navbar-nav .dropdown-item:focus {
+.dropdown-item:hover,
+.navbar-nav .dropdown-item:focus {
   background-color: rgba(0, 0, 0, 0.075);
   color: #000;
 }
- .dropdown-toggle::after {
+.dropdown-toggle::after {
   margin-left: 0.255em;
   vertical-align: 0.255em;
 }
