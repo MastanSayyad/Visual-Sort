@@ -324,9 +324,12 @@ pre code {
   content: "ghhj";
 }
 
-.log {
+.nav-item .log {
   color: white !important;
-  background: rgb(219, 127, 219) !important;
+  width: fit-content;
+  font-weight: 700;
+  background-color: rgb(219, 127, 219);
+  border-radius: 1rem;
 }
 
 .log:hover {
@@ -343,15 +346,18 @@ pre code {
 
 .nav-link {
   color: black;
-
+  display: inline-block; /* Ensures the link takes only the necessary width */
+  position: relative; /* Allows the use of pseudo-elements */
   transition: color 0.3s, border-bottom 0.3s;
   border-bottom: none;
+  width: fit-content;
 }
 
 .nav-link.active {
   color: rgb(219, 127, 219);
   font-weight: 800;
   border-bottom: 2px solid rgb(219, 127, 219);
+  font-weight: 800;
 }
 
 .dropdown-item:hover {
@@ -361,4 +367,13 @@ pre code {
 .hover-move {
   position: relative;
   transition: transform 0.3s ease-in-out;
+}
+
+.navbar-toggler {
+  background-color: #7e22ce; /* Purple background color */
+  border-color: #7e22ce; /* Purple border color */
+}
+
+.navbar-toggler-icon {
+  background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="rgba(255, 255, 255, 1)" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
 }

@@ -148,7 +148,7 @@
 
     <div class="intro-section" id="home-section">
 
-       <!-- <div class="slide-1" style="background-image: url('images/1.jpg');" data-stellar-background-ratio="0.5">
+       <div class="slide-1" style="background-image: url('images/1.jpg');" data-stellar-background-ratio="0.5">
        <div class="container">
           <div class="row align-items-center">
             <div class="col-12">
@@ -163,17 +163,22 @@
             </div>
 
           </div>
-        </div> -->
+        </div>
 
 
-        <div class="flex p-5 items-center justify-center ml-10 mr-10">
-          <div class="sm:w-full md:w-1/2">
-            <h1 class="text-4xl font-bold sm:text-5xl md:text-6xl text-black mb-3">
-              The <span style="color: rgb(219, 127, 219);">#1</span> Sorting Visualization Tool
+        <!-- <div class="flex p-5 items-center justify-center ml-5 mr-5">
+          <div class="sm:w-full md:w-2/4">
+            <div class="mr-5">
+            <h1 class="text-4xl font-semibold sm:text-5xl md:text-6xl text-black mb-4">
+              The <span style="color: rgb(219, 127, 219);">#1</span> Sorting 
+              
+              <p class="mt-3">Visualization Tool</p>
             </h1>
+            
             <p class="mb-4 text-base sm:text-sm md:text-lg text-black">
               Our sorting visualizer tool provides an interactive way to visualize sorting algorithms in action helping users understand how different algorithm work and their efficiency in sorting data.
             </p>
+          </div>
             <a class="mr-3 p-2 rounded-md font-semibold text-white" style="background: rgb(219, 127, 219);" href="visual.html">
               <button>Get Started</button>
             </a>
@@ -181,10 +186,10 @@
               <button class="items-center">Explore <span class="text-2xl">&#x203A;</span></button>
             </a>
           </div>
-          <div class="w-1/2 md:flex hidden">
-            <img id="movingImage" class="hover-move" src="./images/home.jpg" alt="">
+          <div class="w-2/4 md:flex hidden">
+            <img  src="./images/home.jpg" alt="">
           </div>
-        </div>
+        </div> -->
         
         
 
@@ -566,7 +571,7 @@
   </section>
        <div>
     <main>
-        <div class="main"  id="About-Us">
+        <div class="main" id="About-Us" >
                     <div class="card" data-aos="fade-up" data-aos-delay="200">
                     <h1> ABOUT US</h1>
                         <img class="img" src="images/coding.gif" alt="">
@@ -574,7 +579,7 @@
                     </div>
                 </div>
             </div>
-            <section class="mb-10 mt-40 bg-white">
+            <section class="mb-10 mt-40 bg-white"  >
                 <div class="py-12">
                     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div class="lg:text-center">
@@ -1097,30 +1102,6 @@
   <script>
 
 
-  const img = document.getElementById('movingImage');
-
-  img.addEventListener('mouseover', (event) => {
-    const mouseX = event.clientX;
-    const mouseY = event.clientY;
-    const imgRect = img.getBoundingClientRect();
-    const imgCenterX = imgRect.left + imgRect.width / 2;
-    const imgCenterY = imgRect.top + imgRect.height / 2;
-
-    const deltaX = imgCenterX - mouseX;
-    const deltaY = imgCenterY - mouseY;
-
-    const distance = 40; // Distance to move away from the cursor
-
-    const moveX = deltaX > 0 ? distance : -distance;
-    const moveY = deltaY > 0 ? distance : -distance;
-
-    img.style.transform = `translate(${moveX}px, ${moveY}px)`;
-  });
-
-  img.addEventListener('mouseout', () => {
-    img.style.transform = 'translate(0, 0)';
-  });
-
 
 
 
@@ -1132,7 +1113,7 @@
     function changeLinkState() {
       let index = sections.length;
 
-      while(--index && window.scrollY + 20 < sections[index].offsetTop) {}
+      while(--index && window.scrollY + 10 < sections[index].offsetTop) {}
 
       navLinks.forEach((link) => link.classList.remove('active'));
       navLinks[index].classList.add('active');

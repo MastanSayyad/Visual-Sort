@@ -857,7 +857,7 @@ h5,
 .intro-section {
   position: relative;
 }
-/* .intro-section,
+.intro-section,
 .intro-section .container > .row {
   height: 100vh;
   min-height: 900px;
@@ -876,7 +876,7 @@ h5,
 .intro-section p {
   color: rgba(255, 255, 255, 0.5);
   font-size: 1.1rem;
-} */
+}
 
 .img-absolute {
   position: absolute;
@@ -1641,7 +1641,7 @@ h5,
 }
 
 .nav-link:hover {
-  color: purple;
+  color: rgb(219, 127, 219);
   transition: all 0.3s ease;
 }
 
