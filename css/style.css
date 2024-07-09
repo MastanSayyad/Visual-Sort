@@ -1824,7 +1824,7 @@ body {
 }
 
 .topbtn {
-  position: fixed;
+  /* position: fixed;
   width: 50px;
   height: 50px;
   background: #7971ea;
@@ -1835,7 +1835,32 @@ body {
   line-height: 50px;
   color: white !important;
   font-size: 22px;
-  border-radius: 50%;
+  border-radius: 50%; */
+  position: fixed;
+  bottom: 50px; /* Adjust this value to move the button up or down */
+  left: 50px; /* Adjust this value to move the button left or right */
+  z-index: 1000; /* Ensure the button appears above other elements */
+}
+
+.gotopbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+  background: #7971ea;
+  color: white; /* Icon color */
+  border-radius: 50%; /* Make it a circle */
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.gotopbtn:hover {
+  background-color: #555; /* Change the background color on hover */
+}
+
+.gotopbtn i {
+  font-size: 24px; /* Adjust the icon size as needed */
 }
 
 .gotopbtn i {
