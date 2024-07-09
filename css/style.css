@@ -1669,6 +1669,12 @@ h5,
 .review-slider .swiper-wrapper .swiper-slide h3 {
   font-weight: 400;
 }
+.swiper-wrapper .swiper-slide img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
 
 #contact button:hover {
   background: rgb(199, 35, 199);
@@ -1859,4 +1865,61 @@ body {
 
 .gotopbtn i {
   color: white !important; /* Ensure the icon color stays white */
+}
+.dropdown-menu {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
+}
+
+ .dropdown-item {
+  color: #333;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.dropdown-item:hover, .navbar-nav .dropdown-item:focus {
+  background-color: rgba(0, 0, 0, 0.075);
+  color: #000;
+}
+ .dropdown-toggle::after {
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+}
+
+/* .navbar-nav .nav-link {
+  color: #555;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: color 0.2s;
+} */
+
+/* .navbar-nav .nav-link:hover, .navbar-nav .nav-link:focus {
+  color: #000;
+} */
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 0.125rem 0 0;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
+}
+
+.nav-item.show .dropdown-menu {
+  display: block;
 }
