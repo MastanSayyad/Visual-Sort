@@ -2,7 +2,7 @@
 <html lang="en">
 
   <head>
-    <title>SortIt</title>
+    <title>Sort It</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    
@@ -56,6 +56,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <style>
+    .hover-move {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .hover-move:hover {
+      transform: translateX(20px);
+    }
+  </style>
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="72">
@@ -74,54 +83,58 @@
     </div>
 
 
-    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #303842;">
+    <nav class="navbar navbar-expand-lg fixed-top bg-white" >
  
       <div class="container-fluid">
-          <a class="navbar-brand" style="font-weight: 900 ; color: white;" href="#">Visual Sort</a>
-          <button class="navbar-toggler" style="border-color: white;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        <div class="flex items-center"> <img src="images/fevicon.png" class="h-6 mr-2" alt=""><a class="navbar-brand" style="font-weight: 900 ; color:rgb(219, 127, 219);" href="#">Visual Sort</a></div>  
+          <button class="navbar-toggler" style=" background-color: rgb(202, 111, 202) ;color: black;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
               aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon" ></span>
+              <span class="navbar-toggler-icon " ></span>
           </button>
-          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <div class="collapse navbar-collapse justify-content-end " id="navbarNav">
               <ul class="navbar-nav ms-auto">
-                  <li class="nav-item">
-                      <a class="nav-link" style="font-weight: 500;" href="#home-section">Home</a>
+                  <li class="nav-item" >
+                      <a class="nav-link"  href="#home-section">Home</a>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle font-medium" href="./visual.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Sorting Visualizers
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="Bubble.html">Bubble Sort</a></li>
+                      <li><a class="dropdown-item" href="selectionsort.html">Selection Sort</a></li>
+                      <li><a class="dropdown-item" href="Insertion.html">Insertion Sort</a></li>
+                      <li><a class="dropdown-item" href="">Comb Sort</a></li>
+                      <li><a class="dropdown-item" href="mergesort.html">Merge Sort</a></li>
+                      <li><a class="dropdown-item" href="">Heap Sort</a></li>
+                      <li><a class="dropdown-item" href="">Quick Sort</a></li>
+                  
+                    </ul>
                   </li>
                   <!-- <li class="nav-item">
-                      <a class="nav-link" style="font-weight: 500;" href="#algorithm-section">Sorting Visualizers</a>
+                      <a class="nav-link" style="font-weight: 600;" href="#algorithm-section">Sorting Visualizers</a>
                   </li> -->
-                     <li class="nav-item dropdown">
-          <a class="nav-link" href="./visual.html">
+                     <!-- <li class="nav-item dropdown">
+          <a  class="nav-link" style="font-weight: 600;" href="./visual.html">
             Sorting Visualizers
           </a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" style="font-weight: 500;" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Algorithms
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#bubble-sort-section">Bubble Sort</a></li>
-              <li><a class="dropdown-item" href="#merge-sort-section">Merge Sort</a></li>
-              <li><a class="dropdown-item" href="#quick-sort-section">Quick Sort</a></li>
-              <li><a class="dropdown-item" href="#selection-sort-section">Selection Sort</a></li>
-              <li><a class="dropdown-item" href="#bubble-sort-section">Insertion Sort</a></li>
-              <li><a class="dropdown-item" href="#bubble-sort-section">Heap Sort</a></li>
-              <li><a class="dropdown-item" href="#bubble-sort-section">Comb Sort</a></li>
-              <!-- Add more sorting algorithms as needed -->
-          </ul>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" style="font-weight: 500;" href="#features-section">Features</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" style="font-weight: 500;" href="#About-Us">About Us</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link log" style="font-weight: 500; background-color: rgb(55, 55, 172); border-radius: 0.4rem; margin-left: 0.7rem;" href="login.html">Login</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link log" style="font-weight: 500; background-color: rgb(55, 55, 172); border-radius: 0.4rem; margin-left: 0.7rem;" href="signup.html">Sign Up</a>
-      </li>
+                  <li class="nav-item"> -->
+                      <a class="nav-link" style="font-weight: 500;" href="#programs-section">Algorithms</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" style="font-weight: 500;" href="#features-section">Features</a>
+                </li>
+                  <li class="nav-item">
+                      <a class="nav-link" style="font-weight: 500;" href="#About-Us">About Us</a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link log px-3" href="login.html">Login</a>
+                </li>
+                <!-- <li class="nav-item">
+                  <a class="nav-link log" style="font-weight: 600;  background-color:  rgb(219, 127, 219); border-radius: 0.4rem; margin-left: 0.7rem;" href="signup.html">Sign Up</a>
+              </li> -->
                
               </ul>
           </div>
@@ -131,8 +144,8 @@
 
     <div class="intro-section" id="home-section">
 
-      <div class="slide-1" style="background-image: url('images/1.jpg');" data-stellar-background-ratio="0.5">
-        <div class="container">
+       <div class="slide-1" style="background-image: url('images/1.jpg');" data-stellar-background-ratio="0.5">
+       <div class="container">
           <div class="row align-items-center">
             <div class="col-12">
               <div class="row align-items-center">
@@ -147,6 +160,36 @@
 
           </div>
         </div>
+
+
+        <!-- <div class="flex p-5 items-center justify-center ml-5 mr-5">
+          <div class="sm:w-full md:w-2/4">
+            <div class="mr-5">
+            <h1 class="text-4xl font-semibold sm:text-5xl md:text-6xl text-black mb-4">
+              The <span style="color: rgb(219, 127, 219);">#1</span> Sorting 
+              
+              <p class="mt-3">Visualization Tool</p>
+            </h1>
+            
+            <p class="mb-4 text-base sm:text-sm md:text-lg text-black">
+              Our sorting visualizer tool provides an interactive way to visualize sorting algorithms in action helping users understand how different algorithm work and their efficiency in sorting data.
+            </p>
+          </div>
+            <a class="mr-3 p-2 rounded-md font-semibold text-white" style="background: rgb(219, 127, 219);" href="visual.html">
+              <button>Get Started</button>
+            </a>
+            <a class="mr-3 bg-gray-300 p-2 rounded-md font-semibold hover:text-purple-700" href="#programs-section">
+              <button class="items-center">Explore <span class="text-2xl">&#x203A;</span></button>
+            </a>
+          </div>
+          <div class="w-2/4 md:flex hidden">
+            <img  src="./images/home.jpg" alt="">
+          </div>
+        </div> -->
+        
+        
+        
+
       </div>
     </div>
 
@@ -525,7 +568,7 @@
   </section>
        <div>
     <main>
-        <div class="main"  id="About-Us">
+        <div class="main" id="About-Us" >
                     <div class="card" data-aos="fade-up" data-aos-delay="200">
                     <h1> ABOUT US</h1>
                         <img class="img" src="images/coding.gif" alt="">
@@ -533,7 +576,7 @@
                     </div>
                 </div>
             </div>
-            <section class="mb-10 mt-40 bg-white">
+            <section class="mb-10 mt-40 bg-white"  >
                 <div class="py-12">
                     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div class="lg:text-center">
@@ -1054,6 +1097,31 @@
 
 
   <script>
+
+
+
+
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    function changeLinkState() {
+      let index = sections.length;
+
+      while(--index && window.scrollY + 10 < sections[index].offsetTop) {}
+
+      navLinks.forEach((link) => link.classList.remove('active'));
+      navLinks[index].classList.add('active');
+    }
+
+    changeLinkState();
+    window.addEventListener('scroll', changeLinkState);
+  });
+  
+
+
     const topButton = document.getElementById("topbtn");
     window.onscroll = function () {
         if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
