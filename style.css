@@ -326,6 +326,7 @@ pre code {
 
 .log {
   color: white !important;
+  background: rgb(219, 127, 219) !important;
 }
 
 .log:hover {
@@ -349,6 +350,7 @@ pre code {
 
 .nav-link.active {
   color: rgb(219, 127, 219);
+  font-weight: 800;
   border-bottom: 2px solid rgb(219, 127, 219);
 }
 
