@@ -1,0 +1,23 @@
+name: Issue Welcome Comment
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add Welcome Comment
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.issues.createComment({
+              issue_number: context.payload.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `Thank you for creating an issue! 🎉 Please make sure to:
+              - Read our [CONTRIBUTING.md](https://github.com/${context.repo.owner}/${context.repo.repo}/blob/main/CONTRIBUTING.md) guide.
+              - Star our repo ⭐ if you find it useful.
+              Your contribution is appreciated!`
+            })

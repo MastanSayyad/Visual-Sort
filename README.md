@@ -5,6 +5,15 @@ Welcome to **Visual Sort**, a web-based sorting algorithm visualization tool bui
 ![image](https://github.com/MastanSayyad/Visual-Sort/assets/101971980/60a1d8c8-c21f-482c-9e41-01e4bd98af4f)
 
 
+##  Project Admin ✨
+
+<table align="center">
+  <tr>
+<td align="center"><a href="https://github.com/MastanSayyad"><img src="https://media.licdn.com/dms/image/D4D03AQH5h5wjzu5JCw/profile-displayphoto-shrink_400_400/0/1720377064846?e=1726099200&v=beta&t=yEkMjvHLm06OHyiDKMX_ZSRA_-Lqq1oZY8-ukd-dW0E" width="100px;" alt="Mastan Sayyad"/><br /><sub><b>Mastan Sayyad</b></sub></a></td>
+  
+ </tr>
+</table>
+
 ## #Live Demo
 
 Check out the live demo of the project: [Visual Sort](https://visual-sort-pink.vercel.app/)
@@ -90,8 +99,17 @@ You can clone the repository using the command line or GitHub Desktop.
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/MastanSayyad/Visual-Sort/blob/main/LICENSE) file for details
 
 
-**Please Give a Star and Thank you for your visit :)**
 
+<div align="center">
+  <h2 style="font-size:3rem;">Our Contributors <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" alt="Red Heart" width="40" height="40" /></h2>
+  <h3>Thank you for contributing to our repository</h3>
+
+  <a href="https://github.com/MastanSayyad/Visual-Sort/graphs/contributors">
+    <img src="https://contributors-img.web.app/image?repo=MastanSayyad/Visual-Sort"/>
+  </a>
+
+  <p style="font-family:var(--ff-philosopher);font-size:3rem;"><b>Show some <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" alt="Red Heart" width="40" height="40" /> by starring this awesome repository!</b></p>
+</div>
 
 
 

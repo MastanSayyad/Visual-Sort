@@ -862,31 +862,6 @@ body.darkMode {
   padding-bottom: 10px !important;
 }
 
-/* Blocks */
-.intro-section {
-  position: relative;
-}
-.intro-section,
-.intro-section .container > .row {
-  height: 100vh;
-  min-height: 900px;
-}
-.intro-section.single-cover,
-.intro-section.single-cover .container > .row {
-  height: 50vh;
-  min-height: 400px;
-}
-.intro-section h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 1.5rem;
-}
-.intro-section p {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 1.1rem;
-}
-
 .img-absolute {
   position: absolute;
   right: 10%;
@@ -1552,16 +1527,6 @@ body.darkMode {
   transform: scale(1.2);
 }
 
-.nav-link {
-  color: #7971ea;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-  color: #555;
-}
-
 .container_1 {
   width: 100%;
   margin: auto;
@@ -1655,21 +1620,13 @@ body.darkMode {
 }
 
 .nav-link {
-  color: white;
+  color: black;
+  text-decoration: none;
 }
 
 .nav-link:hover {
-  color: purple;
+  color: rgb(219, 127, 219);
   transition: all 0.3s ease;
-}
-
-.navbar.fixed-top.navbar-light .navbar-brand,
-.navbar.fixed-top.navbar-light .navbar-nav .nav-link {
-  color: black;
-}
-
-.navbar.fixed-top.navbar-light .navbar-nav .nav-link:hover {
-  color: purple;
 }
 
 /* Style for placeholder text */
@@ -1695,6 +1652,12 @@ body.darkMode {
 
 .review-slider .swiper-wrapper .swiper-slide h3 {
   font-weight: 400;
+}
+.swiper-wrapper .swiper-slide img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }
 
 #contact button:hover {
@@ -1856,15 +1819,126 @@ body {
 
 @media (max-width: 768px) {
   .container {
-      padding-left: 15px;
-      padding-right: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   h1 {
-      font-size: 2rem;
+    font-size: 2rem;
   }
 
   h2 {
-      font-size: 1.5rem;
+    font-size: 1.5rem;
   }
+}
+
+.topbtn {
+  position: fixed;
+  bottom: 50px;
+  left: 50px;
+  z-index: 1000;
+}
+
+.gotopbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+  background: rgb(219, 127, 219);
+  color: white; /* Icon color */
+  border-radius: 50%; /* Make it a circle */
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.gotopbtn:hover {
+  background-color: #555; /* Change the background color on hover */
+}
+
+.gotopbtn i {
+  font-size: 24px; /* Adjust the icon size as needed */
+}
+
+.gotopbtn i {
+  color: white !important; /* Ensure the icon color stays white */
+}
+.dropdown-menu {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
+}
+
+.dropdown-item {
+  color: #333;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.dropdown-item:hover,
+.navbar-nav .dropdown-item:focus {
+  background-color: rgba(0, 0, 0, 0.075);
+  color: #000;
+}
+.dropdown-toggle::after {
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 0.125rem 0 0;
+  font-size: 1rem;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
+}
+
+.nav-item.show .dropdown-menu {
+  display: block;
+}
+
+.chatbot-container {
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.chatbot-button {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-text {
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 200px; /* Adjust max-width as needed */
+  padding: 7px;
+  text-align: center;
+  color: white;
+  background: rgb(219, 127, 219);
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 10;
+}
+
+.chatbot-button:hover .tooltip-text,
+.chatbot-button:focus .tooltip-text {
+  opacity: 1;
 }

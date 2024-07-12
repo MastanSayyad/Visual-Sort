@@ -66,7 +66,6 @@
         #heading {
             text-align: center;
             margin-top: 20px;
-            color: #333;
             font-size: 36px;
             font-weight: bold;
         }
@@ -91,34 +90,188 @@
         .sorted {
             background-color: #2ecc71;
         }
-        .time{
-            display:flex;
-            align-items: end;
-            justify-content:space-around;
-            margin: 10px 20px;
+        .tour-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            display: none;
+        }
+        .tour-popup {
+            position: fixed;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            max-width: 300px;
+            z-index: 1001;
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+        }
+        .tour-popup h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .tour-popup p {
+            margin-bottom: 15px;
+        }
+        .tour-popup button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .tour-popup button:hover {
+            background-color: #0056b3;
+        }
+        .tour-popup .skip-btn {
+            background-color: #dc3545;
+        }
+        .tour-popup .skip-btn:hover {
+            background-color: #c82333;
+        }
+        .sidebar {
+            height: 90%;
+            width: 0;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            right: 0;
+            background: linear-gradient(135deg, #111 0%, #333 100%);
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            color: white;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+        }
+        .sidebar h2 {
+            color: #f1f1f1;
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .sidebar h3 {
+            color: #ddd;
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .sidebar p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .sidebar pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background-color: #222;
+    border: 1px solid #444;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+        .sidebar-content {
+            padding: 0 20px;
+        }
+        .sidebar table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+.sidebar table td {
+    padding: 5px;
+    border-bottom: 1px solid #444;
+}
+
+.sidebar table td:first-child {
+    width: 30%;
+}
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #111;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            transition: 0.3s;
+        }
+        .openbtn:hover {
+            background-color: #444;
+        }
+        .openbtn.active {
+            background-color: #4CAF50;
+        }
+        .complexity-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.complexity-box {
+    width: 48%;
+    background-color: #222;
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.complexity-box h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.complexity-box table {
+    width: 100%;
+}
+
+.complexity-box p {
+    margin: 0;
+}
+
+.sidebar {
+    overflow-y: auto;
+}
+
+.sidebar-content {
+    padding: 0 20px 20px 20px;
+}
+        #main {
+            transition: margin-right .5s;
+            padding: 16px;
         }
     </style>
 </head>
 <body>
+    <div id="Loader"></div>
     <div class="header">
-        <h1>Sorting Algorithms Visualization</h1>
+        <h1 id="heading">Sorting Algorithms Visualization</h1>
     </div>
 
-    <div id="contain">
-        <h2 id="heading">SORTING VISUALIZATION</h2>
-        <div class="time">
-            <div><h3>Time Complexity</h3></div>
-            <div><h3 id="best-case">Best Case: O(n)</h3></div>
-            <div><h3 id="worst-case">Worst Case: O(n^2)</h3></div>
-            <div><h3 id="average-case">Average Case: O(n^2)</h3></div>
-            <div><h3 id="space-complexity">Space Complexity: O(1)</h3></div>
+    <div id="mySidebar" class="sidebar">
+        <div class="sidebar-content">
+            <div id="algoInfo"></div>
         </div>
+    </div>
+
+    <div id="main">
+        <button class="openbtn" onclick="toggleNav()">&#9776; Algorithm Info</button>
         <div class="sh" id="visualization"></div>
 
         <div id="buttons">
             <input id="array" type="text" placeholder="Enter array separated by space" size="30">
             <button id="submit" class="btn-primary" onclick="submit()">Submit</button>
-            <select id="sortSelect" onchange="updateTimeComplexity()">
+            <select id="sortSelect" onchange="updateAlgoInfo()">
                 <option value="bubble">Bubble Sort</option>
                 <option value="selection">Selection Sort</option>
                 <option value="insertion">Insertion Sort</option>
@@ -135,9 +288,19 @@
         </div>
     </div>
 
+    <div class="tour-overlay" id="tourOverlay">
+        <div class="tour-popup" id="tourPopup">
+            <h3 id="tourTitle"></h3>
+            <p id="tourDescription"></p>
+            <button id="tourNext">Next</button>
+            <button id="tourSkip" class="skip-btn">Skip</button>
+        </div>
+    </div>
+
     <script>
         let array = [];
         let stop = false;
+        let sidebarOpen = false;
         const delay = ms => new Promise(res => setTimeout(res, ms));
         const delayTime = 300;
 
@@ -322,19 +485,13 @@
         async function heapSort() {
             let n = array.length;
 
-            // Build heap (rearrange array)
             for (let i = Math.floor(n / 2) - 1; i >= 0; i--)
                 await heapify(n, i);
 
-            // One by one extract an element from heap
             for (let i = n - 1; i > 0; i--) {
                 if (stop) return;
-                // Move current root to end
                 await swap(0, i);
-
-                // call max heapify on the reduced heap
                 await heapify(i, 0);
-
                 document.getElementById(`bar-${i}`).classList.add("sorted");
             }
             document.getElementById(`bar-0`).classList.add("sorted");
@@ -369,24 +526,19 @@
         }
 
         async function heapify(n, i) {
-            let largest = i; // Initialize largest as root
-            let l = 2 * i + 1; // left = 2*i + 1
-            let r = 2 * i + 2; // right = 2*i + 2
+            let largest = i;
+            let l = 2 * i + 1;
+            let r = 2 * i + 2;
 
-            // If left child is larger than root
             if (l < n && array[l] > array[largest])
                 largest = l;
 
-            // If right child is larger than largest so far
             if (r < n && array[r] > array[largest])
                 largest = r;
 
-            // If largest is not root
             if (largest != i) {
                 await highlightBars([i, largest], "comparing");
                 await swap(i, largest);
-
-                // Recursively heapify the affected sub-tree
                 await heapify(n, largest);
             }
         }
@@ -451,6 +603,7 @@
             document.getElementById("resume").disabled = false;
             document.getElementById("reset").disabled = false;
         }
+
         function disableSubmitButton() {
             document.getElementById("submit").disabled = true;
             document.getElementById("start").disabled = true;
@@ -495,48 +648,267 @@
             enableSubmitButton();
         }
 
-        const TimeComplexity={
-            bubble: {
-                best: "O(n)",
-                average: "O(n^2)",
-                worst: "O(n^2)",
-                space: "O(1)"
-            },
-            selection: {
-                best: "O(n^2)",
-                average: "O(n^2)",
-                worst: "O(n^2)",
-                space: "O(1)"
-            },
-            insertion: {
-                best: "O(n)",
-                average: "O(n^2)",
-                worst: "O(n^2)",
-                space: "O(1)"
-            },
-            merge: {
-                best: "O(n log n)",
-                average: "O(n log n)",
-                worst: "O(n log n)",
-                space: "O(n)"
-            },
-            comb: {
-                best: "O(n log n)",
-                average: "O(n^2)",
-                worst: "O(n^2)",
-                space: "O(1)"
+        const AlgorithmInfo = {
+    bubble: {
+        description: "Bubble Sort repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order.",
+        algorithm: `1. Start with the first element.
+2. Compare the current element with the next element.
+3. If the current element is greater than the next element, swap them.
+4. Move to the next element and repeat step 2.
+5. Continue this process until no more swaps are needed.`,
+        timeComplexity: {
+            best: "O(n)",
+            average: "O(n²)",
+            worst: "O(n²)"
+        },
+        spaceComplexity: "O(1)\n\n"
+    },
+    selection: {
+        description: "Selection Sort divides the input list into two parts: a sorted portion at the left end and an unsorted portion at the right end.",
+        algorithm: `1. Find the smallest element in the unsorted portion.
+2. Swap it with the first element of the unsorted portion.
+3. Move the boundary between the sorted and unsorted portions one element to the right.
+4. Repeat steps 1-3 until the entire array is sorted.`,
+        timeComplexity: {
+            best: "O(n²)",
+            average: "O(n²)",
+            worst: "O(n²)"
+        },
+        spaceComplexity: "O(1)\n\n"
+    },
+    insertion: {
+        description: "Insertion Sort builds the final sorted array one item at a time. It is much less efficient on large lists than more advanced algorithms.",
+        algorithm: `1. Start with the second element.
+2. Compare it with the elements before it.
+3. Insert it into its correct position in the sorted portion.
+4. Move to the next unsorted element.
+5. Repeat steps 2-4 until all elements are sorted.`,
+        timeComplexity: {
+            best: "O(n)",
+            average: "O(n²)",
+            worst: "O(n²)"
+        },
+        spaceComplexity: "O(1)\n\n"
+    },
+    merge: {
+        description: "Merge Sort is an efficient, stable sorting algorithm that makes use of the divide and conquer strategy.",
+        algorithm: `1. Divide the unsorted list into n sublists, each containing one element.
+2. Repeatedly merge sublists to produce new sorted sublists until there is only one sublist remaining.
+3. During merging:
+   a. Compare the first elements of both sublists.
+   b. Take the smaller element and add it to the merged list.
+   c. Move to the next element in the sublist from which the element was taken.
+   d. Repeat until one sublist is empty.
+   e. Append any remaining elements from the non-empty sublist.`,
+        timeComplexity: {
+            best: "O(n log n)",
+            average: "O(n log n)",
+            worst: "O(n log n)"
+        },
+        spaceComplexity: "O(n)\n\n"
+    },
+    comb: {
+        description: "Comb Sort is mainly an improvement over Bubble Sort. The basic idea is to eliminate turtles, or small values near the end of the list.",
+        algorithm: `1. Initialize gap size as array length.
+2. Set shrink factor (usually 1.3).
+3. While gap > 1 or swapped is true:
+   a. Calculate gap (gap / shrink factor).
+   b. Set swapped to false.
+   c. Compare elements with current gap.
+   d. If out of order, swap them and set swapped to true.
+4. If gap is 1, perform a final bubble sort pass.`,
+        timeComplexity: {
+            best: "O(n log n)",
+            average: "O(n²)",
+            worst: "O(n²)"
+        },
+        spaceComplexity: "O(1)\n\n"
+    },
+    heap: {
+        description: "Heap Sort is a comparison-based sorting technique based on Binary Heap data structure. It is similar to selection sort where we first find the minimum element and place it at the beginning.",
+        algorithm: `1. Build a max heap from the input data.
+2. Swap the root (maximum element) with the last element of the heap.
+3. Reduce the heap size by 1.
+4. Heapify the root of the tree.
+5. Repeat steps 2-4 while the size of the heap is greater than 1.`,
+        timeComplexity: {
+            best: "O(n log n)",
+            average: "O(n log n)",
+            worst: "O(n log n)"
+        },
+        spaceComplexity: "O(1)\n\n"
+    },
+    quick: {
+        description: "QuickSort is a Divide and Conquer algorithm. It picks an element as pivot and partitions the given array around the picked pivot.",
+        algorithm: `1. Choose a pivot element from the array.
+2. Partition the array around the pivot:
+   a. Move all elements smaller than the pivot to its left.
+   b. Move all elements greater than the pivot to its right.
+3. Recursively apply steps 1-2 to the sub-array of elements with smaller values and the sub-array of elements with greater values.`,
+        timeComplexity: {
+            best: "O(n log n)",
+            average: "O(n log n)",
+            worst: "O(n²)"
+        },
+        spaceComplexity: "O(log n)\n\n"
+    }
+};
+function updateAlgoInfo() {
+    const sortMethod = document.getElementById("sortSelect").value;
+    const info = AlgorithmInfo[sortMethod];
+    const infoElement = document.getElementById("algoInfo");
+    infoElement.innerHTML = `
+        <h2>${sortMethod.charAt(0).toUpperCase() + sortMethod.slice(1)} Sort</h2>
+        <h3>Description:</h3>
+        <p>${info.description}</p>
+        <div class="complexity-container">
+            <div class="complexity-box">
+                <h3>Time Complexity</h3>
+                <table>
+                    <tr><td><strong>Best:</strong></td><td>${info.timeComplexity.best}</td></tr>
+                    <tr><td><strong>Average:</strong></td><td>${info.timeComplexity.average}</td></tr>
+                    <tr><td><strong>Worst:</strong></td><td>${info.timeComplexity.worst}</td></tr>
+                </table>
+            </div>
+            <div class="complexity-box">
+                <h3>Space Complexity</h3>
+                <p>${info.spaceComplexity}</p>
+            </div>
+        </div>
+        <h3>Algorithm:</h3>
+        <pre>${info.algorithm}</pre>
+    `;
+}
+        function toggleNav() {
+            if (sidebarOpen) {
+                closeNav();
+            } else {
+                openNav();
             }
         }
 
-        function updateTimeComplexity(){
-            const sortMethod = document.getElementById("sortSelect").value;
-            const complexity=TimeComplexity[sortMethod];
-            document.getElementById("best-case").textContent = `Best Case: ${complexity.best}`;
-            document.getElementById("average-case").textContent = `Average Case: ${complexity.average}`;
-            document.getElementById("worst-case").textContent = `Worst Case: ${complexity.worst}`;
-            document.getElementById("space-complexity").textContent = `Space Complexity: ${complexity.space}`;
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "300px";
+            document.getElementById("main").style.marginRight = "300px";
+            document.querySelector(".openbtn").classList.add("active");
+            document.querySelector(".openbtn").innerHTML = "&#10005; Close Info";
+            updateAlgoInfo();
+            sidebarOpen = true;
         }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginRight = "0";
+            document.querySelector(".openbtn").classList.remove("active");
+            document.querySelector(".openbtn").innerHTML = "&#9776; Algorithm Info";
+            sidebarOpen = false;
+        }
+
+        const tourSteps = [
+            {
+                title: "Welcome to Sorting Visualizer",
+                description: "This tour will guide you through the features of our sorting algorithm visualizer.",
+                target: "heading"
+            },
+            {
+                title: "Enter Your Array",
+                description: "Type your numbers separated by spaces in this input box.",
+                target: "array"
+            },
+            {
+                title: "Submit Array",
+                description: "Click this button to visualize your entered array.",
+                target: "submit"
+            },
+            {
+                title: "Choose Sorting Algorithm",
+                description: "Select the sorting algorithm you want to visualize.",
+                target: "sortSelect"
+            },
+            {
+                title: "Algorithm Information",
+                description: "Click this button to open a sidebar with detailed information about the selected algorithm, including its description and complexity.",
+                target: "openbtn"
+            },
+            {
+                title: "Start Sorting",
+                description: "Click this button to start the sorting process.",
+                target: "start"
+            },
+            {
+                title: "Additional Controls",
+                description: "Use these buttons to stop, resume, reset, or clear the visualization.",
+                target: "buttons"
+            }
+        ];
+
+        let currentStep = 0;
+
+        function startTour() {
+            document.getElementById("tourOverlay").style.display = "block";
+            showStep(currentStep);
+        }
+
+        function showStep(step) {
+            const tourPopup = document.getElementById("tourPopup");
+            const targetElement = document.getElementById(tourSteps[step].target);
+            const targetRect = targetElement.getBoundingClientRect();
+
+            let top = targetRect.bottom + 10;
+            let left = targetRect.left + targetRect.width / 2 - 150;
+
+            if (left < 10) left = 10;
+            if (left + 300 > window.innerWidth) left = window.innerWidth - 310;
+            
+            if (top + 200 > window.innerHeight) {
+                top = targetRect.top - 210;
+                if (top < 10) {
+                    top = 10;
+                }
+            }
+
+            top = Math.max(10, Math.min(top, window.innerHeight - 210));
+
+            tourPopup.style.left = `${left}px`;
+            tourPopup.style.top = `${top}px`;
+
+            document.getElementById("tourTitle").textContent = tourSteps[step].title;
+            document.getElementById("tourDescription").textContent = tourSteps[step].description;
+
+            if (step === tourSteps.length - 1) {
+                document.getElementById("tourNext").textContent = "Finish";
+            } else {
+                document.getElementById("tourNext").textContent = "Next";
+            }
+
+            targetElement.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+        }
+
+        document.getElementById("tourNext").addEventListener("click", () => {
+            currentStep++;
+            if (currentStep < tourSteps.length) {
+                showStep(currentStep);
+            } else {
+                document.getElementById("tourOverlay").style.display = "none";
+                currentStep = 0;
+            }
+        });
+
+        window.addEventListener("load", function() {
+            loader.style.display = "none";
+            startTour();
+        });
+
+        document.getElementById("tourSkip").addEventListener("click", () => {
+            document.getElementById("tourOverlay").style.display = "none";
+            currentStep = 0;
+        });
     </script>
+    <script>
+      var loader = document.getElementById("Loader");
+      window.addEventListener("load", function(){
+        loader.style.display = "none";
+      })
+    </script> 
 </body>
 </html>
-

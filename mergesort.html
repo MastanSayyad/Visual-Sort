@@ -4,6 +4,7 @@
     <title>Merge Sort Visualization</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -102,6 +103,7 @@
     <script src="https://d3js.org/d3.v4.min.js"></script>
 </head>
 <body>
+    <div id="Loader"></div>
     <div class="header">
         <a href="index.html">Home</a>
         <a href="Bubble.html">Bubble Sort</a>
@@ -303,5 +305,11 @@
                 .classed("comparing", false);
         }
     </script>
+    <script>
+      var loader = document.getElementById("Loader");
+      window.addEventListener("load", function(){
+        loader.style.display = "none";
+      })
+    </script> 
 </body>
 </html>

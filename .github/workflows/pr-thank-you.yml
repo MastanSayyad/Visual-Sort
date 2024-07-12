@@ -1,0 +1,33 @@
+name: PR Thank You Bot
+
+on:
+  pull_request:
+    types: [opened, closed]
+
+jobs:
+  thank_you:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Welcome Comment
+        if: github.event.action == 'opened'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.issues.createComment({
+              issue_number: context.payload.pull_request.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'Thank you for your contribution! 🎉 We appreciate your effort in making our project better. Please provide any additional information if needed.'
+            })
+
+      - name: Send Merge Comment
+        if: github.event.action == 'closed' && github.event.pull_request.merged == true
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.issues.createComment({
+              issue_number: context.payload.pull_request.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'Thank you for merging this PR! 🙌 Your contribution has been successfully integrated into the project. Great job!'
+            })

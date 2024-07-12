@@ -14,20 +14,22 @@
 }
 
 .card {
+
     display: flex;
     flex-direction: column;
     align-items: center;
     border: 1px solid ash;
+    box-shadow: 5px 3px 3px 3px rgb(244, 240, 240);
     border-radius: 8px;
     padding: 16px;
     height: 660px;
     margin: 20px auto;
-    background-color: white;
+    background-color: rgb(252, 251, 251);
   }
 
 .card p{
     padding: 15px;
-    color: purple;
+    color: rgb(0, 0, 0);
 }
   .img {
     width: 440px;
@@ -36,11 +38,12 @@
     margin-right: 16px;
   }
   .card h1 {
+    margin-top: 30px;
     font-size: 36px;
     font-weight: bold;
     text-align: center;
     margin-bottom: 24px;
-    color: purple;
+    color: rgb(0, 0, 0);
   }
   .content {
     flex: 1;
