@@ -321,15 +321,6 @@ h5,
     font-size: 3rem;
   }
 }
-body {
-  background-color: white;
-  color: black;
-}
-
-body.darkMode {
-  background-color: black;
-  color: white;
-}
 
 .play-single-big {
   width: 90px;
