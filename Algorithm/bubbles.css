@@ -1004,4 +1004,12 @@ button:hover {
     color: rgb(219, 127, 219);
     transition: all 0.3s ease;
   }
-      
+  
+  .footer a {
+    color: white;
+}
+
+.footer .btn-secondary {
+    background-color: white;
+    color: rgb(202, 111, 202);
+}
