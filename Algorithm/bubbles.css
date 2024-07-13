@@ -1013,3 +1013,167 @@ button:hover {
     background-color: white;
     color: rgb(202, 111, 202);
 }
+
+.topbtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.gotopbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+  background: rgb(219, 127, 219);
+  color: white; /* Icon color */
+  border-radius: 50%; /* Make it a circle */
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.gotopbtn:hover {
+  background-color: #555; /* Change the background color on hover */
+}
+
+.gotopbtn i {
+  font-size: 24px; /* Adjust the icon size as needed */
+}
+
+.gotopbtn i {
+  color: white !important; /* Ensure the icon color stays white */
+}
+.container-fluid {
+  width: 100%;
+  padding: 0;
+}
+
+.form-control {
+  height: 48px;
+  font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.form-control:active,
+.form-control:focus {
+  border-color: rgb(219, 127, 219);
+}
+
+.form-control:hover,
+.form-control:active,
+.form-control:focus {
+  box-shadow: none !important;
+}
+
+.btn {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 900;
+  padding: 14px 30px;
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus {
+  outline: none;
+  box-shadow: none !important;
+}
+
+.btn.btn-primary {
+  background-color: rgb(219, 127, 219);
+  border-color: rgb(219, 127, 219);
+  color: white;
+}
+
+.btn.btn-primary:hover {
+  background-color: rgb(225, 63, 225);
+  border-color: rgb(219, 127, 219);
+}
+
+.icons {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  font-size: 25px;
+}
+
+.icons a {
+  color: inherit;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.icons a:hover {
+  transform: scale(1.2);
+  color: #cd1fd0;
+}
+
+.fa.fa-twitter::before {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  content: "";
+  background-color: currentColor;
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg viewBox="0 -8 26 30" xmlns="http://www.w3.org/2000/svg"><g><path fill="white" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g></svg>') no-repeat center;
+  mask: url('data:image/svg+xml;utf8,<svg viewBox="0 -8 26 30" xmlns="http://www.w3.org/2000/svg"><g><path fill="white" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g></svg>') no-repeat center;
+  background-position: center 3px;
+}
+
+footer {
+  background-color: #f8f9fa;
+  padding: 40px 0;
+  width: 100%;
+}
+
+footer h5 {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+footer .footer-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+footer .vs {
+  margin-bottom: 15px;
+}
+
+footer .vs ul {
+  padding-left: 0;
+}
+
+footer .vs li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+footer .nav-link {
+  color: #6c757d;
+  text-decoration: none;
+}
+
+footer .nav-link:hover {
+  color: #d327c2;
+}
+#last{
+  height: 100%;
+}
+/* .topbtn {
+  position: fixed;
+  bottom: 50px;
+  left: 50px;
+  z-index: 1000;
+}
+.gotopbtn {
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  background: lightgray;
+  padding: 10px;
+  border-radius: 50%;
+} */
