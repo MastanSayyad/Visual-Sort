@@ -1095,9 +1095,12 @@ button:hover {
   display: flex;
   justify-content: left;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
   width: 100%;
   font-size: 25px;
+  margin-left: 40px;
+  padding-top: none;
+  margin-top: none;
 }
 
 .icons a {
@@ -1142,6 +1145,7 @@ footer .footer-title {
 
 footer .vs {
   margin-bottom: 15px;
+  margin-left: 10%;
 }
 
 footer .vs ul {
@@ -1163,6 +1167,9 @@ footer .nav-link:hover {
 }
 #last{
   height: 100%;
+}
+#vs{
+  margin-left: 10%;
 }
 /* .topbtn {
   position: fixed;
