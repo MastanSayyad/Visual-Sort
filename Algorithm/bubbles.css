@@ -1103,6 +1103,7 @@ button:hover {
 .icons a {
   color: inherit;
   transition: transform 0.3s, color 0.3s;
+  margin-left: 10px;
 }
 
 .icons a:hover {
