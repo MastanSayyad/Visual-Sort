@@ -375,3 +375,34 @@ description.querySelector('pre code.algorithm').innerText = bubbleSortAlgorithm;
 $(document).ready(function() {
     $('.dropdown-toggle').dropdown();
   });
+  
+  const topButton = document.getElementById("topbtn");
+  window.onscroll = function () {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+          topButton.style.display = "block";
+      } else {
+          topButton.style.display = "none";
+      }
+  };
+  topButton.onclick = function (event) {
+    event.preventDefault(); 
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'  
+    });
+};
+  const upimage = document.getElementByClass("upimage");
+  window.onscroll = function () {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+          topButton.style.display = "block";
+      } else {
+          topButton.style.display = "none";
+      }
+  };
+  topButton.onclick = function (event) {
+      event.preventDefault(); 
+      window.scrollTo({
+          top: 0,
+          behavior: 'smooth'  
+      });
+  };
