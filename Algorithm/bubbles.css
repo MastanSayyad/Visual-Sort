@@ -15,6 +15,12 @@ body {
     margin: 0;
     padding: 0;
 }
+html, body {
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
 
 /* .navbar {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
