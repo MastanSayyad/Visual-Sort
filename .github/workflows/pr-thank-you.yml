@@ -33,7 +33,7 @@ jobs:
             const issue_number = context.payload.pull_request.number;
             const owner = context.repo.owner;
             const repo = context.repo.repo;
-            const body = 'Thank you for merging this PR! 🙌 Your contribution has been successfully integrated into the project. Great job!';
+            const body = '🎉 Congrats, your changes were accepted !!! 🙌 Your contribution has been successfully integrated into the project. Great job!';
 
             github.rest.issues.createComment({
               issue_number: issue_number,
