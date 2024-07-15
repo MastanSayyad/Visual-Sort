@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counting Sort Visualizer</title>
+    <link rel="stylesheet" href="counting.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+          <img src="/images/fevicon.png" alt="VS" class="logo">
+          <a href="/index.html" class="brand-name">Visual Sort</a>
+        </div>
+        <ul class="navbar-menu">
+          <li><a href="/index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="#">Sorting Visualizers ▼</a>
+            <ul class="dropdown-content">
+              <li><a href="/Algorithm/Bubble.html">Bubble Sort</a></li>
+              <li><a href="/selectionsort.html">Selection Sort</a></li>
+              <li><a href="/Insertion.html">Insertion Sort</a></li>
+              <li><a href="/Algorithm/CombSort.html">Comb Sort</a></li>
+              <li><a href="/Algorithm/Mergesort.html">Merge Sort</a></li>
+              <li><a href="/Algorithm/Heapsort.html">Heap Sort</a></li>
+              <li><a href="/Algorithm/Quicksort.html">Quick Sort</a></li>
+              <li><a href="/counting.html">Counting Sort</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">Algorithms ▼</a>
+            <ul class="dropdown-content">
+                li><a href="/Algorithm/Bubble.html">Bubble Sort</a></li>
+                <li><a href="/selectionsort.html">Selection Sort</a></li>
+                <li><a href="/Insertion.html">Insertion Sort</a></li>
+                <li><a href="/Algorithm/CombSort.html">Comb Sort</a></li>
+                <li><a href="/Algorithm/Mergesort.html">Merge Sort</a></li>
+                <li><a href="/Algorithm/Heapsort.html">Heap Sort</a></li>
+                <li><a href="/Algorithm/Quicksort.html">Quick Sort</a></li>
+                <li><a href="/counting.html">Counting Sort</a></li>
+            </ul>
+          </li>
+          <li><a href="/index.html#features-section">Features</a></li>
+          <li><a href="/index.html#About-Us">About Us</a></li>
+          <li><a href="/login.html" class="login-btn">Login</a></li>
+        </ul>
+      </nav>
+  
+
+     
+      <main>
+        <section id="counting-sort">
+        <div class="container">
+            <h1>Counting Sort</h1>
+            <div class="content-wrapper">
+                <div class="text-content">
+                    <p>Counting Sort is a non-comparison-based sorting algorithm that works well when there is a limited range of input values. It is particularly efficient when the range of input values is small compared to the number of elements to be sorted. The basic idea behind Counting Sort is to count the frequency of each distinct element in the input array and use that information to place the elements in their correct sorted positions.</p>
+                    
+                    <div class="algorithm-box">
+                        <h3>Algorithm:</h3>
+                        <ol>
+                            <li>Find the range of the input array (minimum and maximum elements).</li>
+                            <li>Create a count array to store the count of each unique object.</li>
+                            <li>Store the count of each unique object in the count array.</li>
+                            <li>Modify the count array by storing the actual position of each object in the output array.</li>
+                            <li>Build the output array using the modified count array and the original input array.</li>
+                            <li>Copy the sorted elements into the original array.</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="visualization-content">
+                    <div class="visualization-box">
+                        <div class="array-visualization">
+                            <span>2</span>
+                            <span>5</span>
+                            <span>4</span>
+                            <span>6</span>
+                            <span>1</span>
+                            <span>3</span>
+                        </div>
+                    </div>
+                    <table class="complexity-table">
+                        <tr>
+                            <th>Complexity</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>Time Complexity (Best, Average, Worst)</td>
+                            <td>O(n + k)</td>
+                        </tr>
+                        <tr>
+                            <td>Space Complexity</td>
+                            <td>O(k)</td>
+                        </tr>
+                    </table>
+                    <p>Where n is the number of elements in the input array and k is the range of input.</p>
+                </div>
+            </div>
+        </div>
+      
+           
+        </section>
+        <section id="counting-sort-visualizer">
+          <h2>Counting Sort Visualizer</h2>
+          <div id="visualizer-container">
+              <div id="array-container"></div>
+          </div>
+          <div id="input-controls">
+              <input type="text" id="input-numbers" placeholder="Enter numbers separated by spaces">
+              <button id="submit">Submit</button>
+              <button id="start-sort">Start Sort</button>
+              <button id="stop">Stop</button>
+              <button id="resume">Resume</button>
+              <button id="reset">Reset</button>
+              <button id="clear">Clear</button>
+          </div>
+      </section>
+        <section id="counting-sort-code">
+            <h2>Counting Sort Code</h2>
+            <div class="code-tabs">
+                <button class="tab-btn active" data-lang="java">Java</button>
+                <button class="tab-btn" data-lang="c">C</button>
+                <button class="tab-btn" data-lang="cpp">C++</button>
+                <button class="tab-btn" data-lang="python">Python</button>
+            </div>
+            <pre id="code-display"></pre>
+        </section>
+
+        <section id="practice-questions">
+            <h2>Practice Questions</h2>
+            <table>
+                <tr>
+                    <th>Question Number</th>
+                    <th>Question Title</th>
+                    <th>Level</th>
+                    <th>Link</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Sort an Array</td>
+                    <td>Easy</td>
+                    <td><a href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Sort Characters By Frequency</td>
+                    <td>Medium</td>
+                    <td><a href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Largest Number</td>
+                    <td>Hard</td>
+                    <td><a href="#">Link</a></td>
+                </tr>
+            </table>
+        </section>
+    </main>
+
+   
+ <footer class="container py-4 py-md-5 px-4 px-md-3">
+    <div class="row d-flex justify-content-center align-items-center text-center">
+      <div class="col-md-6 mb-3">
+        <form>
+          <h5>Subscribe to our newsletter</h5>
+          <p>Monthly digest of what's new and exciting from us.</p>
+          <div class="d-flex gap-2 justify-content-center align-items-center">
+            <input id="newsletter1" type="text" class="form-control w-full" placeholder="Email address">
+            <button class="btn btn-primary" type="button">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-md-4 mb-3">
+        <a class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none footer-title"
+          href="/" aria-label="Visual Sort">
+          Visual Sort
+        </a>
+        <div class="vs">
+        <ul class="list-unstyled small">
+          <li class="mb-2">Visual Sort is a web-based sorting algorithm visualization tool which provides an
+            interactive way to visualize various sorting algorithms in action, helping users understand how
+            different algorithms work and their efficiency in sorting data</li>
+        </ul>
+        </div>
+      </div>
+      <div class="col-6 col-md-2 mb-3">
+        <h5>Home</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#home-section" class="nav-link p-0 text-body-secondary">Home</a></li>
+          <li class="nav-item mb-2"><a href="#algorithm-section"
+              class="nav-link p-0 text-body-secondary">Algorithms</a></li>
+          <li class="nav-item mb-2"><a href="#programs-section"
+              class="nav-link p-0 text-body-secondary">Programs</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-2 mb-3">
+        <h5>About</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#about-us-section" class="nav-link p-0 text-body-secondary">About</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Our Contributors</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-2 mb-3">
+        <h5>Support</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#faq" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-2 mb-3">
+        <h5>Legal</h5>
+        <ul class="nav flex-column">
+
+          
+          <li class="nav-item mb-2"><a href="privacy-policy.html" class="nav-link p-0 text-body-secondary">Privacy Policy</a></li>
+
+          <li class="nav-item mb-2"><a href="Terms.html" class="nav-link p-0 text-body-secondary">Terms & Conditions</a></li>
+          <li class="nav-item mb-2"><a href="licensing.html" class="nav-link p-0 text-body-secondary">Licensing</a></li>
+        </ul>
+      </div>
+      
+    </div>
+
+     <div id="topbtn" class="topbtn">
+      <a class="gotopbtn" href="#"><i class="fa-solid fa-angles-up"></i></a>
+  </div>
+  
+
+   
+    <div class="foot">
+      <div class="icons">
+        <div class="linkedin">
+        <a href="https://www.linkedin.com/in/mastan-sayyad-126904223/"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <div class="github">
+         <a href="https://github.com/MastanSayyad"><i class="fa-brands fa-github"></i></a>  
+        </div>
+        <div class="instagram">
+         <a href=""><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <div class="twitter">
+         <a href=""><i class="fa fa-twitter"></i></a>
+        </div>
+    </div>
+
+    </div>
+  
+  <div class="d-flex flex-column flex-sm-row justify-content-center py-4 my-4 border-top">
+    <!-- <p>© 2024 Visual Sort - Mastan Sayyad, Inc. All rights reserved.</p> -->
+    <p> &copy; <script>document.write(new Date().getFullYear())</script> Visual Sort - Visual Sort, Inc. All rights reserved.</p>
+  </div>
+</footer>
+    
+
+    <script src="counting.js"></script>
+</body>
+</html>
