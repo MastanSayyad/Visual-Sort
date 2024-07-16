@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="./bubbles.css">
+    <link rel="stylesheet" href="./radix.css">
     <script src="https://kit.fontawesome.com/2815a7015d.js" crossorigin="anonymous"></script>
-    <title>Merge Sort</title>
+    <title>Radix Sort</title>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -83,11 +83,11 @@
     <!-- Bubble Sort Section -->
     <section class="bubble-sort-section">
         <div class="container">
-            <h1 class="bubble-sort-title">Merge Sort</h1>
+            <h1 class="bubble-sort-title">Radix Sort</h1>
             <div class="row mt-5">
                 <div class="col-md-6">
                     <div class="bubble-sort-description">
-                        <p>Merge Sort is a divide-and-conquer algorithm that splits the array into halves, recursively sorts each half, and then merges the sorted halves to produce the sorted array. It is known for its efficiency in handling large data sets, with a time complexity of O(n log n) in all cases.</p>
+                        <p>Radix Sort is a non-comparative sorting algorithm that sorts numbers by processing individual digits. It processes digits from the least significant digit (LSD) to the most significant digit (MSD) or vice versa, depending on the implementation. Radix Sort can handle large numbers of elements efficiently when the number of digits (or characters for string sorting) is relatively small.</p>
                         <br>
                         <h3>Algorithm:</h3>
         <pre><code class="algorithm"></code></pre>
@@ -95,7 +95,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="bubble-sort-gif">
-                        <img src="../images/merge2.gif" alt="Bubble Sort Visualization" class="img-fluid shadow-lg rounded">
+                        <img src="../images/radix-sort-final-result.gif" alt="Bubble Sort Visualization" class="img-fluid shadow-lg rounded">
                     </div>
                     <table class="table table-bordered mt-3">
                         <thead>
@@ -106,19 +106,19 @@
                         <tbody>
                             <tr>
                                 <td>Best Time Complexity</td>
-                                <td>O(n log n)</td>
+                                <td>O(nk)</td>
                             </tr>
                             <tr>
                                 <td>Average Time Complexity</td>
-                                <td>O(n log n)</td>
+                                <td>O(nk)</td>
                             </tr>
                             <tr>
                                 <td>Worst Time Complexity</td>
-                                <td>O(n log n)</td>
+                                <td>O(nk)</td>
                             </tr>
                             <tr>
                                 <td>Space Complexity</td>
-                                <td>O(n)</td>
+                                <td>O(n+k)</td>
                             </tr>
                         </tbody>
                     </table>
@@ -136,7 +136,7 @@
     <!-- Visualizer Section -->
     <section class="visualizer-section py-5">
         <div class="container text-center">
-            <h2 class="mb-4">Merge Sort Visualizer</h2>
+            <h2 class="mb-4">Selection Sort Visualizer</h2>
             <div id="Loader"></div>
             <div id="contain">
                 <div class="sh" id="visualization"></div>
@@ -144,7 +144,7 @@
                     <input id="array" type="text" placeholder="Enter array separated by space" size="30" class="form-control mx-2">
                     <button id="submit" class="btn btn-primary mx-2" onclick="submit()">Submit</button>
                     <select id="sortSelect" onchange="updateTimeComplexity()" class="form-control mx-2">
-                        <option value="merge">Merge Sort</option>
+                        <option value="radix">Radix Sort</option>
                     </select>
                     <button id="start" class="btn btn-primary mx-2" onclick="startSort()">Start Sort</button>
                     <button class="btn btn-primary mx-2" onclick="stop = true; stopClicked()">Stop</button>
@@ -163,11 +163,11 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Code Section -->
     <section class="code-section py-5">
         <div class="container">
-            <h2>Merge Sort Code</h2>
+            <h2>Selection Sort Code</h2>
             <div class="nav nav-tabs mb-3" id="languageTabs" role="tablist">
                 <a class="nav-item nav-link active" id="java-tab" data-toggle="tab" href="#java" role="tab" aria-controls="java" aria-selected="true">Java</a>
                 <a class="nav-item nav-link" id="c-tab" data-toggle="tab" href="#c" role="tab" aria-controls="c" aria-selected="false">C</a>
@@ -176,145 +176,134 @@
             </div>
             <div class="tab-content" id="languageTabsContent">
                 <div class="tab-pane fade show active" id="java" role="tabpanel" aria-labelledby="java-tab">
-                    <pre class="code-display p-3 rounded bg-dark text-white"><code>public void mergeSort(int[] arr, int left, int right) {
-                        if (left < right) {
-                            int mid = (left + right) / 2;
-                            mergeSort(arr, left, mid);
-                            mergeSort(arr, mid + 1, right);
-                            merge(arr, left, mid, right);
-                        }
-                    }
-                    
-                    public void merge(int[] arr, int left, int mid, int right) {
-                        int n1 = mid - left + 1;
-                        int n2 = right - mid;
-                        int[] leftArr = new int[n1];
-                        int[] rightArr = new int[n2];
-                        System.arraycopy(arr, left, leftArr, 0, n1);
-                        System.arraycopy(arr, mid + 1, rightArr, 0, n2);
-                        int i = 0, j = 0, k = left;
-                        while (i < n1 && j < n2) {
-                            if (leftArr[i] <= rightArr[j]) {
-                                arr[k++] = leftArr[i++];
-                            } else {
-                                arr[k++] = rightArr[j++];
+                    <pre class="code-display p-3 rounded bg-dark text-white"><code>public class RadixSort {
+                        public static void radixSort(int[] arr) {
+                            int max = Arrays.stream(arr).max().getAsInt();
+                            for (int exp = 1; max / exp > 0; exp *= 10) {
+                                countingSort(arr, exp);
                             }
                         }
-                        while (i < n1) {
-                            arr[k++] = leftArr[i++];
+                    
+                        private static void countingSort(int[] arr, int exp) {
+                            int n = arr.length;
+                            int[] output = new int[n];
+                            int[] count = new int[10];
+                    
+                            for (int i = 0; i < n; i++) {
+                                count[(arr[i] / exp) % 10]++;
+                            }
+                    
+                            for (int i = 1; i < 10; i++) {
+                                count[i] += count[i - 1];
+                            }
+                    
+                            for (int i = n - 1; i >= 0; i--) {
+                                output[count[(arr[i] / exp) % 10] - 1] = arr[i];
+                                count[(arr[i] / exp) % 10]--;
+                            }
+                    
+                            System.arraycopy(output, 0, arr, 0, n);
                         }
-                        while (j < n2) {
-                            arr[k++] = rightArr[j++];
-                        }
-                    }</code></pre>
+                </code></pre>
                 </div>
                 <div class="tab-pane fade" id="c" role="tabpanel" aria-labelledby="c-tab">
-                    <pre class="code-display p-3 rounded bg-dark text-white"><code>void mergeSort(int arr[], int left, int right) {
-                        if (left < right) {
-                            int mid = left + (right - left) / 2;
-                            mergeSort(arr, left, mid);
-                            mergeSort(arr, mid + 1, right);
-                            merge(arr, left, mid, right);
+                    <pre class="code-display p-3 rounded bg-dark text-white"><code>int getMax(int arr[], int n) {
+                        int max = arr[0];
+                        for (int i = 1; i < n; i++) {
+                            if (arr[i] > max)
+                                max = arr[i];
                         }
+                        return max;
                     }
                     
-                    void merge(int arr[], int left, int mid, int right) {
-                        int n1 = mid - left + 1;
-                        int n2 = right - mid;
-                        int L[n1], R[n2];
-                        for (int i = 0; i < n1; i++)
-                            L[i] = arr[left + i];
-                        for (int j = 0; j < n2; j++)
-                            R[j] = arr[mid + 1 + j];
-                        int i = 0, j = 0, k = left;
-                        while (i < n1 && j < n2) {
-                            if (L[i] <= R[j]) {
-                                arr[k] = L[i];
-                                i++;
-                            } else {
-                                arr[k] = R[j];
-                                j++;
-                            }
-                            k++;
+                    void countSort(int arr[], int n, int exp) {
+                        int output[n];
+                        int count[10] = {0};
+                    
+                        for (int i = 0; i < n; i++)
+                            count[(arr[i] / exp) % 10]++;
+                    
+                        for (int i = 1; i < 10; i++)
+                            count[i] += count[i - 1];
+                    
+                        for (int i = n - 1; i >= 0; i--) {
+                            output[count[(arr[i] / exp) % 10] - 1] = arr[i];
+                            count[(arr[i] / exp) % 10]--;
                         }
-                        while (i < n1) {
-                            arr[k] = L[i];
-                            i++;
-                            k++;
-                        }
-                        while (j < n2) {
-                            arr[k] = R[j];
-                            j++;
-                            k++;
-                        }
-                    }</code></pre>
+                    
+                        for (int i = 0; i < n; i++)
+                            arr[i] = output[i];
+                    }
+                    
+                    void radixSort(int arr[], int n) {
+                        int m = getMax(arr, n);
+                        for (int exp = 1; m / exp > 0; exp *= 10)
+                            countSort(arr, n, exp);
+                    }
+                    
+                    </code></pre>
                 </div>
                 <div class="tab-pane fade" id="cpp" role="tabpanel" aria-labelledby="cpp-tab">
-                    <pre class="code-display p-3 rounded bg-dark text-white"><code>void mergeSort(vector&lt;int&gt;& arr, int left, int right) {
-                        if (left < right) {
-                            int mid = left + (right - left) / 2;
-                            mergeSort(arr, left, mid);
-                            mergeSort(arr, mid + 1, right);
-                            merge(arr, left, mid, right);
-                        }
+                    <pre class="code-display p-3 rounded bg-dark text-white"><code>int getMax(int arr[], int n) {
+                        return *max_element(arr, arr + n);
                     }
                     
-                    void merge(vector&lt;int&gt;& arr, int left, int mid, int right) {
-                        int n1 = mid - left + 1;
-                        int n2 = right - mid;
-                        vector&lt;int&gt; L(n1), R(n2);
-                        for (int i = 0; i < n1; i++)
-                            L[i] = arr[left + i];
-                        for (int j = 0; j < n2; j++)
-                            R[j] = arr[mid + 1 + j];
-                        int i = 0, j = 0, k = left;
-                        while (i < n1 && j < n2) {
-                            if (L[i] <= R[j]) {
-                                arr[k] = L[i];
-                                i++;
-                            } else {
-                                arr[k] = R[j];
-                                j++;
-                            }
-                            k++;
+                    void countSort(int arr[], int n, int exp) {
+                        int output[n];
+                        int count[10] = {0};
+                    
+                        for (int i = 0; i < n; i++)
+                            count[(arr[i] / exp) % 10]++;
+                    
+                        for (int i = 1; i < 10; i++)
+                            count[i] += count[i - 1];
+                    
+                        for (int i = n - 1; i >= 0; i--) {
+                            output[count[(arr[i] / exp) % 10] - 1] = arr[i];
+                            count[(arr[i] / exp) % 10]--;
                         }
-                        while (i < n1) {
-                            arr[k] = L[i];
-                            i++;
-                            k++;
-                        }
-                        while (j < n2) {
-                            arr[k] = R[j];
-                            j++;
-                            k++;
-                        }
+                    
+                        for (int i = 0; i < n; i++)
+                            arr[i] = output[i];
+                    }
+                    
+                    void radixSort(int arr[], int n) {
+                        int m = getMax(arr, n);
+                        for (int exp = 1; m / exp > 0; exp *= 10)
+                            countSort(arr, n, exp);
                     }</code></pre>
                 </div>
                 <div class="tab-pane fade" id="python" role="tabpanel" aria-labelledby="python-tab">
-                    <pre class="code-display p-3 rounded bg-dark text-white"><code>def merge_sort(arr):
-                        if len(arr) > 1:
-                            mid = len(arr) // 2
-                            left_half = arr[:mid]
-                            right_half = arr[mid:]
-                            merge_sort(left_half)
-                            merge_sort(right_half)
-                            i = j = k = 0
-                            while i < len(left_half) and j < len(right_half):
-                                if left_half[i] < right_half[j]:
-                                    arr[k] = left_half[i]
-                                    i += 1
-                                else:
-                                    arr[k] = right_half[j]
-                                    j += 1
-                                k += 1
-                            while i < len(left_half):
-                                arr[k] = left_half[i]
-                                i += 1
-                                k += 1
-                            while j < len(right_half):
-                                arr[k] = right_half[j]
-                                j += 1
-                                k += 1</code></pre>
+                    <pre class="code-display p-3 rounded bg-dark text-white"><code>def getMax(arr):
+                        return max(arr)
+                    
+                    def countingSort(arr, exp):
+                        n = len(arr)
+                        output = [0] * n
+                        count = [0] * 10
+                    
+                        for i in range(n):
+                            index = (arr[i] // exp) % 10
+                            count[index] += 1
+                    
+                        for i in range(1, 10):
+                            count[i] += count[i - 1]
+                    
+                        for i in range(n - 1, -1, -1):
+                            index = (arr[i] // exp) % 10
+                            output[count[index] - 1] = arr[i]
+                            count[index] -= 1
+                    
+                        for i in range(n):
+                            arr[i] = output[i]
+                    
+                    def radixSort(arr):
+                        max1 = getMax(arr)
+                        exp = 1
+                        while max1 // exp > 0:
+                            countingSort(arr, exp)
+                            exp *= 10
+                    </code></pre>
                 </div>
             </div>
         </div>
@@ -348,14 +337,15 @@
                     </tr>
                     <tr>
                         <th scope="row">3</th>
-                        <td>Merge k Sorted Lists</td>
+                        <td>Valid anagrams</td>
                         <td>Hard</td>
-                        <td><a href="https://leetcode.com/problems/merge-k-sorted-lists/">Link</a></td>
+                        <td><a href="https://leetcode.com/problems/valid-anagram/">Link</a></td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </section>
+
     <footer class="container-fluid py-4 py-md-5 px-4 px-md-3">
         <div class="row d-flex justify-content-center align-items-center text-center">
             <div class="col-md-6 mb-3">
@@ -371,7 +361,7 @@
         </div>
         <div class="row mt-5">
             <div class="col-md-4 mb-3">
-                <a class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none footer-title" href="/" aria-label="Visual Sort">
+                <a id="vs" class="d-inline-flex align-items-center ml- mb-2 text-body-emphasis text-decoration-none footer-title" href="/" aria-label="Visual Sort">
                     Visual Sort
                 </a>
                 <div class="vs">
@@ -426,10 +416,11 @@
 <div id="topbtn" class="topbtn">
     <a class="gotopbtn" href="#"><img id="topbtn" src="../images/upload.png" width="50px" height="50px" alt=""></a>
 </div>
+
     <!-- JavaScript Files -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="./Mergesort.js"></script>
+    <script src="./Radixsort.js"></script>
 </body>
 </html>
