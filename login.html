@@ -2,30 +2,165 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="css/login.css"/>
+    <title>Login - Visual Sort</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            max-width: 900px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .left-side {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .right-side {
+            flex: 1;
+            background: linear-gradient(135deg, #db7fdb, #c84fd1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-bottom: 2px solid #ddd;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+        .input-group input:focus {
+            outline: none;
+            border-color: #c84fd1;
+        }
+        button {
+            background: #c84fd1;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #db7fdb;
+        }
+        .signup-link {
+            margin-top: 20px;
+            text-align: center;
+            color: #666;
+        }
+        .signup-link a {
+            color: #c84fd1;
+            text-decoration: none;
+        }
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: #c84fd1;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+            z-index: 1000;
+        }
+        .back-btn:hover {
+            background: #db7fdb;
+        }
+        .animated-bg {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, #db7fdb, #c84fd1, #db7fdb, #c84fd1);
+            animation: bgAnimation 15s linear infinite;
+        }
+        @keyframes bgAnimation {
+            0% {
+                transform: translateX(-50%) translateY(-50%) rotate(0deg);
+            }
+            100% {
+                transform: translateX(-50%) translateY(-50%) rotate(360deg);
+            }
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .right-side {
+                display: none;
+            }
+            .left-side {
+                padding: 30px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
 </head>
 <body>
+    <a href="index.html" class="back-btn">&#8592;</a>
     <div class="container">
-        <div class="left-section">
-            <button class="back-button" onclick="window.location.href='index.html'"><img src="./images/back-button.png" width="50px" height="50px"/></button>
-            <h1 class="animated-heading">Visual Sort<span class="blinking-cursor">|</span></h1>
-            <p class="description">
-                Visual Sort is a website designed to visually demonstrate how different sorting algorithms work. It provides an interactive and educational experience for users to understand the steps and logic behind various sorting methods.
-            </p>
-            <form id="loginForm" class="login-form">
-                <input type="text" id="username" placeholder="Username" class="input-field">
-                <input type="password" id="password" placeholder="Password" class="input-field">
-                <button type="submit" class="submit-button">Login</button>
+        <div class="left-side">
+            <h1>Welcome Back</h1>
+            <form>
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit">Login</button>
             </form>
-            <p class="already-signed-up">
-                Not signed up? <a href="signup.html">Sign In</a>
-            </p>
+            <p class="signup-link">Don't have an account? <a href="signup.html">Sign up</a></p>
         </div>
-        <div class="right-section">
-            <img src="./images/login_image.png" alt="Sorting images" class="transition-image">
+        <div class="right-side">
+            <div class="animated-bg"></div>
         </div>
     </div>
 </body>
