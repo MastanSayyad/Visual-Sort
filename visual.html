@@ -327,6 +327,7 @@
                 <option value="merge">Merge Sort</option>
                 <option value="heap">Heap Sort</option>
                 <option value="quick">Quick Sort</option>
+                <option value="radix">Radix Sort</option>
             </select>
             <button id="start" class="btn-primary" onclick="startSort()">Start Sort</button>
             <button class="btn-primary" onclick="stop = true; stopClicked()">Stop</button>
@@ -625,6 +626,49 @@
             await swap(i + 1, high);
             return i + 1;
         }
+        function getMax(arr) {
+    let max = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    return max;
+}
+
+// Function to count sort based on the digit represented by exp
+async function countSort(arr, exp) {
+    let output = new Array(arr.length);
+    let count = new Array(10).fill(0);
+
+    for (let i = 0; i < arr.length; i++) {
+        count[Math.floor(arr[i] / exp) % 10]++;
+    }
+
+    for (let i = 1; i < 10; i++) {
+        count[i] += count[i - 1];
+    }
+
+    for (let i = arr.length - 1; i >= 0; i--) {
+        output[count[Math.floor(arr[i] / exp) % 10] - 1] = arr[i];
+        count[Math.floor(arr[i] / exp) % 10]--;
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = output[i];
+        await updateSingleBar(i);
+    }
+}
+
+// Function to implement Radix Sort
+async function radixSort() {
+    let m = getMax(array);
+
+    for (let exp = 1; Math.floor(m / exp) > 0; exp *= 10) {
+        await countSort(array, exp);
+        if (stop) return;
+    }
+}
 
         async function highlightBars(indices, className) {
             indices.forEach(index => {
@@ -696,6 +740,9 @@
                     break;
                 case "quick":
                     await quickSort();
+                    break;
+                case "radix":
+                    await radixSort();
                     break;
             }
             enableSubmitButton();
