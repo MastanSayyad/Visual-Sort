@@ -1218,3 +1218,26 @@ footer .nav-link:hover {
         max-height: 150px;
     }
 }
+@media (max-width: 576px) {
+  #visualization {
+      width: 100%;
+      height: auto;
+  }
+
+  #buttons {
+      flex-direction: column;
+  }
+
+  .mx-2 {
+      margin-left: 0.5rem !important;
+      margin-right: 0.5rem !important;
+  }
+
+  .mb-2 {
+      margin-bottom: 0.5rem !important;
+  }
+
+  .mb-md-0 {
+      margin-bottom: 0 !important;
+  }
+}
