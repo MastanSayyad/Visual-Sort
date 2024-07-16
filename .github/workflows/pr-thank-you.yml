@@ -9,25 +9,35 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Send Welcome Comment
-        if: github.event.action == 'opened'
+        if: ${{ github.event.action == 'opened' }}
         uses: actions/github-script@v6
         with:
           script: |
-            github.issues.createComment({
-              issue_number: context.payload.pull_request.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: 'Thank you for your contribution! 🎉 We appreciate your effort in making our project better. Please provide any additional information if needed.'
-            })
+            const issue_number = context.payload.pull_request.number;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const body = 'Thank you for your contribution! 🎉 We appreciate your effort in making our project better. Please provide any additional information if needed.';
+
+            github.rest.issues.createComment({
+              issue_number: issue_number,
+              owner: owner,
+              repo: repo,
+              body: body
+            });
 
       - name: Send Merge Comment
-        if: github.event.action == 'closed' && github.event.pull_request.merged == true
+        if: ${{ github.event.action == 'closed' && github.event.pull_request.merged == true }}
         uses: actions/github-script@v6
         with:
           script: |
-            github.issues.createComment({
-              issue_number: context.payload.pull_request.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: 'Thank you for merging this PR! 🙌 Your contribution has been successfully integrated into the project. Great job!'
-            })
+            const issue_number = context.payload.pull_request.number;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const body = '🎉 Congrats, your changes were accepted !!! 🙌 Your contribution has been successfully integrated into the project. Great job!';
+
+            github.rest.issues.createComment({
+              issue_number: issue_number,
+              owner: owner,
+              repo: repo,
+              body: body
+            });
