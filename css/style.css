@@ -1933,3 +1933,15 @@ body {
 .chatbot-button:focus .tooltip-text {
   opacity: 1;
 }
+.custom-figure {
+  width: 340px;
+  height: 190px;
+  margin: 0;
+  overflow: hidden; /* Optional: To ensure the image does not overflow the figure */
+}
+
+.custom-figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This will make sure the image covers the whole figure area */
+}
