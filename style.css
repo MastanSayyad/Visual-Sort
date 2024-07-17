@@ -447,7 +447,7 @@ pre code {
 
 /* Style the scrollbar */
 ::-webkit-scrollbar {
-  width: 12px !important; /* Width of the entire scrollbar */
+  width: 6px !important; /* Width of the entire scrollbar */
 }
 
 /* Style the track (progress bar) */
