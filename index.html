@@ -65,203 +65,114 @@
       transform: translateX(20px);
     }
   </style>
-  <style>
-       @keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-  .image-container {
-  perspective: 1000px;
-}
-
-.image-wrapper {
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.2s;
-}
-.image-inner{
-  animation: float 4s ease-in-out infinite;
-}
-
-.main-image {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.ripple-effect {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at var(--x) var(--y), rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%);
-  opacity: 0;
-  transition: opacity 0.2s;
-  pointer-events: none;
-}
-
-.image-wrapper:hover .ripple-effect {
-  opacity: 1;
-}
-   body {
-    font-family: 'Roboto', sans-serif;
-    /* background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%); */
-}
-
-.intro-section {
-  display: flex;
-  align-items: center;
-  min-height: 100vh;
-  padding: 2rem 0;
-  overflow: hidden;
-
-}
-
-.intro-section.fade-in {
-    opacity: 1;
-}
-
-.floating-shape {
-    position: absolute;
-    opacity: 0.1;
-    z-index: -1;
-}
-
-.shape-1 {
-    top: 17%;
-    left: 5%;
-    width: 100px;
-    height: 100px;
-    background: rgb(219, 127, 219);
-    border-radius: 50%;
-    animation: float 6s ease-in-out infinite;
-}
-
-.shape-2 {
-    bottom: 12%;
-    left: 30%;
-    width: 120px;
-    height: 120px;
-    background: rgb(219, 127, 219);
-    border-radius: 50%;
-    animation: float 6s ease-in-out infinite;
-}
-.shape-3 {
-    bottom: 58%;
-    right: 8%;
-    width: 150px;
-    height: 150px;
-    background: #c84fd1;
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    animation: float 4s ease-in-out infinite;
-    
-}
-.shape-4 {
-    bottom: 8%;
-    right: 22%;
-    width: 350px;
-    height: 350px;
-    background: #c84fd1;
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    animation: float 4s ease-in-out infinite;
-    
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-}
-
-h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-}
-
-.button-container a {
-    border-radius: 25px;
-    transition: all 0.3s ease;
-}
-
-.button-container a:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 7px 14px rgba(0,0,0,0.1), 0 5px 5px rgba(0,0,0,0.06);
-}
-
-.text-container {
-    max-width: 600px;
-}
-
-.feature-icon {
-    display: inline-block;
-    margin-right: 10px;
-    color: rgb(219, 127, 219);
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-@keyframes landingAnimation {
-0% {
-opacity: 0;
-transform: translateY(50px);
-}
-100% {
-opacity: 1;
-transform: translateY(0);
-}
-}
-
-.landing-animate {
-opacity: 0;
-animation: fadeIn 1s ease-out forwards;
-}
-
-.text-container.landing-animate {
-animation-delay: 0.2s;
-}
-
-.button-container.landing-animate {
-animation-delay: 0.4s;
-}
-
-.animate-fade-in-up {
-    animation: fadeInUp 0.6s ease-out forwards;
-    opacity: 0;
-}
-
-.delay-100 { animation-delay: 0.1s; }
-.delay-200 { animation-delay: 0.2s; }
-.delay-300 { animation-delay: 0.3s; }
-.delay-400 { animation-delay: 0.4s; }
-
-  
-@media (max-width: 768px) {
-  .intro-section {
-    padding-top: 5rem; /* Adjust based on your navbar height */
-  }
-}
-
-  </style>
+ <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero-section {
+            min-height: 100vh;
+            background-color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .floating-shape {
+            position: absolute;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        .shape-1 {
+            top: 17%;
+            left: 5%;
+            width: 100px;
+            height: 100px;
+            background: rgb(219, 127, 219);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        .shape-2 {
+            bottom: 12%;
+            left: 30%;
+            width: 120px;
+            height: 120px;
+            background: rgb(219, 127, 219);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        .shape-3 {
+            bottom: 58%;
+            right: 8%;
+            width: 150px;
+            height: 150px;
+            background: #c84fd1;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            animation: float 4s ease-in-out infinite;
+        }
+        .shape-4 {
+            bottom: 8%;
+            right: 22%;
+            width: 350px;
+            height: 350px;
+            background: #c84fd1;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            animation: float 4s ease-in-out infinite;
+        }
+        .image-container {
+            perspective: 1000px;
+        }
+        .image-wrapper {
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.2s;
+        }
+        .image-inner {
+            animation: float 4s ease-in-out infinite;
+        }
+        .main-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .ripple-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at var(--x) var(--y), rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%);
+            opacity: 0;
+            transition: opacity 0.2s;
+            pointer-events: none;
+        }
+        .image-wrapper:hover .ripple-effect {
+            opacity: 1;
+        }
+        .scroll-arrow {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            color: rgb(219, 127, 219);
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-20px) translateX(-50%); }
+            60% { transform: translateY(-10px) translateX(-50%); }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+    </style>
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="72">
@@ -340,50 +251,44 @@ animation-delay: 0.4s;
 
  
 
-      <div class="intro-section min-h-screen flex items-center" id="home-section">
+      <section class="hero-section flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8">
         <div class="floating-shape shape-1"></div>
         <div class="floating-shape shape-2"></div>
         <div class="floating-shape shape-3"></div>
         <div class="floating-shape shape-4"></div>
-      
-        <div class="container mx-auto px-4">
-          <div class="flex flex-col md:flex-row items-center justify-between">
-            <div class="w-full md:w-1/2 mb-8 md:mb-0">
-              <div class="text-container landing-animate">
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4 animate-fade-in-up">
-                  <span class="block">The <span style="color: rgb(219, 127, 219);">#1</span> Sorting</span>
-                  <span class="block">Visualization Tool</span>
-                </h1>
-                
-                <p class="mb-6 text-sm sm:text-base text-gray-700 animate-fade-in-up delay-100">
-                  <i class="fas fa-chart-bar feature-icon"></i>Interactive visualization
-                  <br>
-                  <i class="fas fa-tachometer-alt feature-icon"></i>Understand algorithm efficiency
-                  <br>
-                  <i class="fas fa-lightbulb feature-icon"></i>Learn sorting techniques
-                </p>
-              </div>
-              <div class="button-container animate-fade-in-up delay-200">
-                <a class="inline-block mr-4 px-6 py-3 rounded-full font-semibold text-white transition duration-300 ease-in-out hover:shadow-lg" style="background: rgb(219, 127, 219);" href="visual.html">
-                  <span>Get Started</span>
-                </a>
-                <a class="inline-block px-6 py-3 bg-gray-200 rounded-full font-semibold text-gray-700 transition duration-300 ease-in-out hover:bg-gray-300 hover:text-purple-700" href="#programs-section">
-                  <span>Explore</span>
-                </a>
-              </div>
-            </div>
-            <div class="w-full md:w-1/2 image-container animate-fade-in-up delay-300">
-              <div class="image-wrapper">
-                <div class="image-inner">
-                  <img src="./images/home.png" alt="Sorting Visualization" class="main-image w-full h-auto max-w-md mx-auto">
-                  <div class="ripple-effect"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 mb-10 md:mb-0 z-10">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 animate-fade-in-up">
+                    The <span style="color: #c84fd1;">#1</span> Sorting 
+                    <span class="whitespace-nowrap">Visualization Tool</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-700 mb-8 animate-fade-in-up delay-100">
+                    Interactive visualization tool for various sorting algorithms. Understand efficiency and learn sorting techniques with ease.
+                </p>
+                <div class="flex flex-wrap gap-4 animate-fade-in-up delay-200">
+                    <a href="visual.html" class=" text-white px-6 py-3 rounded-full font-semibold hover:bg-purple-600 transition duration-300" style="background-color: #c84fd1;">
+                        Get Started
+                    </a>
+                    <a href="#programs-section" class="bg-gray-200 text-gray-800 px-6 py-3 rounded-full font-semibold hover:bg-gray-300 transition duration-300">
+                        Explore
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 image-container animate-fade-in-up delay-300">
+                <div class="image-wrapper">
+                    <div class="image-inner">
+                        <img src="./images/home.png" alt="Sorting Visualization" class="main-image">
+                        <div class="ripple-effect"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-arrow">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
     <div class="site-section algorithm-title" id="algorithm-section">
       <div class="container">
         <div class="row mb-5 justify-content-center">
@@ -1413,6 +1318,21 @@ window.addEventListener('load', function() {
             behavior: 'smooth'  
         });
     };
+    document.addEventListener('DOMContentLoaded', function() {
+            const arrow = document.querySelector('.scroll-arrow');
+            const heroSection = document.getElementById('home-section');
+
+            window.addEventListener('scroll', function() {
+                const heroBottom = heroSection.getBoundingClientRect().bottom;
+                const windowHeight = window.innerHeight;
+
+                if (window.scrollY > 200 || heroBottom < 0) {
+                    arrow.style.opacity = '0';
+                } else {
+                    arrow.style.opacity = '1';
+                }
+            });
+        });
 </script>
 
 
