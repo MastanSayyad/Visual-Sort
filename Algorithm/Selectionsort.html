@@ -1,161 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="./bubbles.css">
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMt23cez/3paNdF+ZL0LaFf6FYyUo13EFBZu/9m" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/2815a7015d.js" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./bubbles.css" />
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMt23cez/3paNdF+ZL0LaFf6FYyUo13EFBZu/9m"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/2815a7015d.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Selection Sort</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
-        <div class="container-fluid">
-            <div class="d-flex align-items-center">
-                <img src="../images/fevicon.png" width="50px" class="h-6 mr-2" alt="">
-                <a class="navbar-brand" style="font-weight: 900; color: rgb(219, 127, 219); padding-left: 10px;" href="#">Visual Sort</a>
-            </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../index.html#programs-section">Sorting Visualizers</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle font-medium" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
-                            Algorithm
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="Bubble.html">Bubble Sort</a>
-                            <a class="dropdown-item" href="Selectionsort.html">Selection Sort</a>
-                            <a class="dropdown-item" href="Insertionsort.html">Insertion Sort</a>
-                            <a class="dropdown-item" href="CombSort.html">Comb Sort</a>
-                            <a class="dropdown-item" href="mergesort.html">Merge Sort</a>
-                            <a class="dropdown-item" href="Heapsort.html">Heap Sort</a>
-                            <a class="dropdown-item" href="Quicksort.html">Quick Sort</a>
-                            <a class="dropdown-item" href="Radixsort.html">Radix Sort</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../index.html#features-section">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../index.html#About-Us">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link log px-3" href="../login.html">Login</a>
-                    </li>
-                </ul>
-            </div>
+      <div class="container-fluid">
+        <div class="d-flex align-items-center">
+          <img
+            src="../images/fevicon.png"
+            width="50px"
+            class="h-6 mr-2"
+            alt=""
+          />
+          <a
+            class="navbar-brand"
+            style="
+              font-weight: 900;
+              color: rgb(219, 127, 219);
+              padding-left: 10px;
+            "
+            href="#"
+            >Visual Sort</a
+          >
         </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html#programs-section"
+                >Sorting Visualizers</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle font-medium"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Algorithm
+              </a>
+              <div
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <a class="dropdown-item" href="Bubble.html">Bubble Sort</a>
+                <a class="dropdown-item" href="Selectionsort.html"
+                  >Selection Sort</a
+                >
+                <a class="dropdown-item" href="Insertionsort.html"
+                  >Insertion Sort</a
+                >
+                <a class="dropdown-item" href="CombSort.html">Comb Sort</a>
+                <a class="dropdown-item" href="mergesort.html">Merge Sort</a>
+                <a class="dropdown-item" href="Heapsort.html">Heap Sort</a>
+                <a class="dropdown-item" href="Quicksort.html">Quick Sort</a>
+                <a class="dropdown-item" href="Radixsort.html">Radix Sort</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html#features-section"
+                >Features</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html#About-Us">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="../contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link log px-3" href="../login.html">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
     <!-- Bubble Sort Section -->
     <section class="bubble-sort-section">
-        <div class="container">
-            <h1 class="bubble-sort-title">Selection Sort</h1>
-            <div class="row mt-5">
-                <div class="col-md-6">
-                    <div class="bubble-sort-description">
-                        <p>Selection Sort is a simple comparison-based sorting algorithm. It works by repeatedly finding the minimum element from the unsorted part of the list and moving it to the beginning. he algorithm maintains two subarrays in a given array The subarray which is already sorted and The subarray which is unsorted during each iteration, the minimum element from the unsorted subarray is selected and swapped with the leftmost unsorted element, moving the boundary of the sorted subarray one element to the right.</p>
-                        <br>
-                        <h3>Algorithm:</h3>
-        <pre><code class="algorithm"></code></pre>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="bubble-sort-gif">
-                        <img src="../images/selection2.gif" alt="Bubble Sort Visualization" class="img-fluid shadow-lg rounded">
-                    </div>
-                    <table class="table table-bordered mt-3">
-                        <thead>
-                            <tr>
-                                <th colspan="2">Complexity</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Best Time Complexity</td>
-                                <td>O(n<sup>2</sup>)</td>
-                            </tr>
-                            <tr>
-                                <td>Average Time Complexity</td>
-                                <td>O(n<sup>2</sup>)</td>
-                            </tr>
-                            <tr>
-                                <td>Worst Time Complexity</td>
-                                <td>O(n<sup>2</sup>)</td>
-                            </tr>
-                            <tr>
-                                <td>Space Complexity</td>
-                                <td>O(1)</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+      <div class="container">
+        <h1 class="bubble-sort-title">Selection Sort</h1>
+        <div class="row mt-5">
+          <div class="col-md-6">
+            <div class="bubble-sort-description">
+              <p>
+                Selection Sort is a simple comparison-based sorting algorithm.
+                It works by repeatedly finding the minimum element from the
+                unsorted part of the list and moving it to the beginning. he
+                algorithm maintains two subarrays in a given array The subarray
+                which is already sorted and The subarray which is unsorted
+                during each iteration, the minimum element from the unsorted
+                subarray is selected and swapped with the leftmost unsorted
+                element, moving the boundary of the sorted subarray one element
+                to the right.
+              </p>
+              <br />
+              <h3>Algorithm:</h3>
+              <pre><code class="algorithm"></code></pre>
             </div>
+          </div>
+          <div class="col-md-6">
+            <div class="bubble-sort-gif">
+              <img
+                src="../images/selection2.gif"
+                alt="Bubble Sort Visualization"
+                class="img-fluid shadow-lg rounded"
+              />
+            </div>
+            <table class="table table-bordered mt-3">
+              <thead>
+                <tr>
+                  <th colspan="2">Complexity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Best Time Complexity</td>
+                  <td>O(n<sup>2</sup>)</td>
+                </tr>
+                <tr>
+                  <td>Average Time Complexity</td>
+                  <td>O(n<sup>2</sup>)</td>
+                </tr>
+                <tr>
+                  <td>Worst Time Complexity</td>
+                  <td>O(n<sup>2</sup>)</td>
+                </tr>
+                <tr>
+                  <td>Space Complexity</td>
+                  <td>O(1)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Complexity Section -->
-    <section class="complexity-section py-5">
-            
-    </section>
-    
+    <section class="complexity-section py-5"></section>
 
     <!-- Visualizer Section -->
     <section class="visualizer-section py-5">
-        <div class="container text-center">
-            <h2 class="mb-4">Selection Sort Visualizer</h2>
-            <div id="Loader"></div>
-            <div id="contain">
-                <div class="sh" id="visualization"></div>
-                <div id="buttons" class="d-flex flex-column flex-md-row justify-content-center mt-3">
-                    <input id="array" type="text" placeholder="Enter array separated by space" size="30" class="form-control mx-2 mb-2 mb-md-0">
-                    <button id="submit" class="btn btn-primary mx-2 mb-2 mb-md-0" onclick="submit()">Submit</button>
-                    <select id="sortSelect" onchange="updateTimeComplexity()" class="form-control mx-2 mb-2 mb-md-0">
-                        <option value="selection">Selection Sort</option>
-                    </select>
-                    <button id="start" class="btn btn-primary mx-2 mb-2 mb-md-0" onclick="startSort()">Start Sort</button>
-                    <button class="btn btn-primary mx-2 mb-2 mb-md-0" onclick="stop = true; stopClicked()">Stop</button>
-                    <button id="resume" class="btn btn-primary mx-2 mb-2 mb-md-0" onclick="stop = false; startSort()">Resume</button>
-                    <button id="reset" class="btn btn-primary mx-2 mb-2 mb-md-0" onclick="reset()">Reset</button>
-                    <button class="btn btn-danger mx-2 mb-2 mb-md-0" onclick="window.location.reload();">Clear</button>
-                </div>
-            </div>
-            <div class="tour-overlay" id="tourOverlay">
-                <div class="tour-popup" id="tourPopup">
-                    <h3 id="tourTitle"></h3>
-                    <p id="tourDescription"></p>
-                    <button id="tourNext">Next</button>
-                    <button id="tourSkip" class="skip-btn">Skip</button>
-                </div>
-            </div>
+      <div class="container text-center">
+        <h2 class="mb-4">Selection Sort Visualizer</h2>
+        <div id="Loader"></div>
+        <div id="contain">
+          <div class="sh" id="visualization"></div>
+          <div
+            id="buttons"
+            class="d-flex flex-column flex-md-row justify-content-center mt-3"
+          >
+            <input
+              id="array"
+              type="text"
+              placeholder="Enter array separated by space"
+              size="30"
+              class="form-control mx-2 mb-2 mb-md-0"
+            />
+            <button
+              id="submit"
+              class="btn btn-primary mx-2 mb-2 mb-md-0"
+              onclick="submit()"
+            >
+              Submit
+            </button>
+            <select
+              id="sortSelect"
+              onchange="updateTimeComplexity()"
+              class="form-control mx-2 mb-2 mb-md-0"
+            >
+              <option value="selection">Selection Sort</option>
+            </select>
+            <button
+              id="start"
+              class="btn btn-primary mx-2 mb-2 mb-md-0"
+              onclick="startSort()"
+            >
+              Start Sort
+            </button>
+            <button
+              class="btn btn-primary mx-2 mb-2 mb-md-0"
+              onclick="stop = true; stopClicked()"
+            >
+              Stop
+            </button>
+            <button
+              id="resume"
+              class="btn btn-primary mx-2 mb-2 mb-md-0"
+              onclick="stop = false; startSort()"
+            >
+              Resume
+            </button>
+            <button
+              id="reset"
+              class="btn btn-primary mx-2 mb-2 mb-md-0"
+              onclick="reset()"
+            >
+              Reset
+            </button>
+            <button
+              class="btn btn-danger mx-2 mb-2 mb-md-0"
+              onclick="window.location.reload();"
+            >
+              Clear
+            </button>
+          </div>
         </div>
+        <div class="tour-overlay" id="tourOverlay">
+          <div class="tour-popup" id="tourPopup">
+            <h3 id="tourTitle"></h3>
+            <p id="tourDescription"></p>
+            <button id="tourNext">Next</button>
+            <button id="tourSkip" class="skip-btn">Skip</button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Code Section -->
     <section class="code-section py-5">
-        <div class="container">
-            <h2>Selection Sort Code</h2>
-            <div class="nav nav-tabs mb-3" id="languageTabs" role="tablist">
-                <a class="nav-item nav-link active" id="java-tab" data-toggle="tab" href="#java" role="tab" aria-controls="java" aria-selected="true">Java</a>
-                <a class="nav-item nav-link" id="c-tab" data-toggle="tab" href="#c" role="tab" aria-controls="c" aria-selected="false">C</a>
-                <a class="nav-item nav-link" id="cpp-tab" data-toggle="tab" href="#cpp" role="tab" aria-controls="cpp" aria-selected="false">C++</a>
-                <a class="nav-item nav-link" id="python-tab" data-toggle="tab" href="#python" role="tab" aria-controls="python" aria-selected="false">Python</a>
-            </div>
-            <div class="tab-content" id="languageTabsContent">
-                <div class="tab-pane fade show active" id="java" role="tabpanel" aria-labelledby="java-tab">
-                    <pre class="code-display p-3 rounded bg-dark text-white"><code>public static void selectionSort(int[] arr) {
+      <div class="container">
+        <h2>Selection Sort Code</h2>
+        <div class="nav nav-tabs mb-3" id="languageTabs" role="tablist">
+          <a
+            class="nav-item nav-link active"
+            id="java-tab"
+            data-toggle="tab"
+            href="#java"
+            role="tab"
+            aria-controls="java"
+            aria-selected="true"
+            >Java</a
+          >
+          <a
+            class="nav-item nav-link"
+            id="c-tab"
+            data-toggle="tab"
+            href="#c"
+            role="tab"
+            aria-controls="c"
+            aria-selected="false"
+            >C</a
+          >
+          <a
+            class="nav-item nav-link"
+            id="cpp-tab"
+            data-toggle="tab"
+            href="#cpp"
+            role="tab"
+            aria-controls="cpp"
+            aria-selected="false"
+            >C++</a
+          >
+          <a
+            class="nav-item nav-link"
+            id="python-tab"
+            data-toggle="tab"
+            href="#python"
+            role="tab"
+            aria-controls="python"
+            aria-selected="false"
+            >Python</a
+          >
+        </div>
+        <div class="tab-content" id="languageTabsContent">
+          <div
+            class="tab-pane fade show active"
+            id="java"
+            role="tabpanel"
+            aria-labelledby="java-tab"
+          >
+            <pre
+              class="code-display p-3 rounded bg-dark text-white"
+            ><code>public static void selectionSort(int[] arr) {
                         int n = arr.length;
                         for (int i = 0; i < n - 1; i++) {
                             int minIdx = i;
@@ -170,9 +334,16 @@
                         }
                     }
                 </code></pre>
-                </div>
-                <div class="tab-pane fade" id="c" role="tabpanel" aria-labelledby="c-tab">
-                    <pre class="code-display p-3 rounded bg-dark text-white"><code>void selectionSort(int arr[], int n) {
+          </div>
+          <div
+            class="tab-pane fade"
+            id="c"
+            role="tabpanel"
+            aria-labelledby="c-tab"
+          >
+            <pre
+              class="code-display p-3 rounded bg-dark text-white"
+            ><code>void selectionSort(int arr[], int n) {
                         for (int i = 0; i < n-1; i++) {
                             int minIdx = i;
                             for (int j = i+1; j < n; j++) {
@@ -186,9 +357,16 @@
                         }
                     }
                     </code></pre>
-                </div>
-                <div class="tab-pane fade" id="cpp" role="tabpanel" aria-labelledby="cpp-tab">
-                    <pre class="code-display p-3 rounded bg-dark text-white"><code>void selectionSort(int arr[], int n) {
+          </div>
+          <div
+            class="tab-pane fade"
+            id="cpp"
+            role="tabpanel"
+            aria-labelledby="cpp-tab"
+          >
+            <pre
+              class="code-display p-3 rounded bg-dark text-white"
+            ><code>void selectionSort(int arr[], int n) {
                         for (int i = 0; i < n-1; i++) {
                             int minIdx = i;
                             for (int j = i+1; j < n; j++) {
@@ -199,9 +377,16 @@
                             swap(arr[minIdx], arr[i]);
                         }
                     }</code></pre>
-                </div>
-                <div class="tab-pane fade" id="python" role="tabpanel" aria-labelledby="python-tab">
-                    <pre class="code-display p-3 rounded bg-dark text-white"><code>def selection_sort(arr):
+          </div>
+          <div
+            class="tab-pane fade"
+            id="python"
+            role="tabpanel"
+            aria-labelledby="python-tab"
+          >
+            <pre
+              class="code-display p-3 rounded bg-dark text-white"
+            ><code>def selection_sort(arr):
                         n = len(arr)
                         for i in range(n):
                             min_idx = i
@@ -210,123 +395,222 @@
                                     min_idx = j
                             arr[i], arr[min_idx] = arr[min_idx], arr[i]
                     </code></pre>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Practice Questions Section -->
     <section class="questions-section py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center">Practice Questions</h2>
-            <table class="table table-striped mt-4">
-                <thead>
-                    <tr>
-                        <th scope="col">Question Number</th>
-                        <th scope="col">Question Title</th>
-                        <th scope="col">Level</th>
-                        <th scope="col">Link</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Sort an Array</td>
-                        <td>Easy</td>
-                        <td><a href="https://leetcode.com/problems/sort-an-array/">Link</a></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Sort List</td>
-                        <td>Medium</td>
-                        <td><a href="https://leetcode.com/problems/sort-list/">Link</a></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Valid anagrams</td>
-                        <td>Hard</td>
-                        <td><a href="https://leetcode.com/problems/valid-anagram/">Link</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+      <div class="container">
+        <h2 class="text-center">Practice Questions</h2>
+        <table class="table table-striped mt-4">
+          <thead>
+            <tr>
+              <th scope="col">Question Number</th>
+              <th scope="col">Question Title</th>
+              <th scope="col">Level</th>
+              <th scope="col">Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Sort an Array</td>
+              <td>Easy</td>
+              <td>
+                <a href="https://leetcode.com/problems/sort-an-array/">Link</a>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Sort List</td>
+              <td>Medium</td>
+              <td>
+                <a href="https://leetcode.com/problems/sort-list/">Link</a>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Valid anagrams</td>
+              <td>Hard</td>
+              <td>
+                <a href="https://leetcode.com/problems/valid-anagram/">Link</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <footer class="container-fluid py-4 py-md-5 px-4 px-md-3">
-        <div class="row d-flex justify-content-center align-items-center text-center">
-            <div class="col-md-6 mb-3">
-                <form>
-                    <h5>Subscribe to our newsletter</h5>
-                    <p>Monthly digest of what's new and exciting from us.</p>
-                    <div class="d-flex gap-2 justify-content-center align-items-center">
-                        <input id="newsletter1" type="text" class="form-control w-full" placeholder="Email address">
-                        <button class="btn btn-primary" type="button">Subscribe</button>
-                    </div>
-                </form>
+      <div
+        class="row d-flex justify-content-center align-items-center text-center"
+      >
+        <div class="col-md-6 mb-3">
+          <form>
+            <h5>Subscribe to our newsletter</h5>
+            <p>Monthly digest of what's new and exciting from us.</p>
+            <div class="d-flex gap-2 justify-content-center align-items-center">
+              <input
+                id="newsletter1"
+                type="text"
+                class="form-control w-full"
+                placeholder="Email address"
+              />
+              <button class="btn btn-primary" type="button">Subscribe</button>
             </div>
+          </form>
         </div>
-        <div class="row mt-5">
-            <div class="col-md-4 mb-3">
-                <a id="vs" class="d-inline-flex align-items-center ml- mb-2 text-body-emphasis text-decoration-none footer-title" href="../index.html" aria-label="Visual Sort">
-                    Visual Sort
-                </a>
-                <div class="vs">
-                    <ul class="list-unstyled small">
-                        <li class="mb-2">Visual Sort is a web-based sorting algorithm visualization tool which provides an interactive way to visualize various sorting algorithms in action, helping users understand how different algorithms work and their efficiency in sorting data.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-6 col-md-2 mb-3">
-                <h5>Home</h5>
-                <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="../index.html#home-section" class="nav-link p-0 text-body-secondary">Home</a></li>
-                    <li class="nav-item mb-2"><a href="../index.html#programs-section" class="nav-link p-0 text-body-secondary">Algorithms</a></li>
-                    <li class="nav-item mb-2"><a href="../index.html#algorithm-section" class="nav-link p-0 text-body-secondary">Programs</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-md-2 mb-3">
-                <h5>About</h5>
-                <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="../index.html#About-us-section" class="nav-link p-0 text-body-secondary">About</a></li>
-                    <li class="nav-item mb-2"><a href="https://github.com/MastanSayyad/Visual-Sort/graphs/contributors" class="nav-link p-0 text-body-secondary">Our Contributors</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-md-2 mb-3">
-                <h5>Support</h5>
-                <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="../index.html#faq" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                    <li class="nav-item mb-2"><a href="../index.html#contact-us" class="nav-link p-0 text-body-secondary">Contact</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-md-2 mb-3">
-                <h5>Legal</h5>
-                <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="../privacy-policy.html" class="nav-link p-0 text-body-secondary">Privacy Policy</a></li>
-                    <li class="nav-item mb-2"><a href="../Terms.html" class="nav-link p-0 text-body-secondary">Terms & Conditions</a></li>
-                    <li class="nav-item mb-2"><a href="../licensing.html" class="nav-link p-0 text-body-secondary">Licensing</a></li>
-                </ul>
-            </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-md-4 mb-3">
+          <a
+            id="vs"
+            class="d-inline-flex align-items-center ml- mb-2 text-body-emphasis text-decoration-none footer-title"
+            href="../index.html"
+            aria-label="Visual Sort"
+          >
+            Visual Sort
+          </a>
+          <div class="vs">
+            <ul class="list-unstyled small">
+              <li class="mb-2">
+                Visual Sort is a web-based sorting algorithm visualization tool
+                which provides an interactive way to visualize various sorting
+                algorithms in action, helping users understand how different
+                algorithms work and their efficiency in sorting data.
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="foot">
-            <div class="icons">
-                <a href="https://www.linkedin.com/in/mastan-sayyad-126904223/" class="linkedin"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/MastanSayyad" class="github"><i class="fa-brands fa-github"></i></a>
-                <a href="#" class="instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-            </div>
+        <div class="col-6 col-md-2 mb-3">
+          <h5>Home</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2">
+              <a
+                href="../index.html#home-section"
+                class="nav-link p-0 text-body-secondary"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item mb-2">
+              <a
+                href="../index.html#programs-section"
+                class="nav-link p-0 text-body-secondary"
+                >Algorithms</a
+              >
+            </li>
+            <li class="nav-item mb-2">
+              <a
+                href="../index.html#algorithm-section"
+                class="nav-link p-0 text-body-secondary"
+                >Programs</a
+              >
+            </li>
+          </ul>
         </div>
-        <div id="last" class="d-flex flex-column flex-sm-row justify-content-center py-4 my-1 border-top">
-            <p>© 2024 Visual Sort - Mastan Sayyad, Inc. All rights reserved.</p>
+        <div class="col-6 col-md-2 mb-3">
+          <h5>About</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2">
+              <a
+                href="../index.html#About-us-section"
+                class="nav-link p-0 text-body-secondary"
+                >About</a
+              >
+            </li>
+            <li class="nav-item mb-2">
+              <a
+                href="https://github.com/MastanSayyad/Visual-Sort/graphs/contributors"
+                class="nav-link p-0 text-body-secondary"
+                >Our Contributors</a
+              >
+            </li>
+          </ul>
         </div>
+        <div class="col-6 col-md-2 mb-3">
+          <h5>Support</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2">
+              <a
+                href="../index.html#faq"
+                class="nav-link p-0 text-body-secondary"
+                >FAQs</a
+              >
+            </li>
+            <li class="nav-item mb-2">
+              <a
+                href="../index.html#contact-us"
+                class="nav-link p-0 text-body-secondary"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-2 mb-3">
+          <h5>Legal</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2">
+              <a
+                href="../privacy-policy.html"
+                class="nav-link p-0 text-body-secondary"
+                >Privacy Policy</a
+              >
+            </li>
+            <li class="nav-item mb-2">
+              <a href="../Terms.html" class="nav-link p-0 text-body-secondary"
+                >Terms & Conditions</a
+              >
+            </li>
+            <li class="nav-item mb-2">
+              <a
+                href="../licensing.html"
+                class="nav-link p-0 text-body-secondary"
+                >Licensing</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot">
+        <div class="icons">
+          <a
+            href="https://www.linkedin.com/in/mastan-sayyad-126904223/"
+            class="linkedin"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+          <a href="https://github.com/MastanSayyad" class="github"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+          <a href="#" class="instagram"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+        </div>
+      </div>
+      <div
+        id="last"
+        class="d-flex flex-column flex-sm-row justify-content-center py-4 my-1 border-top"
+      >
+        <p>© 2024 Visual Sort - Mastan Sayyad, Inc. All rights reserved.</p>
+      </div>
     </footer>
-<div id="topbtn" class="topbtn">
-    <a class="gotopbtn" href="#"><img id="topbtn" src="../images/upload.png" width="50px" height="50px" alt=""></a>
-</div>
+    <div id="topbtn" class="topbtn">
+      <a class="gotopbtn" href="#"
+        ><img
+          id="topbtn"
+          src="../images/upload.png"
+          width="50px"
+          height="50px"
+          alt=""
+      /></a>
+    </div>
 
     <!-- JavaScript Files -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="./SelectionSort.js"></script>
-</body>
+  </body>
 </html>
