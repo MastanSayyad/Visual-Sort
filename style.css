@@ -445,6 +445,26 @@ pre code {
   color: #0056b3;
 }
 
+/* Style the scrollbar */
+::-webkit-scrollbar {
+  width: 12px !important; /* Width of the entire scrollbar */
+}
+
+/* Style the track (progress bar) */
+::-webkit-scrollbar-track {
+  background: rgb(252, 185, 252) !important; /* Background color of the track */
+}
+
+/* Style the handle (scroll thumb) */
+::-webkit-scrollbar-thumb {
+  background: rgb(209, 72, 209) !important; /* Background color of the handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(155, 33, 155) !important; /* Background color when hovering */
+}
+
 @media (max-width: 600px) {
   .contact-container {
     padding: 15px;
