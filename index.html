@@ -332,6 +332,9 @@ animation-delay: 0.4s;
                       <a class="nav-link" style="font-weight: 500;" href="#About-Us">About Us</a>
                   </li>
                   <li class="nav-item ">
+                    <a class="nav-link  px-3" href="contact.html">Contact</a>
+                </li>
+                  <li class="nav-item ">
                     <a class="nav-link log px-3" href="login.html">Login</a>
                 </li>
                 <!-- <li class="nav-item">
@@ -1069,7 +1072,7 @@ animation-delay: 0.4s;
     
 
 
-    <section class="contact-us" id="contact-us">
+    <!-- <section class="contact-us" id="contact-us">
       <div id="contact" class="py-5">
         <div class="container">
           <div class="row">
@@ -1094,7 +1097,43 @@ animation-delay: 0.4s;
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
+
+
+
+    <div class="contact-container mt-5 mx-auto">
+      <h1 class="text-2xl md:text-4xl font-bold">Contact Us</h1>
+      <form>
+          <div class="input-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" required>
+          </div>
+          <div class="input-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" required>
+          </div>
+          <div class="input-group">
+              <label for="message">Enter Your Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class=" text-white rounded-md px-4 py-2">Send Message</button>
+      </form>
+      <div class="social-media">
+          <h2>Follow Us</h2>
+          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <form>
+        <h5 class="mt-5">Subscribe to our newsletter</h5>
+        <p>Monthly digest of what's new and exciting from us.</p>
+        <div class="d-flex gap-2 justify-content-center align-items-center">
+          <input id="newsletter1" type="text" class="form-control w-full" placeholder="Email address">
+          <button class="btn btn-primary" type="button">Subscribe</button>
+        </div>
+      </form>
+  </div>
     
 
 
@@ -1103,14 +1142,7 @@ animation-delay: 0.4s;
  <footer class="container py-4 py-md-5 px-4 px-md-3">
     <div class="row d-flex justify-content-center align-items-center text-center">
       <div class="col-md-6 mb-3">
-        <form>
-          <h5>Subscribe to our newsletter</h5>
-          <p>Monthly digest of what's new and exciting from us.</p>
-          <div class="d-flex gap-2 justify-content-center align-items-center">
-            <input id="newsletter1" type="text" class="form-control w-full" placeholder="Email address">
-            <button class="btn btn-primary" type="button">Subscribe</button>
-          </div>
-        </form>
+       
       </div>
     </div>
     <div class="row mt-5">
