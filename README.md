@@ -2,7 +2,7 @@
 
 Welcome to **Visual Sort**, a web-based sorting algorithm visualization tool built using HTML, CSS, Bootstrap, SCSS, and JavaScript. This project provides an interactive way to visualize various sorting algorithms in action, helping users understand how different algorithms work and their efficiency in sorting data.
 
-![image](https://github.com/MastanSayyad/Visual-Sort/assets/101971980/60a1d8c8-c21f-482c-9e41-01e4bd98af4f)
+![image](https://github.com/user-attachments/assets/3c613e72-1a56-4922-a39b-9e40d73adead)
 
 
 ##  Project Admin ✨
