@@ -10,7 +10,7 @@ Welcome to **Visual Sort**, a web-based sorting algorithm visualization tool bui
 <table align="center">
   <tr>
 <td align="center"><a href="https://github.com/MastanSayyad"><img src="https://media.licdn.com/dms/image/D4D03AQH5h5wjzu5JCw/profile-displayphoto-shrink_400_400/0/1720377064846?e=1726099200&v=beta&t=yEkMjvHLm06OHyiDKMX_ZSRA_-Lqq1oZY8-ukd-dW0E" width="100px;" alt="Mastan Sayyad"/><br /><sub><b>Mastan Sayyad</b></sub></a></td>
-  
+<td align="center"><a href="https://github.com/RadhikaMalpani1702"><img src="https://avatars.githubusercontent.com/u/163530398?v=4" width="100px;" alt="Radhika Malpani"/><br /><sub><b>Radhika Malpani</b></sub></a></td>
  </tr>
 </table>
 
