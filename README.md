@@ -25,8 +25,12 @@ Visual Sort is designed to help both beginners and seasoned developers understan
 - Bubble Sort
 - Selection Sort
 - Insertion Sort
-- Merge Sort
-- Quick Sort
+- Comb Sort
+-  Merge Sort
+-  Heap Sort
+-  Quick Sort
+-  Counting Sort
+-  Radix Sort
 
 ## #Technologies Used
 
@@ -76,19 +80,6 @@ You can clone the repository using the command line or GitHub Desktop.
 2. Open the `index.html` file in your browser to view the project locally.
 
 
-## Screenshots
-
-![image](https://github.com/MastanSayyad/Visual-Sort/assets/101971980/60a1d8c8-c21f-482c-9e41-01e4bd98af4f)
-
-![image](https://github.com/MastanSayyad/Visual-Sort/assets/101971980/476cc086-7296-4b30-ad03-664d0922a54a)
-
-![image](https://github.com/MastanSayyad/Visual-Sort/assets/101971980/e8827938-f8b8-4b3b-bba3-6febf1650ab1)
-
-![image](https://github.com/MastanSayyad/Visual-Sort/assets/101971980/224a066c-bbf9-42d8-aabb-6b0724fc45a6)
-
-![image](https://github.com/MastanSayyad/Visual-Sort/assets/101971980/5b0d4a4a-c6d8-4718-b18f-3ffb90d07d75)
-
-![image](https://github.com/MastanSayyad/Visual-Sort/assets/101971980/0df13876-f3af-4bec-800a-507c34dbf315)
 
 ## Additional Resources
 
