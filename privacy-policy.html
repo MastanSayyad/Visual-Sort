@@ -4,116 +4,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Visual Sort</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Document</title>
+    <link rel="stylesheet" href="terms.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@11.1.4/swiper-bundle.min.css" />
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- custom css link -->
+    <script src="https://kit.fontawesome.com/2815a7015d.js" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="fonts/icomoon/style.css"> -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQBo1vBkn6MSmIM6GaeLDJTZf5g5c8IV1qAyyB4W5cZP4Z/et3ur3DqBs" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <!-- Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="about.css">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+    <!-- Remix Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
+        .hover-move {
+            transition: transform 0.3s ease-in-out;
         }
 
-        .navbar {
-            box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+        .hover-move:hover {
+            transform: translateX(20px);
         }
-
-        .navbar-brand {
-            font-size: 1.5rem;
-            letter-spacing: 1px;
-        }
-
-        .container {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, .1);
-            padding: 40px;
-            margin-top: 80px;
-        }
-
-        h1 {
-            color: #303842;
-            border-bottom: 2px solid #303842;
-            padding-bottom: 10px;
-        }
-
-        h2 {
-            color: #303842;
-            margin-top: 30px;
-            font-size: 1.5rem;
-        }
-
-        .last-updated {
-            font-style: italic;
-            color: #6c757d;
-        }
-
-        ul {
-            padding-left: 20px;
-        }
-
-        footer {
-            background-color: #2c3e50;
-            color: #2d5661;
-            padding: 30px 0;
-            margin-top: auto;
-        }
-
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .copyright {
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-        }
-
-        .footer-links {
-            margin-bottom: 15px;
-        }
-
-        .footer-links a {
-            color: #ecf0f1;
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: #3498db;
-        }
-
-        .social-icons a {
-            color: #ecf0f1;
-            font-size: 1.2rem;
-            margin: 0 10px;
-            transition: color 0.3s ease;
-        }
-.mb-4{
-    text-align: center;
-}
-        .social-icons a:hover {
-            color: #3498db;
-        }
-
-        @media (min-width: 768px) {
-            .footer-content {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-            }
-
-            .copyright,
-            .footer-links,
-            .social-icons {
-                margin-bottom: 0;
-            }
-        }
-
         #progress-container {
             width: 100%;
             height: 5px;
@@ -131,7 +78,11 @@
             height: 100%;
             background-color: rgb(219, 127, 219);
         }
+        h1, h2{
+            color: black!important; 
+        }
     </style>
+
 </head>
 
 <body>
@@ -160,125 +111,245 @@
     window.addEventListener('scroll', updateProgressBar);
     
       </script>
+      
+    <body data-spy="scroll" data-target=".site-navbar-target" data-offset="72">
 
-    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #303842;">
-        <div class="container-fluid">
-            <a class="navbar-brand" style="font-weight: 900; color: rgb(255, 255, 255);" href="index.html">Visual
-                Sort</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" style="font-weight: 500; color: white;" href="index.html">Home</a>
-                    </li>
-                </ul>
+        <div id="Loader"></div>
+
+        <div class="site-wrap">
+
+            <div class="site-mobile-menu site-navbar-target">
+                <div class="site-mobile-menu-header">
+                    <div class="site-mobile-menu-close mt-3">
+                        <span class="icon-close2 js-menu-toggle"></span>
+                    </div>
+                </div>
+                <div class="site-mobile-menu-body"></div>
             </div>
-        </div>
-    </nav>
+            <nav class="navbar navbar-expand-lg fixed-top bg-white">
 
-    <div class="container mt-5 pt-5">
-        <h1 class="mb-4">Privacy Policy</h1>
-        <p class="last-updated">Last updated: July 1, 2024</p>
+                <div class="container-fluid">
+                    <div class="flex items-center"> <img src="images/fevicon.png" class="h-6 mr-2" alt=""><a
+                            class="navbar-brand" style="font-weight: 900 ; color:rgb(219, 127, 219);" href="#">Visual
+                            Sort</a></div>
+                    <button class="navbar-toggler" style=" background-color: rgb(202, 111, 202) ;color: black;"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon "></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end " id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
 
-        <h2>Introduction</h2>
-        <p>Welcome to Visual Sort ("we," "our," or "us"). This Privacy Policy governs your use of our website
-            www.visualsort.com (the "Site") and our sorting visualization services. We are committed to protecting your
-            privacy and ensuring a safe, transparent online experience.</p>
+            <div class="wrapper flex_align_justify" style="background-color: rgba(219, 127, 219, 0.9);">
+                <div class="terms_service">
+                    <div class="tc_item tc_head flex_align_justify">
+                        <div class="icon flex_align_justify">
+                            <ion-icon name="terminal-outline"></ion-icon>
+                        </div>
+                        <div class="text">
+                            <h1>Privacy Policy</h1>
+                            <p>Welcome to Visual-sort!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tc_item tc_body">
+                        
+                        <h1 class="mb-4">Privacy Policy</h1>
+                        <p class="last-updated">Last updated: July 1, 2024</p><br>
+                
+                        <h1>Introduction</h1><br>
+                        <p>Welcome to Visual Sort ("we," "our," or "us"). This Privacy Policy governs your use of our website
+                            www.visualsort.com (the "Site") and our sorting visualization services. We are committed to protecting your
+                            privacy and ensuring a safe, transparent online experience.</p><br>
+                
+                        <h2>Information We Collect</h2>
+                        <p>We collect and process the following types of information:</p><br>
+                        <ul style="list-style-type: disc;">
+                            <li><strong>Personal Information:</strong> Name, email address, and any other information you provide when
+                                contacting us or subscribing to our newsletter.</li>
+                            <li><strong>Usage Data:</strong> IP address, browser type, operating system, pages visited, time spent on
+                                the Site, and other analytics data.</li>
+                            <li><strong>Cookies and Tracking Technologies:</strong> We use cookies and similar technologies to enhance
+                                your browsing experience and collect usage information.</li>
+                        </ul>
+                        <br>
+                        <h2>How We Use Your Information</h2><br>
+                        <p>We use the collected information for various purposes, including:</p><br>
+                        <ul style="list-style-type: disc;">
+                            <li>Providing, maintaining, and improving our Site and services.</li>
+                            <li>Responding to your inquiries and fulfilling your requests.</li>
+                            <li>Sending technical notices, updates, security alerts, and administrative messages.</li>
+                            <li>Analyzing usage patterns to enhance user experience and Site functionality.</li>
+                            <li>Detecting, preventing, and addressing technical issues or fraudulent activities.</li>
+                        </ul>
+                
+                        <h2>Sharing of Your Information</h2>
+                        <p>We do not sell, trade, or rent your personally identifiable information to third parties. However, we may
+                            share information with:</p>
+                        <ul style="list-style-type: disc;">
+                            <li>Service providers who assist us in operating our Site and conducting our business, subject to
+                                confidentiality agreements.</li>
+                            <li>Law enforcement or other governmental agencies in response to a legal request or when required by law.
+                            </li>
+                            <li>Other parties in connection with a corporate transaction, such as a merger, sale of assets, or
+                                acquisition.</li>
+                        </ul>
+                        <br>
+                        <h2>Data Security</h2><br>
+                        <p>We implement and maintain reasonable security measures to protect your personal information, including:</p><br>
+                        <ul style="list-style-type: disc;">
+                            <li>Using industry-standard encryption protocols for data transmission.</li>
+                            <li>Storing personal information in encrypted form on secure servers.</li>
+                            <li>Regularly updating our security practices and technologies.</li>
+                            <li>Limiting access to personal information to authorized personnel only.</li>
+                        </ul>
+                        <br>
+                        <h2>Your Rights and Choices</h2><br>
+                        <p>You have certain rights regarding your personal information:</p><br>
+                        <ul style="list-style-type: disc;">   
+                            <li>Access and update your personal information.</li>
+                            <li>Request deletion of your personal data, subject to certain exceptions.</li>
+                            <li>Opt-out of marketing communications.</li>
+                            <li>Object to the processing of your personal information.</li>
+                            <li>Data portability rights, where applicable.</li>
+                        </ul>
+                        <br>
+                        <h2>Children's Privacy</h2><br>
+                        <p>Our Site is not intended for children under 13 years of age. We do not knowingly collect personal information
+                            from children under 13. If you are a parent or guardian and believe we may have collected information about
+                            a child, please contact us immediately.</p><br>
+                
+                        <h2>International Data Transfers</h2><br>
+                        <p>Your information may be transferred to and processed in countries other than your own. We ensure appropriate
+                            safeguards are in place to protect your information and comply with applicable data protection laws.</p><br>
+                
+                        <h2>Changes to This Privacy Policy</h2><br>
+                        <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new
+                            Privacy Policy on this page and updating the "Last updated" date. We encourage you to review this Privacy
+                            Policy periodically.</p><br>
+                
+                        <h2>Contact Us</h2><br>
+                        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our privacy practices,
+                            please contact us at:</p><br>
+                        <p>
+                            Email: privacy@visualsort.com<br>
+                            Address: 123 Tech Street, San Francisco, CA 94105, USA<br>
+                            Phone: +1 (555) 123-4567
+                        </p>
+                
+                           
+                    </div>
+                   
 
-        <h2>Information We Collect</h2>
-        <p>We collect and process the following types of information:</p>
-        <ul>
-            <li><strong>Personal Information:</strong> Name, email address, and any other information you provide when
-                contacting us or subscribing to our newsletter.</li>
-            <li><strong>Usage Data:</strong> IP address, browser type, operating system, pages visited, time spent on
-                the Site, and other analytics data.</li>
-            <li><strong>Cookies and Tracking Technologies:</strong> We use cookies and similar technologies to enhance
-                your browsing experience and collect usage information.</li>
-        </ul>
-
-        <h2>How We Use Your Information</h2>
-        <p>We use the collected information for various purposes, including:</p>
-        <ul>
-            <li>Providing, maintaining, and improving our Site and services.</li>
-            <li>Responding to your inquiries and fulfilling your requests.</li>
-            <li>Sending technical notices, updates, security alerts, and administrative messages.</li>
-            <li>Analyzing usage patterns to enhance user experience and Site functionality.</li>
-            <li>Detecting, preventing, and addressing technical issues or fraudulent activities.</li>
-        </ul>
-
-        <h2>Sharing of Your Information</h2>
-        <p>We do not sell, trade, or rent your personally identifiable information to third parties. However, we may
-            share information with:</p>
-        <ul>
-            <li>Service providers who assist us in operating our Site and conducting our business, subject to
-                confidentiality agreements.</li>
-            <li>Law enforcement or other governmental agencies in response to a legal request or when required by law.
-            </li>
-            <li>Other parties in connection with a corporate transaction, such as a merger, sale of assets, or
-                acquisition.</li>
-        </ul>
-
-        <h2>Data Security</h2>
-        <p>We implement and maintain reasonable security measures to protect your personal information, including:</p>
-        <ul>
-            <li>Using industry-standard encryption protocols for data transmission.</li>
-            <li>Storing personal information in encrypted form on secure servers.</li>
-            <li>Regularly updating our security practices and technologies.</li>
-            <li>Limiting access to personal information to authorized personnel only.</li>
-        </ul>
-
-        <h2>Your Rights and Choices</h2>
-        <p>You have certain rights regarding your personal information:</p>
-        <ul>
-            <li>Access and update your personal information.</li>
-            <li>Request deletion of your personal data, subject to certain exceptions.</li>
-            <li>Opt-out of marketing communications.</li>
-            <li>Object to the processing of your personal information.</li>
-            <li>Data portability rights, where applicable.</li>
-        </ul>
-
-        <h2>Children's Privacy</h2>
-        <p>Our Site is not intended for children under 13 years of age. We do not knowingly collect personal information
-            from children under 13. If you are a parent or guardian and believe we may have collected information about
-            a child, please contact us immediately.</p>
-
-        <h2>International Data Transfers</h2>
-        <p>Your information may be transferred to and processed in countries other than your own. We ensure appropriate
-            safeguards are in place to protect your information and comply with applicable data protection laws.</p>
-
-        <h2>Changes to This Privacy Policy</h2>
-        <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new
-            Privacy Policy on this page and updating the "Last updated" date. We encourage you to review this Privacy
-            Policy periodically.</p>
-
-        <h2>Contact Us</h2>
-        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our privacy practices,
-            please contact us at:</p>
-        <p>
-            Email: privacy@visualsort.com<br>
-            Address: 123 Tech Street, San Francisco, CA 94105, USA<br>
-            Phone: +1 (555) 123-4567
-        </p>
-    </div>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <p class="copyright">&copy; 2024 Visual Sort. All rights reserved.</p>
-
-                <div class="social-icons">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
         </div>
-    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+        <section class="style">
+
+            <footer class="container py py-md px px-md footer">
+                <div class="row d-flex justify-content-center align-items-center text-center footer-header"></div>
+                <div class="row mt footer-content">
+                    <div class="col-md-4 mb-3 footer-section">
+                        <a class="d-inline-flex align-items-center mb-2 footer-title" href="/" aria-label="Visual Sort">
+                            Visual Sort
+                        </a>
+                        <div class="vs">
+                            <ul class="list-unstyled small">
+                                <li class="mb-2 footer-description">Visual Sort is a web-based sorting algorithm visualization tool which provides an
+                                    interactive way to visualize various sorting algorithms in action, helping users understand how
+                                    different algorithms work and their efficiency in sorting data</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-2 mb-3 footer-section">
+                        <h5 class="footer-header-title">Home</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#home-section" class="nav-link p-0">Home</a></li>
+                            <li class="nav-item mb-2"><a href="#algorithm-section" class="nav-link p-0">Algorithms</a></li>
+                            <li class="nav-item mb-2"><a href="#programs-section" class="nav-link p-0">Programs</a></li>
+                        </ul>
+                    </div>
+            
+                    <div class="col-6 col-md-2 mb-3 footer-section">
+                        <h5 class="footer-header-title">About</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#about-us-section" class="nav-link p-0">About</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Our Contributors</a></li>
+                        </ul>
+                    </div>
+            
+                    <div class="col-6 col-md-2 mb-3 footer-section">
+                        <h5 class="footer-header-title">Support</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#faq" class="nav-link p-0">FAQs</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Contact</a></li>
+                        </ul>
+                    </div>
+            
+                    <div class="col-6 col-md-2 mb-3 footer-section">
+                        <h5 class="footer-header-title">Legal</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="privacy-policy.html" class="nav-link p-0">Privacy Policy</a></li>
+                            <li class="nav-item mb-2"><a href="Terms.html" class="nav-link p-0">Terms & Conditions</a></li>
+                            <li class="nav-item mb-2"><a href="license.html" class="nav-link p-0">Licensing</a></li>
+                        </ul>
+                    </div>
+                </div>
+            
+                <div id="topbtn" class="topbtn">
+                    <a class="gotopbtn" href="#"><i class="fa-solid fa-angles-up"></i></a>
+                </div>
+            
+                <div class="foot">
+                    <div class="icons">
+                        <div class="linkedin">
+                            <a href="https://www.linkedin.com/in/mastan-sayyad-126904223/"><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                        <div class="github">
+                            <a href="https://github.com/MastanSayyad"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                        <div class="instagram">
+                            <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                        <div class="twitter">
+                            <a href=""><i class="fa fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="d-flex flex-column flex-sm-row justify-content-center py-4 my-4 border-top footer-bottom">
+                    <p>© 2024 Visual Sort - Mastan Sayyad, Inc. All rights reserved.</p>
+                </div>
+            </footer>
+            
+    </section>
+
+            <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+            <script>
+                var loader = document.getElementById("Loader");
+                window.addEventListener("load", function () {
+                    loader.style.display = "none";
+                })
+            </script>
+              <a href="chatbot.html">
+                <div class="fixed bottom-0 right-2 chatbot-container">
+                  <button class="chatbot-button group">
+                    <img class="h-20" src="./images/chatbot.gif" alt="chatbot">
+                    <span class="tooltip-text">
+                      Welcome to Visual Sort! <br>
+                      How can I help You? ^_^ 
+                    </span>
+                  </button>
+                </div>
+              </a>
+    </body>
 
 </html>
