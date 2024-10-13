@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
 
 :root {
-  --bg-clr: #6c00f9;
+  --bg-clr: #d19cd9;
   --white: #fff;
-  --primary-text-clr: #212121;
-  --secondary-text-clr: #8c8c8c;
-  --bg-hvr: #5803c7;
+  --primary-text-clr: #333;
+  --secondary-text-clr: #8c8c8c; 
+  --bg-hvr: #b67dc8; 
 }
 
 * {
@@ -15,47 +15,48 @@
   font-family: "Open Sans", sans-serif;
 }
 
-body{
-  background: blue;
+body {
+  background-color: #f9f9f9;
   font-size: 12px;
-  
+  color: #333; 
 }
 
-.flex_align_justify{
+.flex_align_justify {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.flex_align{
+.flex_align {
   display: flex;
   align-items: center;
 }
 
-.wrapper{
+.wrapper {
   min-height: 100vh;
   padding: 0 20px;
 }
 
-.terms_service{
+.terms_service {
   width: 800px;
   max-width: 100%;
   height: 650px;
-  background: lightcyan;
-  border-radius: 3px;
-  box-shadow: 0px 0px 3px rgba(0,0,0,0.15);
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.terms_service .tc_item{
+.terms_service .tc_item {
   padding: 20px 40px;
 }
 
-.terms_service .tc_head{
-  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+.terms_service .tc_head {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
   height: 90px;
+  border-bottom: 2px solid var(--bg-clr); 
 }
 
-.terms_service .tc_head .icon{
+.terms_service .tc_head .icon {
   width: 50px;
   height: 50px;
   background: var(--bg-clr);
@@ -65,38 +66,43 @@ body{
   color: var(--white);
 }
 
-.terms_service .tc_body{
+.terms_service .tc_body {
   height: calc(100% - 170px);
   overflow: auto;
   padding-right: 20px;
 }
 
-.terms_service .tc_body ol li{
+.terms_service .tc_body ol li {
   margin-bottom: 15px;
 }
 
-.terms_service .tc_body ol li h3{
+.terms_service .tc_body ol li h3 {
   margin-bottom: 5px;
+  color: var(--bg-clr); 
 }
 
-.terms_service .tc_foot{
-  box-shadow: 0 -1px 2px rgba(0,0,0,0.15);
+.terms_service .tc_foot {
+  box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.15);
   justify-content: space-between;
   height: 80px;
 }
 
-.terms_service .tc_foot button{
+.terms_service .tc_foot button {
   width: 100%;
   border: 1px solid var(--bg-clr);
   padding: 10px 20px;
   border-radius: 3px;
   cursor: pointer;
   transition: all 0.5s ease;
+  background-color: var(--bg-clr);
+  color: var(--white); 
 }
-.txt h3{
-    color: red;
-    font-size: larger;
+
+.txt h3 {
+  color: rgb(219, 127, 219);
+  font-size: larger;
 }
-.footer{
-  background-color: aqua;
+
+.footer {
+  background-color: rgba(0, 0, 0, 0.05);
 }
