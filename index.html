@@ -238,61 +238,56 @@ window.addEventListener('scroll', updateProgressBar);
 
 
 
-    <nav class="navbar navbar-expand-lg fixed-top bg-white" >
- 
+    <nav class="navbar navbar-expand-lg fixed-top bg-white">
       <div class="container-fluid">
-        <div class="flex items-center"> <img src="images/fevicon.png" class="h-6 mr-2" alt=""><a class="navbar-brand" style="font-weight: 900 ; color:rgb(219, 127, 219);" href="/Visual-Sort/">Visual Sort</a></div>  
-          <button class="navbar-toggler" style=" background-color: rgb(202, 111, 202) ;color: black;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon " ></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-end " id="navbarNav">
-              <ul class="navbar-nav ms-auto">
-                  <li class="nav-item" >
-                      <a class="nav-link"  href="#home-section">Home</a>
-                  </li>
-
-                  <li class="nav-item">
-                    <a class="nav-link" style="font-weight: 500;" href="#algorithm-section">Sorting Visualizers</a>
-                </li>
-              
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle font-medium" href="#program-section" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Algorithms
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="./Algorithm/Bubble.html">Bubble Sort</a></li>
-            <li><a class="dropdown-item" href="./Algorithm/Selectionsort.html">Selection Sort</a></li>
-            <li><a class="dropdown-item" href="./Algorithm/Insertionsort.html">Insertion Sort</a></li>
-            <li><a class="dropdown-item" href="./Algorithm/CombSort.html">Comb Sort</a></li>
-            <li><a class="dropdown-item" href="./Algorithm/Mergesort.html">Merge Sort</a></li>
-            <li><a class="dropdown-item" href="./Algorithm/Heapsort.html">Heap Sort</a></li>
-            <li><a class="dropdown-item" href="./Algorithm/Quicksort.html">Quick Sort</a></li>
-            <li><a class="dropdown-item" href="/counting.html">Counting Sort</a></li>
-            <li> <a class="dropdown-item" href="./Algorithm/Radixsort.html">Radix Sort</a></li>
-                  
-
-          </ul>
-        </li>
-                  <li class="nav-item">
-                    <a class="nav-link" style="font-weight: 500;" href="#features-section">Features</a>
-                </li>
-                  <li class="nav-item">
-                      <a class="nav-link" style="font-weight: 500;" href="#About-Us">About Us</a>
-                  </li>
-                  <li class="nav-item ">
-                    <a class="nav-link  px-3" style="font-weight: 500;" href="contact.html">Contact</a>
-                </li>
-                  <li class="nav-item ">
-                    <a class="nav-link log px-3" href="login.html">Login</a>
-                </li>
-            
-               
+        <div class="flex items-center">
+          <img src="images/fevicon.png" class="h-6 mr-2" alt="">
+          <a class="navbar-brand" style="font-weight: 900; color: rgb(219, 127, 219);" href="/Visual-Sort/">Visual Sort</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#home-section" id="home-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="font-weight: 500;" href="#algorithm-section" id="sort-visualizer-link">Sorting Visualizers</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle font-medium" href="#program-section" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Algorithms
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="./Algorithm/Bubble.html">Bubble Sort</a></li>
+                <li><a class="dropdown-item" href="./Algorithm/Selectionsort.html">Selection Sort</a></li>
+                <li><a class="dropdown-item" href="./Algorithm/Insertionsort.html">Insertion Sort</a></li>
+                <li><a class="dropdown-item" href="./Algorithm/CombSort.html">Comb Sort</a></li>
+                <li><a class="dropdown-item" href="./Algorithm/Mergesort.html">Merge Sort</a></li>
+                <li><a class="dropdown-item" href="./Algorithm/Heapsort.html">Heap Sort</a></li>
+                <li><a class="dropdown-item" href="./Algorithm/Quicksort.html">Quick Sort</a></li>
+                <li><a class="dropdown-item" href="/counting.html">Counting Sort</a></li>
+                <li><a class="dropdown-item" href="./Algorithm/Radixsort.html">Radix Sort</a></li>
               </ul>
-          </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="font-weight: 500;" href="#features-section" id="features-link">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="font-weight: 500;" href="#About-Us" id="about-link">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" style="font-weight: 500;" href="contact.html" id="contact-link">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link log px-3" href="login.html" id="login-link">Login</a>
+            </li>
+          </ul>
+        </div>
       </div>
-      </nav>
- 
+    </nav>
 
  
 
@@ -334,7 +329,7 @@ window.addEventListener('scroll', updateProgressBar);
             <i class="fas fa-chevron-down"></i>
         </div>
     </section>
-    <div class="site-section algorithm-title" id="algorithm-section">
+<div class="site-section algorithm-title algorithm-section" id="algorithm-section">
       <div class="container">
         <div class="row mb-5 justify-content-center">
           <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="">
@@ -459,7 +454,7 @@ window.addEventListener('scroll', updateProgressBar);
   </div>
 
 
-  <div class="site-section" id="programs-section">
+<section class="site-section" id="programs-section">
     <div class="container">
       <div class="row mb-5 justify-content-center">
         <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="">
@@ -596,7 +591,7 @@ window.addEventListener('scroll', updateProgressBar);
         </p>
       </div>
   </div>
-    <section class="mb-10 mt-40 bg-white" id="features-section">
+<section class="mb-10 mt-40 bg-white" id="features-section">
       <div class="py-12" data-aos="fade-up" data-aos-delay="200">
           <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div class="lg:text-center">
@@ -728,18 +723,18 @@ window.addEventListener('scroll', updateProgressBar);
               
           </div>
       </div>
-  </section>
-       <div>
-    <main>
-        <div class="main" id="About-Us" >
+</section>
+<div>
+  <main>
+<section class="main" id="About-Us" >
                     <div class="card" data-aos="fade-up" data-aos-delay="200">
                     <h1> ABOUT US</h1>
                         <img class="img" src="images/coding.gif" alt="">
                     <p class="text-base md:text-lg lg:text-2xl text-gray-400 text-center"><b>Visual Sort</b> offers an engaging platform to learn sorting algorithms through interactive visualizations. It covers popular algorithms like <b>Bubble Sort, Merge Sort,</b> and more, making complex concepts easy to understand. Ideal for students and educators, it combines education and user-friendly design to enhance learning experiences.</p>
                     </div>
-                </div>
+                </section>
             </div>
-            <section class="mb-10 mt-40 bg-white"  >
+<section class="mb-10 mt-40 bg-white"  >
                 <div class="py-12">
                     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div class="lg:text-center">
@@ -873,7 +868,7 @@ window.addEventListener('scroll', updateProgressBar);
                         </div>
                     </div>
                 </div>
-            </section>
+</section>
             <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
             </div>
         </div>
@@ -938,7 +933,7 @@ window.addEventListener('scroll', updateProgressBar);
     </div>
   </div>
 </section>
-    <section class="faq" id="faq">
+<section class="faq" id="faq">
       <div class="container_1">
         <div class="accordion__wrapper">
           <h1 class="accordian__title">Frequently Asked Question</h1>
@@ -1009,7 +1004,7 @@ window.addEventListener('scroll', updateProgressBar);
         </div>
         </div>  
       </div>
-    </section>
+</section>
     
  <footer class="container py-4 py-md-5 px-4 px-md-3">
     <div class="row d-flex justify-content-center align-items-center text-center">
@@ -1252,65 +1247,78 @@ window.addEventListener('load', function() {
             }, 100); // Slight delay to ensure smooth transition after preloader
         });
 </script>
-
-
-  <script>
-
-
-
-
-
-
-  document.addEventListener('DOMContentLoaded', function() {
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-link');
+    const topButton = document.getElementById("topbtn");
+    const arrow = document.querySelector('.scroll-arrow');
+    const heroSection = document.getElementById('home-section');
+    
+    let lastKnownScrollPosition = 0;
+    let ticking = false;
 
-    function changeLinkState() {
+    // Function to update active link based on scroll position
+    function updateActiveLink(scrollPos) {
       let index = sections.length;
 
-      while(--index && window.scrollY + 10 < sections[index].offsetTop) {}
+      // Adjust offset for navbar height if necessary
+      const offset = 100; // Adjust this based on your navbar height
 
+      while (--index && scrollPos + offset < sections[index].offsetTop) {}
+
+      // Remove active class from all links
       navLinks.forEach((link) => link.classList.remove('active'));
-      navLinks[index].classList.add('active');
+
+      // Add active class to the current link
+      if (navLinks[index]) navLinks[index].classList.add('active');
     }
 
-    changeLinkState();
-    window.addEventListener('scroll', changeLinkState);
-  });
-  
+    // Handle scroll events
+    function handleScroll() {
+      lastKnownScrollPosition = window.scrollY;
 
+      // Show or hide back-to-top button
+      if (lastKnownScrollPosition > 100) {
+        topButton.style.display = "block";
+      } else {
+        topButton.style.display = "none";
+      }
 
-    const topButton = document.getElementById("topbtn");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            topButton.style.display = "block";
-        } else {
-            topButton.style.display = "none";
-        }
-    };
+      // Hide the scroll arrow based on the position of the hero section
+      const heroBottom = heroSection.getBoundingClientRect().bottom;
+      arrow.style.opacity = (lastKnownScrollPosition > 200 || heroBottom < 0) ? '0' : '1';
+
+      // Update active link
+      if (!ticking) {
+        window.requestAnimationFrame(function () {
+          updateActiveLink(lastKnownScrollPosition);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    // Scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Back-to-top button click event
     topButton.onclick = function (event) {
-        event.preventDefault(); 
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'  
-        });
+      event.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     };
-    document.addEventListener('DOMContentLoaded', function() {
-            const arrow = document.querySelector('.scroll-arrow');
-            const heroSection = document.getElementById('home-section');
 
-            window.addEventListener('scroll', function() {
-                const heroBottom = heroSection.getBoundingClientRect().bottom;
-                const windowHeight = window.innerHeight;
-
-                if (window.scrollY > 200 || heroBottom < 0) {
-                    arrow.style.opacity = '0';
-                } else {
-                    arrow.style.opacity = '1';
-                }
-            });
-        });
+    // Initial call to set active link state
+    updateActiveLink(window.scrollY);
+  });
 </script>
+
+
+
+
 
 
 </body>
