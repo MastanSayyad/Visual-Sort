@@ -1,6 +1,16 @@
-# #Visual Sort 
 
-Welcome to **Visual Sort**, a web-based sorting algorithm visualization tool built using HTML, CSS, Bootstrap, SCSS, and JavaScript. This project provides an interactive way to visualize various sorting algorithms in action, helping users understand how different algorithms work and their efficiency in sorting data.
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/25de73fa-a9b3-48cc-b1c4-8d54d4f60d4f" alt="GitHub Org Logo" width="500" />
+
+### 🌟 Welcome to Visual Sort 🌟
+
+[![GitHub stars](https://img.shields.io/github/stars/MastanSayyad/Visual-Sort?style=social)](https://github.com/MastanSayyad/Visual-Sort/stargazers)   [![GitHub forks](https://img.shields.io/github/forks/MastanSayyad/Visual-Sort?style=social)](https://github.com/MastanSayyad/Visual-Sort/network/members)  [![GitHub views](https://komarev.com/ghpvc/?username=MastanSayyad&repo=Visual-Sort&color=blue)](https://github.com/MastanSayyad/Visual-Sort)   [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/MastanSayyad/Visual-Sort/issues)  [![Deployed Link](https://img.shields.io/badge/Deployed%20on-Vercel-blue?style=flat&logo=vercel)](https://visual-sort-pink.vercel.app/)
+
+</div>
+
+---
+
+A web-based sorting algorithm visualization tool built using HTML, CSS, and JavaScript. This project provides an interactive way to visualize various sorting algorithms in action, helping users understand how different algorithms work and their efficiency in sorting data.
 
 ![image](https://github.com/user-attachments/assets/3c613e72-1a56-4922-a39b-9e40d73adead)
 
@@ -11,14 +21,10 @@ Welcome to **Visual Sort**, a web-based sorting algorithm visualization tool bui
 
 <table align="center">
   <tr>
-<td align="center"><a href="https://github.com/MastanSayyad"><img src="https://media.licdn.com/dms/image/D4D03AQH5h5wjzu5JCw/profile-displayphoto-shrink_400_400/0/1720377064846?e=1726099200&v=beta&t=yEkMjvHLm06OHyiDKMX_ZSRA_-Lqq1oZY8-ukd-dW0E" width="100px;" alt="Mastan Sayyad"/><br /><sub><b>Mastan Sayyad</b></sub></a></td>
+<td align="center"><a href="https://github.com/MastanSayyad"><img src="https://avatars.githubusercontent.com/u/101971980?v=4" width="100px;" alt="Mastan Sayyad"/><br /><sub><b>Mastan Sayyad</b></sub></a></td>
 <td align="center"><a href="https://github.com/RadhikaMalpani1702"><img src="https://avatars.githubusercontent.com/u/163530398?v=4" width="100px;" alt="Radhika Malpani"/><br /><sub><b>Radhika Malpani</b></sub></a></td>
  </tr>
 </table>
-
-## #Live Demo
-
-Check out the live demo of the project: [Visual Sort](https://visual-sort-pink.vercel.app/)
 
 ## #About Project
 
@@ -36,7 +42,7 @@ Visual Sort is designed to help both beginners and seasoned developers understan
 
 ## #Technologies Used
 
-- HTML, CSS, Bootstrap, SCSS, JavaScript.
+- HTML, CSS, JavaScript.
 
 ## #Getting Started
 
