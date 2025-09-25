@@ -22,7 +22,6 @@ A web-based sorting algorithm visualization tool built using HTML, CSS, and Java
 <table align="center">
   <tr>
 <td align="center"><a href="https://github.com/MastanSayyad"><img src="https://avatars.githubusercontent.com/u/101971980?v=4" width="100px;" alt="Mastan Sayyad"/><br /><sub><b>Mastan Sayyad</b></sub></a></td>
-<td align="center"><a href="https://github.com/RadhikaMalpani1702"><img src="https://avatars.githubusercontent.com/u/163530398?v=4" width="100px;" alt="Radhika Malpani"/><br /><sub><b>Radhika Malpani</b></sub></a></td>
  </tr>
 </table>
 
