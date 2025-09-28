@@ -16,7 +16,6 @@ A web-based sorting algorithm visualization tool built using HTML, CSS, and Java
 
 ![image](https://github.com/user-attachments/assets/f6ffbeae-6a48-4e49-8b3c-a480de4eff7e)
 
-
 ##  Project Admin ✨
 
 <table align="center">
