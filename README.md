@@ -4,7 +4,7 @@
 
 ### 🌟 Welcome to Visual Sort 🌟
 
-[![GitHub stars](https://img.shields.io/github/stars/MastanSayyad/Visual-Sort?style=social)](https://github.com/MastanSayyad/Visual-Sort/stargazers)   [![GitHub forks](https://img.shields.io/github/forks/MastanSayyad/Visual-Sort?style=social)](https://github.com/MastanSayyad/Visual-Sort/network/members)  [![GitHub views](https://komarev.com/ghpvc/?username=MastanSayyad&repo=Visual-Sort&color=blue)](https://github.com/MastanSayyad/Visual-Sort)   [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/MastanSayyad/Visual-Sort/issues)  [![Deployed Link](https://img.shields.io/badge/Deployed%20on-Vercel-blue?style=flat&logo=vercel)](https://visual-sort-pink.vercel.app/)
+[![GitHub stars](https://img.shields.io/github/stars/MastanSayyad/Visual-Sort?style=social)](https://github.com/MastanSayyad/Visual-Sort/stargazers)   [![GitHub forks](https://img.shields.io/github/forks/MastanSayyad/Visual-Sort?style=social)](https://github.com/MastanSayyad/Visual-Sort/network/members)  [![GitHub views](https://komarev.com/ghpvc/?username=MastanSayyad&repo=Visual-Sort&color=blue)](https://github.com/MastanSayyad/Visual-Sort)   [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/MastanSayyad/Visual-Sort/issues)  [![Deployed Link](https://img.shields.io/badge/Deployed%20on-Vercel-blue?style=flat&logo=vercel)](https://visual-sort-pink.vercel.app/) ![Issues](https://img.shields.io/github/issues-closed/MastanSayyad/visual-sort) 
 
 </div>
 
